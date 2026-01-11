@@ -8,5 +8,5 @@
 
  ## 提交 git
  使用 github mcp 把 e:\AI_Code_Learning\Claude_Code 上传到 github ，自动编写更改描述
-
+ git add -A && git commit -m "docs: 重命名 Claude Code 使用入门指南文档" && git push
  
