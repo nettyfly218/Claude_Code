@@ -1,19 +1,15 @@
-  # 可用的 MCP 服务器 (7个)
-  ┌──────────────────┬──────────────────────────────────────────────────────────────┬─────────────┐
-  │    MCP 服务器    │                           连接方式                           │    状态     │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ chrome-devtools  │ npx chrome-devtools-mcp@latest                               │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ context7         │ npx @upstash/context7-mcp                                    │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ playwright       │ npx @playwright/mcp@latest                                   │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ web-reader       │ https://open.bigmodel.cn/api/mcp/web_reader/mcp (HTTP)       │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ web-search-prime │ https://open.bigmodel.cn/api/mcp/web_search_prime/mcp (HTTP) │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ zai-mcp-server   │ npx -y @z_ai/mcp-server                                      │ ✓ Connected │
-  ├──────────────────┼──────────────────────────────────────────────────────────────┼─────────────┤
-  │ zread            │ https://open.bigmodel.cn/api/mcp/zread/mcp (HTTP)            │ ✓ Connected │
-  └──────────────────┴──────────────────────────────────────────────────────────────┴─────────────┘
+# 常用 MCP 服务器 (4个)
+
+## chrome-devtools-mcp
+  claude mcp add chrome-devtools -s user -- npx chrome-devtools-mcp@latest
+
+## playwright  
+  claude mcp add playwright -s user -- npx @playwright/mcp@latest 
+
+## context7  
+  claude mcp add context7 -s user -- npx @upstash/context7-mcp 
+
+## github
+  claude mcp add --transport http github https://api.githubcopilot.com/mcp -H "Authorization: Bearer $env:GITHUB_PAT" -s user
+
    
