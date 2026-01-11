@@ -2,6 +2,10 @@
 
 记录 Claude Code AI 助手的使用配置、学习笔记和最佳实践。
 
+## 项目简介
+
+本仓库用于记录 Claude Code 的配置方法、使用技巧以及开发实践，帮助更好地利用 AI 助手提升开发效率。
+
 ## 项目结构
 
 ```
@@ -11,15 +15,29 @@ Claude_Code/
 ├── MCP/              # MCP 服务器配置
 ├── Memory/           # 记忆数据库
 ├── Project/          # 项目实践代码
+│   └── 背单词/       # 背单词练习项目
 ├── Prompt/           # Prompt 技能文档
+│   └── Prompt.md     # Prompt 编写指南
 ├── Skills/           # Claude Skills 技能模块
-├── 学习笔记/          # 个人学习笔记
-└── README.md         # 项目说明
+└── 学习笔记/          # 个人学习笔记
 ```
+
+## 目录说明
+
+| 目录 | 说明 |
+|------|------|
+| `.claude/` | Claude Code 全局配置 |
+| `Agents/` | 自定义 Agent 配置 |
+| `MCP/` | MCP 服务器配置文档 |
+| `Memory/` | 记忆数据库存储 |
+| `Project/` | 实践项目代码 |
+| `Prompt/` | Prompt 编写技巧 |
+| `Skills/` | Skills 技能模块 |
+| `学习笔记/` | 个人学习记录 |
 
 ## MCP 服务器配置
 
-### 常用 MCP 服务器
+### 安装命令
 
 ```powershell
 # Chrome 开发者工具
@@ -35,9 +53,11 @@ claude mcp add context7 -s user -- npx @upstash/context7-mcp
 claude mcp add --transport http github https://api.githubcopilot.com/mcp -H "Authorization: Bearer $env:GITHUB_PAT" -s user
 ```
 
-## Skills 安装
+详细配置请参考 [MCP 配置指南](./MCP/mcp_list.md)。
 
-### 插件市场安装
+## Skills 技能模块
+
+### 安装命令
 
 ```powershell
 /plugin marketplace add anthropics/skills
@@ -46,22 +66,24 @@ claude mcp add --transport http github https://api.githubcopilot.com/mcp -H "Aut
 /plugin marketplace add https://github.com/davila7/claude-code-templates
 ```
 
-### 常用官方技能
+### 常用技能
 
-| 技能 | 描述 |
+| 技能 | 功能 |
 |------|------|
-| algorithmic-art | 算法艺术创作 |
-| canvas-design | 视觉设计 |
-| docx | Word 文档处理 |
-| frontend-design | 前端界面开发 |
-| pdf | PDF 处理 |
-| pptx | PPT 制作 |
-| xlsx | Excel 处理 |
-| mcp-builder | MCP 服务器开发 |
-| web-artifacts-builder | 复杂 Web 组件 |
-| webapp-testing | Web 应用测试 |
+| `algorithmic-art` | 算法艺术创作 |
+| `canvas-design` | 视觉设计 |
+| `docx` | Word 文档处理 |
+| `frontend-design` | 前端界面开发 |
+| `pdf` | PDF 处理 |
+| `pptx` | PPT 制作 |
+| `xlsx` | Excel 处理 |
+| `mcp-builder` | MCP 服务器开发 |
+| `web-artifacts-builder` | 复杂 Web 组件 |
+| `webapp-testing` | Web 应用测试 |
 
-## 使用说明
+详细说明请参考 [Skills 列表](./Skills/skills_list.md)。
+
+## 快速开始
 
 ### 克隆仓库
 
@@ -78,12 +100,31 @@ git commit -m "描述更改"
 git push
 ```
 
-## 文档说明
+## 更新日志
 
-- `学习笔记/` - 存放学习过程中的笔记和心得
-- `MCP/` - MCP 服务器配置说明
-- `Skills/` - 技能模块使用说明
-- `Prompt/` - Prompt 编写技巧和示例
+### v1.1.0 (2026-01-12)
+
+#### 新增
+- 新增 Prompt.md 文档，包含 git 提交命令示例
+- 新增背单词练习项目
+
+#### 优化
+- 重构项目结构，将背单词项目迁移到 Project 目录
+- 优化 README 文档结构
+- 精简文档结构，更新 MCP 和 Skills 配置指南
+- 添加 GitHub MCP 上传项目操作说明
+
+### v1.0.0 (2026-01-02)
+
+- 初始化项目
+- 添加 Claude Code 配置和基本文档
+- 添加 MCP 和 Skills 配置说明
+- 添加学习笔记目录
+
+## 参考资源
+
+- [Claude Code 官方文档](https://docs.claude.com/)
+- [Claude Code GitHub](https://github.com/anthropics/claude-code)
 
 ## 作者
 
