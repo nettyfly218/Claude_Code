@@ -1,0 +1,118 @@
+/*
+ * 布局和响应式设计
+ */
+
+/* === 主应用容器 === */
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* === 容器 === */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.container-sm {
+    max-width: 600px;
+}
+
+.container-lg {
+    max-width: 1400px;
+}
+
+/* === Flexbox布局 === */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-gap-sm { gap: var(--spacing-sm); }
+.flex-gap-md { gap: var(--spacing-md); }
+.flex-gap-lg { gap: var(--spacing-lg); }
+
+/* === Grid布局 === */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* === 响应式 === */
+
+/* 平板 (768px+) */
+@media (min-width: 768px) {
+    #page-container {
+        padding: var(--spacing-xl);
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+}
+
+/* 桌面 (1024px+) */
+@media (min-width: 1024px) {
+    #page-container {
+        padding: var(--spacing-xxl);
+    }
+}
+
+/* 手机横屏优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+    #page-container {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* === 打印样式 === */
+@media print {
+    .btn-primary,
+    .btn-secondary,
+    .btn-icon {
+        display: none;
+    }
+}

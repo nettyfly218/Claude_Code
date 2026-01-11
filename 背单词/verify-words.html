@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单词数据验证</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #FF6B6B;
+            text-align: center;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .category-stats {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #FF6B6B;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .success {
+            color: #51CF66;
+            font-weight: bold;
+        }
+        .warning {
+            color: #FFE66D;
+            font-weight: bold;
+        }
+        .error {
+            color: #FF6B6B;
+            font-weight: bold;
+        }
+        .validation-result {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #e7f5ff;
+            border-left: 4px solid #4ECDC4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 单词数据库验证报告</h1>
+
+        <div id="validation-result" class="validation-result"></div>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="category-stats">
+            <h2>分类统计</h2>
+            <table id="category-table">
+                <thead>
+                    <tr>
+                        <th>分类</th>
+                        <th>单词数量</th>
+                        <th>难度分布</th>
+                    </tr>
+                </thead>
+                <tbody id="category-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 加载单词数据 -->
+    <script src="js/data/words.js"></script>
+    <script src="js/data/words-extended.js"></script>
+
+    <script>
+        // 验证单词数据
+        function validateWords() {
+            const allWords = typeof fullWordDatabase !== 'undefined' ? fullWordDatabase : wordDatabase;
+
+            const results = {
+                totalWords: allWords.length,
+                categories: {},
+                difficulties: {},
+                grades: {},
+                duplicateIds: [],
+                missingFields: [],
+                errors: []
+            };
+
+            // 检查重复ID
+            const idSet = new Set();
+            allWords.forEach(word => {
+                if (idSet.has(word.id)) {
+                    results.duplicateIds.push(word.id);
+                } else {
+                    idSet.set(word.id);
+                }
+            });
+
+            // 统计和验证
+            allWords.forEach((word, index) => {
+                // 检查必需字段
+                const requiredFields = ['id', 'word', 'translation', 'category', 'difficulty', 'phonetic', 'sentence', 'tags', 'grade'];
+                const missing = requiredFields.filter(field => !word[field]);
+                if (missing.length > 0) {
+                    results.missingFields.push({ id: word.id, word: word.word, missing });
+                }
+
+                // 统计分类
+                if (!results.categories[word.category]) {
+                    results.categories[word.category] = [];
+                }
+                results.categories[word.category].push(word);
+
+                // 统计难度
+                results.difficulties[word.difficulty] = (results.difficulties[word.difficulty] || 0) + 1;
+
+                // 统计年级
+                results.grades[word.grade] = (results.grades[word.grade] || 0) + 1;
+            });
+
+            return results;
+        }
+
+        // 显示结果
+        function displayResults(results) {
+            const validationDiv = document.getElementById('validation-result');
+            const statsDiv = document.getElementById('stats');
+            const tbody = document.getElementById('category-tbody');
+
+            // 显示验证结果
+            let validationHTML = '<h3>';
+            if (results.duplicateIds.length === 0 && results.missingFields.length === 0) {
+                validationHTML += '<span class="success">✓ 数据验证通过！</span>';
+            } else {
+                validationHTML += '<span class="error">✗ 发现数据问题</span>';
+            }
+            validationHTML += '</h3>';
+
+            if (results.duplicateIds.length > 0) {
+                validationHTML += `<p class="error">重复ID: ${results.duplicateIds.join(', ')}</p>`;
+            }
+            if (results.missingFields.length > 0) {
+                validationHTML += `<p class="warning">缺少字段的单词: ${results.missingFields.length}个</p>`;
+            }
+            validationDiv.innerHTML = validationHTML;
+
+            // 显示统计卡片
+            statsDiv.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-label">总单词数</div>
+                    <div class="stat-value">${results.totalWords}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">分类数量</div>
+                    <div class="stat-value">${Object.keys(results.categories).length}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">1年级单词</div>
+                    <div class="stat-value">${results.grades[1] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">2年级单词</div>
+                    <div class="stat-value">${results.grades[2] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">3年级单词</div>
+                    <div class="stat-value">${results.grades[3] || 0}</div>
+                </div>
+            `;
+
+            // 显示分类统计表格
+            Object.keys(results.categories).sort().forEach(category => {
+                const words = results.categories[category];
+                const difficultyCount = {};
+                words.forEach(w => {
+                    difficultyCount[w.difficulty] = (difficultyCount[w.difficulty] || 0) + 1;
+                });
+                const diffStr = Object.keys(difficultyCount).sort().map(d =>
+                    `难度${d}: ${difficultyCount[d]}`
+                ).join(', ');
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${category}</td>
+                    <td><strong>${words.length}</strong></td>
+                    <td>${diffStr}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // 执行验证
+        const results = validateWords();
+        displayResults(results);
+
+        // 在控制台输出详细信息
+        console.log('验证结果:', results);
+        console.log(`
+========== 单词数据库验证报告 ==========
+总单词数: ${results.totalWords}
+分类数量: ${Object.keys(results.categories).length}
+年级分布:
+  - 1年级: ${results.grades[1] || 0}个
+  - 2年级: ${results.grades[2] || 0}个
+  - 3年级: ${results.grades[3] || 0}个
+难度分布:
+  - 难度1: ${results.difficulties[1] || 0}个
+  - 难度2: ${results.difficulties[2] || 0}个
+  - 难度3: ${results.difficulties[3] || 0}个
+重复ID: ${results.duplicateIds.length}个
+缺少字段: ${results.missingFields.length}个
+======================================
+        `);
+    </script>
+</body>
+</html>

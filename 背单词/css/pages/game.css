@@ -1,0 +1,852 @@
+/*
+ * 游戏页面样式
+ */
+
+.game-page {
+    padding: var(--spacing-lg);
+    min-height: 100vh;
+}
+
+/* 游戏选择页面 */
+.game-select {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.game-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-card.spelling {
+    border-color: #FF6B6B;
+}
+
+.game-card.matching {
+    border-color: #4ECDC4;
+}
+
+.game-card.quiz {
+    border-color: #FFE66D;
+}
+
+.game-icon {
+    font-size: 80px;
+    margin-bottom: var(--spacing-md);
+}
+
+.game-title {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.game-desc {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--bg-secondary);
+}
+
+.game-stat-item {
+    text-align: center;
+}
+
+.game-stat-value {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+.game-stat-label {
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+/* 游戏通用头部 */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.game-score {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--accent-color);
+}
+
+/* 拼写游戏 */
+.spelling-game {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.spelling-word-display {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.spelling-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.spelling-input-area {
+    min-height: 80px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.spelling-letter {
+    width: 50px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.spelling-letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.spelling-letter-btn {
+    width: 60px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--secondary-color), #6EE7D9);
+    border-radius: var(--radius-md);
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: white;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.spelling-letter-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.spelling-letter-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* 配对游戏 */
+.matching-game {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.matching-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.matching-card {
+    aspect-ratio: 1;
+    background: var(--primary-color);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.matching-card.flipped {
+    background: var(--bg-card);
+}
+
+.matching-card.matched {
+    background: var(--success-color);
+    cursor: default;
+}
+
+.matching-card-content {
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.matching-card.flipped .matching-card-content,
+.matching-card.matched .matching-card-content {
+    opacity: 1;
+}
+
+.matching-card-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.matching-card-text {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+/* 选择题游戏 */
+.quiz-game {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-question {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.quiz-option {
+    background: var(--bg-card);
+    border: 3px solid var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    font-size: var(--font-lg);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-option.correct {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.quiz-option.wrong {
+    background: var(--error-color);
+    border-color: var(--error-color);
+    color: white;
+    animation: shake 0.5s ease;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+}
+
+/* 游戏结果 */
+.game-result {
+    text-align: center;
+    padding: var(--spacing-xxl);
+}
+
+.game-result-icon {
+    font-size: 120px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.game-result-title {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.game-result-score {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    color: var(--accent-color);
+    margin: var(--spacing-lg) 0;
+}
+
+.game-result-stars {
+    font-size: 60px;
+    margin: var(--spacing-lg) 0;
+}
+
+.game-result-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* 响应式 */
+@media (max-width: 767px) {
+    .matching-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .game-select {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* QuizGame 额外样式 */
+.quiz-game .game-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.quiz-game .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.quiz-game .game-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.quiz-game .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: width var(--transition-normal);
+}
+
+.quiz-game .game-progress-text {
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+}
+
+.quiz-instruction {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.quiz-word-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    color: white;
+}
+
+.quiz-word-display {
+    margin-bottom: var(--spacing-md);
+}
+
+.quiz-word-display .word-main {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quiz-word-display .word-phonetic {
+    font-size: var(--font-md);
+    opacity: 0.9;
+}
+
+.btn-audio {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: white;
+    font-size: var(--font-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-audio:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.quiz-option .option-label {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    min-width: 30px;
+}
+
+.quiz-option .option-text {
+    flex: 1;
+    text-align: left;
+}
+
+.quiz-feedback {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    animation: slideDown 0.3s ease;
+}
+
+.quiz-feedback.feedback-correct {
+    background: var(--success-color);
+    color: white;
+}
+
+.quiz-feedback.feedback-wrong {
+    background: var(--error-color);
+    color: white;
+}
+
+.game-footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* QuizGame 结果页面 */
+.quiz-result {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.result-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xxl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.result-title {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.result-stars {
+    font-size: 80px;
+    margin: var(--spacing-lg) 0;
+}
+
+.result-score {
+    margin: var(--spacing-xl) 0;
+}
+
+.result-score .score-main {
+    font-size: 72px;
+    font-weight: var(--font-bold);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.result-score .score-label {
+    font-size: var(--font-md);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.result-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+}
+
+.result-stats .stat-item {
+    text-align: center;
+}
+
+.result-stats .stat-value {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.result-stats .stat-value.correct {
+    color: var(--success-color);
+}
+
+.result-stats .stat-value.wrong {
+    color: var(--error-color);
+}
+
+.result-stats .stat-label {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+.result-comment {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin: var(--spacing-lg) 0;
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.result-actions button {
+    min-width: 120px;
+}
+
+/* 动画 */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* MatchingGame 额外样式 */
+.matching-game .game-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.matching-game .game-score,
+.matching-game .game-moves,
+.matching-game .game-pairs {
+    text-align: center;
+    padding: var(--spacing-sm);
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+}
+
+.matching-game .score-label,
+.matching-game .moves-label,
+.matching-game .pairs-label {
+    display: block;
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.matching-game .score-value,
+.matching-game .moves-value,
+.matching-game .pairs-value {
+    display: block;
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+/* 配对游戏卡片样式 */
+.matching-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.matching-card .card-back,
+.matching-card .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.matching-card .card-back {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+}
+
+.matching-card .card-back-icon {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+}
+
+.matching-card .card-front {
+    background: var(--bg-card);
+    transform: rotateY(180deg);
+    box-shadow: var(--shadow-md);
+}
+
+.matching-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.matching-card.matched .card-front {
+    background: var(--success-color);
+    color: white;
+}
+
+.matching-card .card-word,
+.matching-card .card-translation {
+    text-align: center;
+    width: 100%;
+}
+
+.matching-card .card-word-main {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.matching-card .card-word-phonetic {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+.matching-card.matched .card-word-phonetic {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.matching-card .card-translation {
+    font-size: var(--font-lg);
+    font-weight: var(--font-medium);
+}
+
+/* 配对游戏结果页面 */
+.matching-result {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* 响应式优化 */
+@media (max-width: 767px) {
+    .matching-game .game-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SpellingGame 额外样式 */
+.spelling-game {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.spelling-instruction {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.spelling-word-card {
+    background: linear-gradient(135deg, var(--secondary-color), #6EE7D9);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: white;
+}
+
+.spelling-translation {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+.input-placeholder {
+    color: var(--text-secondary);
+    font-size: var(--font-md);
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.spelling-letter {
+    width: 50px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: white;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.spelling-letter:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.spelling-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.btn-hint,
+.btn-clear,
+.btn-submit {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+}
+
+.btn-hint {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-clear {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.btn-submit {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-hint:hover,
+.btn-clear:hover,
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-hint:disabled,
+.btn-clear:disabled,
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spelling-feedback {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    text-align: center;
+    animation: slideDown 0.3s ease;
+}
+
+.spelling-feedback.feedback-correct {
+    background: var(--success-color);
+    color: white;
+}
+
+.spelling-feedback.feedback-wrong {
+    background: var(--error-color);
+    color: white;
+}
+
+/* SpellingGame 结果页面 */
+.spelling-result {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.spelling-result .result-stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 767px) {
+    .spelling-result .result-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
