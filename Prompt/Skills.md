@@ -4,3 +4,6 @@
 ## github mcp
  @https://github.com/github/github-mcp-server/blob/main/docs/installation-guides/install-claude.md  
  参考网页内容安装 GitHub 官方提供的远程 MCP 服务，使用 --scope user 参数进行全局安装，我的 Personal access tokens 为 GITHUB_PAT
+
+ ## 提交git
+ 使用 github mcp 把 e:\AI_Code_Learning\Claude_Code 上传到 github ，自动编写更改描述
