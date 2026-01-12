@@ -28,13 +28,16 @@
 ## 启动
 ```
   cd your-project-folder
+  claude --dangerously-skip-permissions
   claude
 ```
 ---
 ## 二、从 npm 安装迁移到原生安装（老用户）
 1. 关闭所有 Claude Code 会话
 2. 执行迁移命令：
-claude install
+```
+  claude install
+```
 3. 系统自动完成迁移，包括：
 - 保留所有配置（API Key、环境变量等）
 - 保留项目数据和插件
@@ -121,7 +124,7 @@ claude install
 ```
 
 ---
-## 七、配置常用 Skills （24个）
+## 七、配置常用 Skills （22个）
 
 ### 在 Claude Code 内
 ```
@@ -134,7 +137,9 @@ claude install
 ### 验证安装
 ```
 	/plugin
+  /agents
 	/skills
+  /MCP
 ```
     
 ### 安装推荐的官方插件
@@ -164,12 +169,11 @@ claude install
   | prompt-optimizer | 提示词优化 |
   | qa-expert | QA 测试 |
   | skill-creator | 技能创建 |
-  | template | 模板工具 |
+  | template-skill | 模板工具 |
   | theme-factory | 主题样式 |
   | web-artifacts-builder | 复杂 Web 组件 |
   | webapp-testing | Web 应用测试 |
   | xlsx | Excel 处理 |
-  | claude-hud:configure | HUD 配置 |
-  | claude-hud:setup | HUD 设置 |
+  | api-design-principles | API 设计规范 |
   
 ---

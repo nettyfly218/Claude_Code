@@ -1,4 +1,4 @@
-# 安装 Skills (24个)
+# 安装 Skills (22个)
 
 ## 在 Claude Code 内
 	/plugin marketplace add anthropics/skills
@@ -40,5 +40,4 @@
 | web-artifacts-builder | 复杂 Web 组件 |
 | webapp-testing | Web 应用测试 |
 | xlsx | Excel 处理 |
-| claude-hud:configure | HUD 配置 |
-| claude-hud:setup | HUD 设置 |
+| api-design-principles | API 设计规范 |
