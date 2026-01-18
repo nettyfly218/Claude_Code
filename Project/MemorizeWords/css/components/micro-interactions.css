@@ -1,0 +1,446 @@
+/**
+ * 微交互动画样式 v1.0
+ */
+
+/* === 按钮点击效果 === */
+.btn-clicked {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* === 卡片悬停效果 === */
+.card-hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+/* === 列表项点击效果 === */
+.item-clicked {
+    animation: listItemClick 0.3s ease;
+}
+
+@keyframes listItemClick {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* === 输入框焦点效果 === */
+.input-focused {
+    transform: scale(1.02);
+    transition: transform var(--transition-fast);
+}
+
+.input-shake {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* === 滚动显示效果 === */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === 波纹效果 === */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: rippleExpand 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleExpand {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* === 小型粒子效果 === */
+.mini-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes miniParticleBurst {
+    0% {
+        transform: rotate(var(--angle)) translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(var(--angle)) translateX(60px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* === 成功反馈 === */
+.success-pulse {
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(81, 207, 102, 0.5);
+    }
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* === 错误抖动 === */
+.error-shake {
+    animation: errorShake 0.5s ease;
+}
+
+@keyframes errorShake {
+    0%, 100% {
+        transform: translateX(0);
+        border-color: var(--error-color);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* === 按钮加载状态 === */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: btnSpin 0.8s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes btnSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* === 卡片翻转 === */
+.card-flipping {
+    transition: transform 0.15s ease;
+}
+
+.card-flipped {
+    transform: rotateY(180deg);
+}
+
+/* === 工具提示 === */
+.micro-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === 数字滚动 === */
+.count-up {
+    display: inline-block;
+}
+
+/* === 进度条动画 === */
+.progress-fill {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === 元素进入动画 === */
+.fadeInUp {
+    animation: fadeInUpAnim 0.5s ease forwards;
+}
+
+@keyframes fadeInUpAnim {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInScale {
+    animation: fadeInScaleAnim 0.5s ease forwards;
+}
+
+@keyframes fadeInScaleAnim {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.slideInRight {
+    animation: slideInRightAnim 0.5s ease forwards;
+}
+
+@keyframes slideInRightAnim {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slideInLeft {
+    animation: slideInLeftAnim 0.5s ease forwards;
+}
+
+@keyframes slideInLeftAnim {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* === 涟漪扩散效果 === */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    animation: rippleExpand 0.6s ease-out;
+    pointer-events: none;
+}
+
+/* === 悬停发光效果 === */
+.glow-hover {
+    transition: all var(--transition-normal);
+}
+
+.glow-hover:hover {
+    box-shadow: 0 0 20px currentColor;
+}
+
+/* === 点击涟漪效果 === */
+.click-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.click-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.click-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* === 呼吸效果 === */
+.breathing {
+    animation: breathing 3s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* === 脉冲效果 === */
+.pulsing {
+    animation: pulsing 2s ease-in-out infinite;
+}
+
+@keyframes pulsing {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+}
+
+/* === 漂浮效果 === */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* === 旋转效果 === */
+.rotating {
+    animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* === 弹跳效果 === */
+.bouncing {
+    animation: bouncing 1s ease infinite;
+}
+
+@keyframes bouncing {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* === 响应式 === */
+@media (max-width: 767px) {
+    .card-hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-clicked {
+        transform: scale(0.98);
+    }
+}
+
+/* === 深色模式 === */
+[data-theme="dark"] .micro-tooltip {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1A1A2E;
+}
+
+[data-theme="dark"] .ripple {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* === 可访问性 === */
+@media (prefers-reduced-motion: reduce) {
+    .btn-clicked,
+    .card-hover,
+    .item-clicked,
+    .input-focused,
+    .scroll-reveal,
+    .success-pulse,
+    .error-shake,
+    .card-flipping,
+    .breathing,
+    .pulsing,
+    .floating,
+    .rotating,
+    .bouncing,
+    .mini-particle,
+    .btn-spinner {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .progress-fill {
+        transition: width 0.3s ease;
+    }
+}

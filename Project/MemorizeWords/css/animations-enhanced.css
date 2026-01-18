@@ -1,0 +1,321 @@
+/*
+ * 增强动画效果
+ * 提供更丰富的交互动画
+ */
+
+/* === 页面过渡动画 === */
+
+/* 淡入 + 上滑 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* 淡入 + 缩放 */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.4s ease-out;
+}
+
+/* 滑入效果 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+/* === 卡片动画 === */
+
+/* 卡片翻转 */
+@keyframes cardFlip {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(180deg);
+    }
+}
+
+.card-flip {
+    animation: cardFlip 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+/* 卡片进入 */
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+.card-enter {
+    animation: cardEnter 0.5s ease-out;
+}
+
+/* === 按钮动画 === */
+
+/* 按钮脉冲 */
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+    }
+}
+
+.btn-pulse {
+    animation: buttonPulse 2s infinite;
+}
+
+/* 按钮摇晃 */
+@keyframes buttonShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.btn-shake {
+    animation: buttonShake 0.5s ease-in-out;
+}
+
+/* === 数字滚动动画 === */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(1.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.count-up {
+    animation: countUp 0.6s ease-out;
+}
+
+/* === 星星闪烁 === */
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8) rotate(180deg);
+    }
+}
+
+.star-twinkle {
+    animation: starTwinkle 1s ease-in-out infinite;
+}
+
+/* === 进度条动画 === */
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+}
+
+.progress-animated .progress-bar {
+    animation: progressFill 1s ease-out forwards;
+}
+
+/* === 文字波浪 === */
+@keyframes textWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.text-wave span {
+    display: inline-block;
+    animation: textWave 1s ease-in-out infinite;
+}
+
+.text-wave span:nth-child(2) { animation-delay: 0.1s; }
+.text-wave span:nth-child(3) { animation-delay: 0.2s; }
+.text-wave span:nth-child(4) { animation-delay: 0.3s; }
+.text-wave span:nth-child(5) { animation-delay: 0.4s; }
+
+/* === 成功庆祝动画 === */
+@keyframes celebrate {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.celebrate {
+    animation: celebrate 0.8s ease-out;
+}
+
+/* === 漂浮元素 === */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* === 呼吸效果 === */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.breathe {
+    animation: breathe 2s ease-in-out infinite;
+}
+
+/* === 闪烁提示 === */
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.5;
+    }
+}
+
+.flash {
+    animation: flash 1s ease-in-out;
+}
+
+/* === 震动效果（错误提示）=== */
+@keyframes vibration {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.vibrate {
+    animation: vibration 0.5s ease-in-out;
+}
+
+/* === 弹跳进入 === */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+/* === 彩虹流动 === */
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rainbow-bg {
+    background: var(--gradient-rainbow);
+    background-size: 200% 200%;
+    animation: rainbowFlow 3s ease infinite;
+}
+
+/* === 交错动画延迟 === */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* === 减少动画（可访问性）=== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

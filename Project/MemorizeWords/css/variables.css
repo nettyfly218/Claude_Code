@@ -1,0 +1,207 @@
+/*
+ * CSS设计变量 v2.0
+ * 定义全局颜色、字体、间距等设计系统
+ * 适配低年级小学生的视觉需求
+ */
+
+/* ==================== 浅色主题（默认） ==================== */
+:root {
+    /* === 主色调 - 明亮温暖 === */
+    --primary-color: #FF6B6B;              /* 活力红 */
+    --primary-light: #FF8E8E;              /* 亮红 */
+    --primary-dark: #E55555;               /* 深红 */
+    --primary-gradient: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+
+    --secondary-color: #4ECDC4;            /* 清新青 */
+    --secondary-light: #6EE7D9;            /* 亮青 */
+    --secondary-dark: #3DBDB5;             /* 深青 */
+    --secondary-gradient: linear-gradient(135deg, #4ECDC4 0%, #6EE7D9 100%);
+
+    --accent-color: #FFE66D;               /* 阳光黄 */
+    --accent-light: #FFED8E;               /* 亮黄 */
+    --accent-gradient: linear-gradient(135deg, #FFE66D 0%, #FFED8E 100%);
+
+    /* === 渐变主题 === */
+    --gradient-warm: linear-gradient(135deg, #FFF9F0 0%, #FFE8D6 100%);
+    --gradient-primary: linear-gradient(135deg, #FF6B6B 0%, #FFA07A 50%, #FF8E8E 100%);
+    --gradient-secondary: linear-gradient(135deg, #4ECDC4 0%, #45B7AA 100%);
+    --gradient-success: linear-gradient(135deg, #51CF66 0%, #69DB7C 100%);
+    --gradient-sky: linear-gradient(135deg, #74C0FC 0%, #A5D8FF 100%);
+    --gradient-rainbow: linear-gradient(90deg, #FF6B6B, #FFA94D, #FFE66D, #51CF66, #4ECDC4, #74C0FC);
+
+    /* === 功能色 === */
+    --success-color: #51CF66;
+    --success-light: #69DB7C;
+    --success-gradient: var(--gradient-success);
+
+    --error-color: #FF8787;
+    --error-light: #FFA5A5;
+
+    --warning-color: #FFA94D;
+    --info-color: #74C0FC;
+
+    /* === 背景色 === */
+    --bg-primary: #FFF9F0;                 /* 温暖白 */
+    --bg-secondary: #F8F9FA;               /* 浅灰 */
+    --bg-tertiary: #FFF5F5;                /* 极浅红 */
+    --bg-card: #FFFFFF;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+
+    /* === 文字颜色 === */
+    --text-primary: #2D3436;               /* 主要文字 */
+    --text-secondary: #636E72;             /* 次要文字 */
+    --text-tertiary: #B2BEC3;              /* 辅助文字 */
+    --text-light: #DFE6E9;
+    --text-white: #FFFFFF;
+    --text-inverse: #FFFFFF;
+
+    /* === 边框颜色 === */
+    --border-color: #E8E8E8;
+    --border-light: #F0F0F0;
+
+    /* === 字体大小 - 偏大利于阅读 === */
+    --font-display: 56px;                  /* 超大展示 */
+    --font-xxl: 48px;                      /* 单词显示 */
+    --font-xl: 36px;                       /* 标题 */
+    --font-lg: 24px;                       /* 副标题 */
+    --font-md: 18px;                       /* 正文 */
+    --font-sm: 16px;                       /* 小字 */
+    --font-xs: 14px;                       /* 超小字 */
+
+    /* === 字重 === */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+    --font-black: 900;
+
+    /* === 圆角 - 友好圆润 === */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-2xl: 48px;
+    --radius-round: 50%;
+    --radius-blob: 30% 70% 70% 30% / 30% 30% 70% 70%; /* 泡泡形状 */
+
+    /* === 阴影 - 立体感 === */
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 40px rgba(255, 107, 107, 0.4); /* 发光效果 */
+
+    /* === 间距 === */
+    --spacing-xxs: 2px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    /* === 过渡动画 === */
+    --transition-instant: 0.05s ease;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* === Z-index层级 === */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-header: 250;
+    --z-fixed: 300;
+    --z-navigation: 400;
+    --z-modal-backdrop: 500;
+    --z-modal: 600;
+    --z-toast: 700;
+    --z-nav: 800;
+
+    /* === 导航栏 === */
+    --nav-height: 70px;
+
+    /* === 热力图颜色 === */
+    --bg-heatmap-0: #E8E8E8;
+    --bg-heatmap-1: #C6F6D5;
+    --bg-heatmap-2: #9AE6B4;
+    --bg-heatmap-3: #68D391;
+    --bg-heatmap-4: #38A169;
+
+    /* === 工具提示 === */
+    --bg-tooltip: rgba(0, 0, 0, 0.85);
+    --text-tooltip: #FFFFFF;
+}
+
+/* ==================== 深色主题 ==================== */
+[data-theme="dark"] {
+    --primary-color: #FF8E8E;
+    --primary-light: #FFA5A5;
+    --primary-dark: #E55555;
+
+    --secondary-color: #6EE7D9;
+    --secondary-light: #8EE8DD;
+    --secondary-dark: #5DD4C8;
+
+    --accent-color: #FFE88E;
+    --accent-light: #FFED8E;
+
+    --bg-primary: #1A1A2E;
+    --bg-secondary: #16213E;
+    --bg-tertiary: #0F3460;
+    --bg-card: #1F2937;
+    --bg-card-dark: #1F2937;
+
+    --text-primary: #F8F9FA;
+    --text-secondary: #B0B0B0;
+    --text-tertiary: #6C757D;
+    --text-light: #495057;
+
+    --border-color: #374151;
+    --border-light: #4B5563;
+    --border-color-dark: #374151;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    /* === 深色模式热力图颜色 === */
+    --bg-heatmap-0: #2D3748;
+    --bg-heatmap-1: #276749;
+    --bg-heatmap-2: #2F855A;
+    --bg-heatmap-3: #38A169;
+    --bg-heatmap-4: #48BB78;
+
+    /* === 深色模式工具提示 === */
+    --bg-tooltip-dark: rgba(255, 255, 255, 0.95);
+    --text-tooltip-dark: #1A1A2E;
+
+    /* === 深色模式文字 === */
+    --text-primary-dark: #F8F9FA;
+    --text-secondary-dark: #B0B0B0;
+}
+
+/* ==================== 响应式断点 ==================== */
+@media (max-width: 767px) {
+    :root {
+        --font-display: 40px;
+        --font-xxl: 36px;
+        --font-xl: 28px;
+        --font-lg: 20px;
+        --font-md: 16px;
+        --spacing-lg: 16px;
+        --spacing-xl: 24px;
+        --nav-height: 60px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --font-display: 48px;
+        --font-xxl: 42px;
+        --font-xl: 32px;
+    }
+}

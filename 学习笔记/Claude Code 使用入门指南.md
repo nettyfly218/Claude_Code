@@ -14,13 +14,10 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 ### Windows
 ```powershell
-# 方式一:PowerShell(推荐)
+# 方式一:PowerShell 原生安装(推荐)
 irm https://claude.ai/install.ps1 | iex
 
-# 方式二:CMD
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-
-# 方式三:npm安装(需先安装 Node.js)
+# 方式二:npm 全局安装(需先安装 Node.js + git)
 npm install -g @anthropic-ai/claude-code
 ```
 
@@ -28,6 +25,12 @@ npm install -g @anthropic-ai/claude-code
 ```bash
 claude --version
 ```
+
+### 绕过首次登录
+```
+  setx  ANTHROPIC_AUTH_TOKEN "claude_code_cli_for_vscode"    
+  Get-ChildItem Env: | Where-Object {$_.Name -like "*ANTHROPIC*"} | Format-Table Name, Value -AutoSize 
+``` 
 
 ### 启动 Claude Code
 ```bash

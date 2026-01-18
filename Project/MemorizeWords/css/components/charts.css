@@ -1,0 +1,412 @@
+/**
+ * 图表可视化组件样式 v1.0
+ */
+
+/* === 学习趋势柱状图 === */
+.trend-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: var(--spacing-md);
+    border-bottom: 2px solid var(--bg-secondary);
+    gap: var(--spacing-xs);
+    position: relative;
+}
+
+.trend-bar {
+    flex: 1;
+    background: var(--primary-gradient);
+    background-size: 100% 200%;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    min-height: 10px;
+    position: relative;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    animation: barGrow 0.6s ease both;
+}
+
+@keyframes barGrow {
+    from {
+        height: 0 !important;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.trend-bar:hover {
+    opacity: 0.8;
+    transform: scaleY(1.05);
+    background-position: 0 -100%;
+    filter: brightness(1.1);
+}
+
+.trend-bar-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-xs);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    background: var(--bg-card);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+
+.trend-bar:hover .trend-bar-value {
+    opacity: 1;
+}
+
+.trend-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--spacing-sm);
+}
+
+.trend-label {
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+    text-align: center;
+    flex: 1;
+}
+
+/* === 环形进度图 === */
+.donut-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+.donut-chart {
+    position: relative;
+}
+
+.donut-chart.animate .donut-segment {
+    animation: donutFadeIn 0.6s ease both;
+}
+
+@keyframes donutFadeIn {
+    from {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+.donut-segment {
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.donut-segment:hover {
+    opacity: 1;
+    filter: brightness(1.1);
+    stroke-width: calc(var(--stroke-width, 20) * 1.2);
+}
+
+.donut-total {
+    font-size: 36px;
+    font-weight: var(--font-bold);
+    fill: var(--text-primary);
+    animation: countUp 0.6s ease;
+}
+
+.donut-label {
+    font-size: var(--font-sm);
+    fill: var(--text-secondary);
+}
+
+/* === 迷你统计卡片 === */
+.mini-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.mini-stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    animation: cardEnter 0.4s ease both;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+}
+
+.mini-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.mini-stat-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.mini-stat-icon {
+    font-size: 24px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.mini-stat-title {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+.mini-stat-value {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mini-stat-change {
+    font-size: var(--font-xs);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mini-stat-change span {
+    color: var(--text-secondary);
+}
+
+.mini-stat-change.positive {
+    color: var(--success-color);
+}
+
+.mini-stat-change.negative {
+    color: var(--error-color);
+}
+
+.mini-stat-sparkline {
+    margin-top: var(--spacing-sm);
+    opacity: 0.7;
+}
+
+/* === 工具提示 === */
+.chart-tooltip {
+    position: fixed;
+    background: var(--bg-tooltip);
+    color: var(--text-tooltip);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: var(--font-xs);
+    box-shadow: var(--shadow-lg);
+    pointer-events: none;
+    z-index: 1000;
+    white-space: nowrap;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === 打卡热力图 === */
+.checkin-heatmap {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    animation: cardEnter 0.6s ease both;
+}
+
+.heatmap-header {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3px;
+    margin-bottom: var(--spacing-md);
+}
+
+.heatmap-day-label {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    text-align: center;
+    padding: 2px;
+    grid-row: 1;
+}
+
+.heatmap-cell {
+    aspect-ratio: 1;
+    border-radius: var(--radius-xs);
+    background: var(--bg-heatmap-0);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.heatmap-cell:hover {
+    transform: scale(1.3);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+
+.heatmap-cell.level-0 {
+    background: var(--bg-heatmap-0);
+}
+
+.heatmap-cell.level-1 {
+    background: var(--bg-heatmap-1);
+}
+
+.heatmap-cell.level-2 {
+    background: var(--bg-heatmap-2);
+}
+
+.heatmap-cell.level-3 {
+    background: var(--bg-heatmap-3);
+}
+
+.heatmap-cell.level-4 {
+    background: var(--bg-heatmap-4);
+}
+
+.heatmap-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+.heatmap-legend-scale {
+    display: flex;
+    gap: 2px;
+}
+
+.heatmap-legend .heatmap-cell {
+    cursor: default;
+}
+
+/* === 环形图图例 === */
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+}
+
+.donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-sm);
+}
+
+.donut-legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.donut-legend-label {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.donut-legend-value {
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+/* === 响应式 === */
+@media (max-width: 767px) {
+    .mini-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donut-chart-container {
+        padding: var(--spacing-md);
+    }
+
+    .checkin-heatmap {
+        padding: var(--spacing-md);
+    }
+
+    .heatmap-grid {
+        gap: 2px;
+        overflow-x: auto;
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .heatmap-cell {
+        min-width: 12px;
+    }
+}
+
+/* === 深色模式 === */
+[data-theme="dark"] .mini-stat-card,
+[data-theme="dark"] .checkin-heatmap {
+    background: var(--bg-card-dark);
+}
+
+[data-theme="dark"] .donut-total {
+    fill: var(--text-primary-dark);
+}
+
+[data-theme="dark"] .donut-label {
+    fill: var(--text-secondary-dark);
+}
+
+[data-theme="dark"] .donut-legend-label {
+    color: var(--text-primary-dark);
+}
+
+[data-theme="dark"] .chart-tooltip {
+    background: var(--bg-tooltip-dark);
+    color: var(--text-tooltip-dark);
+}
+
+/* === 可访问性 === */
+@media (prefers-reduced-motion: reduce) {
+    .trend-bar,
+    .donut-segment,
+    .mini-stat-card,
+    .heatmap-cell,
+    .chart-tooltip {
+        animation: none !important;
+        transition: none !important;
+    }
+}

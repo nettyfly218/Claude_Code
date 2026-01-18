@@ -11,3 +11,6 @@ Thumbs.db
 
 # 日志
 *.log
+
+# Terminal Paste Image folder
+.cp-images/

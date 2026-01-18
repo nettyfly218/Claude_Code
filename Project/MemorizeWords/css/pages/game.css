@@ -1,0 +1,915 @@
+/*
+ * 游戏页面样式 v3.0
+ * 应用现代化设计系统
+ */
+
+.game-page {
+    padding: var(--spacing-lg);
+    padding-bottom: calc(var(--nav-height) + var(--spacing-lg));
+    min-height: 100vh;
+    animation: fadeInUp 0.5s ease;
+}
+
+/* === 游戏选择页面 === */
+.game-select {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.game-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    animation: cardEnter 0.6s ease both;
+}
+
+.game-card:nth-child(1) { animation-delay: 0.1s; }
+.game-card:nth-child(2) { animation-delay: 0.2s; }
+.game-card:nth-child(3) { animation-delay: 0.3s; }
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.game-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-card.spelling {
+    border-color: #FF6B6B;
+}
+
+.game-card.spelling::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B6B, #FFE66D);
+}
+
+.game-card.matching {
+    border-color: #4ECDC4;
+}
+
+.game-card.matching::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4ECDC4, #51CF66);
+}
+
+.game-card.quiz {
+    border-color: #FFE66D;
+}
+
+.game-card.quiz::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFE66D, #FF8E8E);
+}
+
+.game-icon {
+    font-size: 80px;
+    margin-bottom: var(--spacing-md);
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.game-card:nth-child(1) .game-icon { animation-delay: 0s; }
+.game-card:nth-child(2) .game-icon { animation-delay: 1s; }
+.game-card:nth-child(3) .game-icon { animation-delay: 2s; }
+
+.game-title {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-sm);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.game-desc {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--bg-secondary);
+}
+
+.game-stat-item {
+    text-align: center;
+}
+
+.game-stat-value {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+.game-stat-label {
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+/* === 游戏通用头部 === */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border-top: 3px solid var(--primary-color);
+    animation: slideInRight 0.5s ease;
+}
+
+.game-score {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === 拼写游戏 === */
+.spelling-game {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.spelling-word-display {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-color);
+    animation: cardEnter 0.6s ease;
+}
+
+.spelling-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.spelling-instruction {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.spelling-word-card {
+    background: var(--secondary-gradient);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.spelling-translation {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+.spelling-input-area {
+    min-height: 80px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    border: 2px dashed var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.spelling-input-area:focus-within {
+    border-color: var(--accent-color);
+    background: var(--bg-card);
+}
+
+.input-placeholder {
+    color: var(--text-tertiary);
+    font-size: var(--font-md);
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.spelling-letter {
+    width: 50px;
+    height: 60px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: white;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.spelling-letter:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.spelling-letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.spelling-letter-btn {
+    width: 60px;
+    height: 70px;
+    background: var(--secondary-gradient);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: white;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.spelling-letter-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.spelling-letter-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.spelling-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.btn-hint,
+.btn-clear,
+.btn-submit {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-hint {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.btn-clear {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.btn-submit {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.btn-hint:hover,
+.btn-clear:hover,
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.spelling-feedback {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    text-align: center;
+    animation: slideDown 0.3s ease;
+}
+
+.spelling-feedback.feedback-correct {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.spelling-feedback.feedback-wrong {
+    background: var(--error-gradient);
+    color: white;
+}
+
+/* === 配对游戏 === */
+.matching-game {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.matching-game .game-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.matching-game .game-score,
+.matching-game .game-moves,
+.matching-game .game-pairs {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.matching-game .score-label,
+.matching-game .moves-label,
+.matching-game .pairs-label {
+    display: block;
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.matching-game .score-value,
+.matching-game .moves-value,
+.matching-game .pairs-value {
+    display: block;
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+.matching-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.matching-card {
+    aspect-ratio: 1;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.matching-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.matching-card .card-back,
+.matching-card .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.matching-card .card-back {
+    background: var(--primary-gradient);
+}
+
+.matching-card .card-back-icon {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    color: white;
+}
+
+.matching-card .card-front {
+    background: var(--bg-card);
+    transform: rotateY(180deg);
+    box-shadow: var(--shadow-md);
+}
+
+.matching-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.matching-card.matched .card-front {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.matching-card.matched {
+    animation: celebrate 0.6s ease;
+}
+
+.matching-card .card-word,
+.matching-card .card-translation {
+    text-align: center;
+    width: 100%;
+}
+
+.matching-card .card-word-main {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.matching-card .card-word-phonetic {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+.matching-card.matched .card-word-phonetic {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.matching-card .card-translation {
+    font-size: var(--font-lg);
+    font-weight: var(--font-medium);
+}
+
+.matching-card-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+/* === 选择题游戏 === */
+.quiz-game {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-game .game-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.quiz-game .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.quiz-game .game-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.quiz-game .progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width var(--transition-normal);
+}
+
+.quiz-game .game-progress-text {
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+}
+
+.quiz-question {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-color);
+    animation: cardEnter 0.6s ease;
+}
+
+.quiz-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    margin: 0 auto var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-instruction {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.quiz-word-card {
+    background: var(--primary-gradient);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    color: white;
+}
+
+.quiz-word-display {
+    margin-bottom: var(--spacing-md);
+}
+
+.quiz-word-display .word-main {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quiz-word-display .word-phonetic {
+    font-size: var(--font-md);
+    opacity: 0.9;
+}
+
+.btn-audio {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: white;
+    font-size: var(--font-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.btn-audio:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.quiz-option {
+    background: var(--bg-card);
+    border: 3px solid var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    font-size: var(--font-lg);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.quiz-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.quiz-option.correct {
+    background: var(--success-gradient);
+    border-color: var(--success-color);
+    color: white;
+    animation: celebrate 0.6s ease;
+}
+
+.quiz-option.wrong {
+    background: var(--error-gradient);
+    border-color: var(--error-color);
+    color: white;
+    animation: shake 0.5s ease;
+}
+
+.quiz-option .option-label {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+    min-width: 30px;
+}
+
+.quiz-option.correct .option-label {
+    color: white;
+}
+
+.quiz-option .option-text {
+    flex: 1;
+    text-align: left;
+}
+
+.quiz-option:disabled {
+    cursor: not-allowed;
+}
+
+.quiz-feedback {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-md);
+    font-weight: var(--font-medium);
+    animation: slideDown 0.3s ease;
+}
+
+.quiz-feedback.feedback-correct {
+    background: var(--success-gradient);
+    color: white;
+}
+
+.quiz-feedback.feedback-wrong {
+    background: var(--error-gradient);
+    color: white;
+}
+
+/* === 游戏结果页面 === */
+.game-result {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    animation: fadeInUp 0.6s ease;
+}
+
+.result-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xxl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border-top: 4px solid var(--success-color);
+}
+
+.game-result-icon {
+    font-size: 120px;
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.game-result-title {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-md);
+    background: var(--success-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.game-result-score {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    color: var(--accent-color);
+    margin: var(--spacing-lg) 0;
+}
+
+.game-result-stars {
+    font-size: 60px;
+    margin: var(--spacing-lg) 0;
+}
+
+.game-result-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.result-title {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+}
+
+.result-stars {
+    font-size: 80px;
+    margin: var(--spacing-lg) 0;
+}
+
+.result-stars .star {
+    display: inline-block;
+    animation: starTwinkle 1.5s ease-in-out infinite;
+}
+
+.result-stars .star:nth-child(1) { animation-delay: 0s; }
+.result-stars .star:nth-child(2) { animation-delay: 0.3s; }
+.result-stars .star:nth-child(3) { animation-delay: 0.6s; }
+
+.result-score {
+    margin: var(--spacing-xl) 0;
+}
+
+.result-score .score-main {
+    font-size: 72px;
+    font-weight: var(--font-bold);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.result-score .score-label {
+    font-size: var(--font-md);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.result-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+}
+
+.result-stats .stat-item {
+    text-align: center;
+}
+
+.result-stats .stat-value {
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.result-stats .stat-value.correct {
+    color: var(--success-color);
+}
+
+.result-stats .stat-value.wrong {
+    color: var(--error-color);
+}
+
+.result-stats .stat-label {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+.result-comment {
+    font-size: var(--font-lg);
+    color: var(--text-secondary);
+    margin: var(--spacing-lg) 0;
+}
+
+.result-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.result-actions button {
+    min-width: 120px;
+}
+
+.game-footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* === 动画 === */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* === 响应式 === */
+@media (max-width: 767px) {
+    .game-page {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--nav-height) + var(--spacing-md));
+    }
+
+    .matching-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+
+    .game-select {
+        grid-template-columns: 1fr;
+    }
+
+    .matching-game .game-info {
+        grid-template-columns: 1fr;
+    }
+
+    .spelling-result .result-stats,
+    .result-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* === 深色模式 === */
+[data-theme="dark"] .game-card,
+[data-theme="dark"] .spelling-word-display,
+[data-theme="dark"] .quiz-question,
+[data-theme="dark"] .result-card {
+    background: var(--bg-card-dark);
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .spelling-input-area {
+    background: var(--bg-secondary-dark);
+}
+
+[data-theme="dark"] .quiz-option {
+    background: var(--bg-card-dark);
+}
+
+[data-theme="dark"] .result-stats {
+    background: var(--bg-secondary-dark);
+}
+
+/* === 可访问性 === */
+@media (prefers-reduced-motion: reduce) {
+    .game-card,
+    .game-icon,
+    .spelling-letter,
+    .spelling-letter-btn,
+    .matching-card,
+    .quiz-option,
+    .game-result-icon,
+    .result-stars .star {
+        animation: none !important;
+        transition: none !important;
+    }
+}

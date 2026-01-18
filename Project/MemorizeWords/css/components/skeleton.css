@@ -1,0 +1,401 @@
+/**
+ * 骨架屏组件样式 v1.0
+ */
+
+/* === 骨架屏基础 === */
+.skeleton-wrapper {
+    padding: var(--spacing-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+.skeleton-wrapper.skeleton-fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* === Shimmer 动画效果 === */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton-icon,
+.skeleton-title,
+.skeleton-text,
+.skeleton-avatar,
+.skeleton-card,
+.skeleton-stat-value,
+.skeleton-word-large,
+.skeleton-phonetic,
+.skeleton-meaning,
+.skeleton-button,
+.skeleton-calendar-day,
+.skeleton-achievement-icon,
+.skeleton-achievement-name,
+.skeleton-achievement-desc,
+.skeleton-game-question,
+.skeleton-game-option {
+    background: linear-gradient(
+        90deg,
+        var(--bg-secondary) 25%,
+        var(--bg-tertiary) 50%,
+        var(--bg-secondary) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+}
+
+/* === 卡片骨架屏 === */
+.skeleton-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.skeleton-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.skeleton-card .skeleton-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-round);
+}
+
+.skeleton-card .skeleton-title {
+    width: 80px;
+    height: 24px;
+}
+
+.skeleton-card .skeleton-text {
+    width: 120px;
+    height: 16px;
+}
+
+/* === 列表骨架屏 === */
+.skeleton-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.skeleton-list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-round);
+    flex-shrink: 0;
+}
+
+.skeleton-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.skeleton-content .skeleton-title {
+    width: 150px;
+    height: 18px;
+}
+
+.skeleton-content .skeleton-text {
+    width: 200px;
+    height: 14px;
+}
+
+/* === 统计卡片骨架屏 === */
+.skeleton-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.skeleton-stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.skeleton-stat-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.skeleton-stat-value {
+    width: 60px;
+    height: 32px;
+    border-radius: var(--radius-md);
+}
+
+.skeleton-stat-label {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+/* === 日历骨架屏 === */
+.skeleton-calendar {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.skeleton-calendar-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.skeleton-calendar-header .skeleton-title {
+    width: 120px;
+    height: 24px;
+}
+
+.skeleton-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.skeleton-calendar-day {
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+}
+
+/* === 单词卡片骨架屏 === */
+.skeleton-word-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.skeleton-word-large {
+    width: 200px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+}
+
+.skeleton-phonetic {
+    width: 150px;
+    height: 20px;
+}
+
+.skeleton-meaning {
+    width: 250px;
+    height: 18px;
+}
+
+.skeleton-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.skeleton-button {
+    width: 100px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+}
+
+/* === 游戏骨架屏 === */
+.skeleton-game {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.skeleton-game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.skeleton-game-header .skeleton-title {
+    width: 150px;
+    height: 28px;
+}
+
+.skeleton-game-header .skeleton-score {
+    width: 80px;
+    height: 28px;
+}
+
+.skeleton-game-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.skeleton-game-question {
+    width: 200px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+.skeleton-game-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.skeleton-game-option {
+    height: 60px;
+    border-radius: var(--radius-lg);
+}
+
+/* === 成就骨架屏 === */
+.skeleton-achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.skeleton-achievement {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.skeleton-achievement-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-round);
+}
+
+.skeleton-achievement-name {
+    width: 80px;
+    height: 14px;
+}
+
+.skeleton-achievement-desc {
+    width: 90px;
+    height: 12px;
+}
+
+/* === 欢迎区域骨架屏 === */
+.skeleton-welcome {
+    background: var(--bg-card);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.skeleton-welcome .skeleton-title {
+    width: 200px;
+    height: 32px;
+    margin: 0 auto var(--spacing-sm);
+}
+
+.skeleton-welcome .skeleton-text {
+    width: 250px;
+    height: 18px;
+    margin: 0 auto;
+}
+
+/* === 页面容器 === */
+.skeleton-page {
+    padding: var(--spacing-lg);
+    padding-bottom: calc(var(--nav-height) + var(--spacing-lg));
+}
+
+/* === 响应式 === */
+@media (max-width: 767px) {
+    .skeleton-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skeleton-game-options {
+        grid-template-columns: 1fr;
+    }
+
+    .skeleton-page {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--nav-height) + var(--spacing-md));
+    }
+
+    .skeleton-word-card {
+        padding: var(--spacing-lg);
+    }
+
+    .skeleton-word-large {
+        width: 150px;
+        height: 36px;
+    }
+}
+
+/* === 深色模式 === */
+[data-theme="dark"] .skeleton-card,
+[data-theme="dark"] .skeleton-list-item,
+[data-theme="dark"] .skeleton-stat-card,
+[data-theme="dark"] .skeleton-calendar,
+[data-theme="dark"] .skeleton-word-card,
+[data-theme="dark"] .skeleton-game,
+[data-theme="dark"] .skeleton-achievement,
+[data-theme="dark"] .skeleton-welcome {
+    background: var(--bg-card-dark);
+}
+
+/* === 可访问性 === */
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-icon,
+    .skeleton-title,
+    .skeleton-text,
+    .skeleton-avatar,
+    .skeleton-card,
+    .skeleton-stat-value,
+    .skeleton-word-large,
+    .skeleton-phonetic,
+    .skeleton-meaning,
+    .skeleton-button,
+    .skeleton-calendar-day,
+    .skeleton-achievement-icon,
+    .skeleton-achievement-name,
+    .skeleton-achievement-desc,
+    .skeleton-game-question,
+    .skeleton-game-option {
+        animation: none !important;
+        background: var(--bg-secondary) !important;
+    }
+}

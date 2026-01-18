@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="适合小学生的英语单词学习应用">
+    <title>快乐学单词 🌟</title>
+
+    <!-- CSS样式 -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/animations-enhanced.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/charts.css">
+    <link rel="stylesheet" href="css/components/celebration.css">
+    <link rel="stylesheet" href="css/components/skeleton.css">
+    <link rel="stylesheet" href="css/components/micro-interactions.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/pages/learn.css">
+    <link rel="stylesheet" href="css/pages/game.css">
+    <link rel="stylesheet" href="css/pages/progress.css">
+</head>
+<body>
+    <!-- 主应用容器 -->
+    <div id="app">
+        <!-- 页面内容将通过JavaScript动态加载 -->
+        <div id="page-container"></div>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="loading" class="loading hidden">
+        <div class="loading-spinner"></div>
+        <p>加载中...</p>
+    </div>
+
+    <!-- 奖励弹窗 -->
+    <div id="reward-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="reward-animation">⭐</div>
+            <h2 id="reward-title">太棒了！</h2>
+            <p id="reward-message">你真厉害！</p>
+            <button class="btn-primary" onclick="App.closeRewardModal()">继续加油</button>
+        </div>
+    </div>
+
+    <!-- JavaScript模块 -->
+    <!-- 工具和常量 -->
+    <script src="js/utils/constants.js"></script>
+    <script src="js/utils/helpers.js"></script>
+
+    <!-- 数据层 -->
+    <script src="js/data/words.js"></script>
+    <script src="js/data/words-extended.js"></script>
+
+    <!-- 服务层 -->
+    <script src="js/services/StorageService.js"></script>
+    <script src="js/services/AudioService.js"></script>
+    <script src="js/services/ProgressTracker.js"></script>
+
+    <!-- 模型层 -->
+    <script src="js/models/UserProgress.js"></script>
+    <script src="js/models/ReviewScheduler.js"></script>
+
+    <!-- 组件层 -->
+    <script src="js/components/WordCard.js"></script>
+    <script src="js/components/ProgressBar.js"></script>
+    <script src="js/components/Calendar.js"></script>
+    <script src="js/components/Charts.js"></script>
+    <script src="js/components/Celebration.js"></script>
+    <script src="js/components/Skeleton.js"></script>
+    <script src="js/components/MicroInteractions.js"></script>
+    <script src="js/components/BottomNavigation.js"></script>
+    <script src="js/components/ThemeToggle.js"></script>
+
+    <!-- 页面控制器 -->
+    <script src="js/pages/HomePage.js"></script>
+    <script src="js/pages/LearnPage.js"></script>
+    <script src="js/pages/GamePage.js"></script>
+    <script src="js/pages/ProgressPage.js"></script>
+
+    <!-- 游戏模块 -->
+    <script src="js/games/SpellingGame.js"></script>
+    <script src="js/games/MatchingGame.js"></script>
+    <script src="js/games/QuizGame.js"></script>
+
+    <!-- 应用主入口（最后加载） -->
+    <script src="js/app.js"></script>
+</body>
+</html>

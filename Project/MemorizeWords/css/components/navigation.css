@@ -1,0 +1,125 @@
+/*
+ * 底部导航栏组件
+ * 移动端友好的导航方式
+ */
+
+/* 底部导航栏容器 */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: var(--z-nav);
+    padding: 0 var(--spacing-md);
+}
+
+/* 导航项 */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    min-width: 60px;
+    color: var(--text-tertiary);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item.active .nav-icon {
+    transform: scale(1.15);
+}
+
+.nav-item.active .nav-indicator {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* 导航图标 */
+.nav-icon {
+    font-size: var(--font-xl);
+    transition: transform var(--transition-bounce);
+    position: relative;
+}
+
+/* 导航标签 */
+.nav-label {
+    font-size: var(--font-xs);
+    font-weight: var(--font-medium);
+    transition: all var(--transition-normal);
+}
+
+/* 活跃指示器 */
+.nav-indicator {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 4px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-round);
+    transition: all var(--transition-bounce);
+    opacity: 0;
+}
+
+.nav-item.active .nav-indicator {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* 涟漪效果 */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--primary-color) 0%, transparent 70%);
+    opacity: 0;
+    border-radius: var(--radius-md);
+    transition: opacity var(--transition-fast);
+}
+
+.nav-item:active::after {
+    opacity: 0.1;
+}
+
+/* 桌面端样式 */
+@media (min-width: 768px) {
+    .bottom-nav {
+        max-width: 480px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+}
+
+/* 小屏设备适配 */
+@media (max-width: 374px) {
+    .nav-item {
+        min-width: 50px;
+        padding: var(--spacing-xs);
+    }
+    .nav-icon {
+        font-size: var(--font-lg);
+    }
+    .nav-label {
+        font-size: 10px;
+    }
+}
