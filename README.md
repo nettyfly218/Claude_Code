@@ -15,7 +15,10 @@ Claude_Code/
 ├── MCP/              # MCP 服务器配置
 ├── Memory/           # 记忆数据库
 ├── Project/          # 项目实践代码
-│   └── 背单词/       # 背单词练习项目
+│   ├── MemorizeWords/  # 背单词练习项目
+│   ├── SnakeGame/      # 贪吃蛇游戏
+│   ├── temp_converter/ # 温度转换工具
+│   └── SkitScript/     # 小品剧本 (待重命名)
 ├── Prompt/           # Prompt 技能文档
 │   └── Prompt.md     # Prompt 编写指南
 ├── Skills/           # Claude Skills 技能模块

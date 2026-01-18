@@ -3,7 +3,11 @@
     "allow": [
       "Bash(git pull)",
       "Bash(git reset:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push)",
+      "Bash(where:*)",
+      "Bash(mklink \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python3.exe\" \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\")",
+      "Bash(powershell -Command:*)"
     ]
   }
 }
