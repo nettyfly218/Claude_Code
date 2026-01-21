@@ -184,3 +184,10 @@
 - 输出增量更新报告
 
 使用 /hot-topic-tracker 技能，基于最近 coworker、扣子2.0 和 minimax agent 2.0 发布，写一篇 2026年 ai agent 发展趋势的报告
+
+## yt-dlp 
+使用 skills-creator 创建一个【yt-dlp】技能，要求：
+帮我把这个开源工具https://github.com/yt-dlp/yt-dlp打包成一个Skill，只要我后续给出视频链接，就可以帮我下载视频。
+
+把这些经验，都更新到video-downloader这个skill里，下次就别这么慢了。
+
