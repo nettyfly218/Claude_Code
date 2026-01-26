@@ -1,6 +1,54 @@
 # Prompt
     常用提示词记录
 
+## Skills 管理套件
+
+### github-to-skills 
+    自动将 GitHub 仓库转化为专业的 AI 技能
+    /github-to-skills https://github.com/yt-dlp/yt-dlp
+    /github-to-skills https://github.com/C4illin/ConvertX#
+    /github-to-skills https://github.com/tw93/Pake
+
+### skill-manager
+    生命周期管理：用于批量扫描、检查更新和升级基于 GitHub 的 Skills。
+    /skill-manager check     # Scan for updates
+    /skill-manager list      # List all skills
+    /skill-manager delete <name>  # Remove a skill
+
+### skill-evolution-manager
+    技能演进管理：通过分析对话内容和用户反馈，自动总结经验并优化现有的 Skills。
+
+## githu-trending-report
+    创建一个Skills，功能如下：
+    第一步，爬取今日热门项目前5个https://github.com/trending
+    第二步，获取他们的README文件，
+    第三步，把前5个项目，总结成一个中文简介摘要，需要包含项目是什么？解决什么问题？技术栈是什么？Star数量多少等主要内容
+    第四步，调用python脚本，发送总结的中文摘要并保存到桌面
+    这个Skill应包含两个Python脚本：
+    脚本1：爬trending，获取前五5项目的README，把结果保存到一个markdown文件
+    脚本2：使用 /frontend-design 生成科技风格的日报信息，并输出html到桌面
+
+## skill-translator (技能翻译助手) 
+    请帮我生成一个skills， 批量为所有Claude Code Skills添加中文翻译。
+
+    任务：
+    1. 扫描 ~/.claude/skills/ 和 Skills 目录下的所有 skills
+    2 读取每个Skill的SKILL.md文件
+    3 检查name和description字段是否已有中文翻译
+    4 如果没有，根据Skill的英文名和description，添加中文翻译
+    5 格式：
+    - name: 英文名 中文说明（4-6字）
+    - description: 完整的中文描述
+
+    要求：
+    - name的中文说明要简短（4-6字）
+    - description要完整翻译成中文，写详细一点
+    - 保留原有英文名，只在后面添加中文
+    - 不要修改其他字段
+    - 处理完后告诉我修改了哪些Skill
+
+    开始执行。
+
 ## 使用 pdf skill
     使用 /pdf skill 将@e:\AI_Code_Learning\Claude_Code\Prompt\三上语文王朝霞培优100分.pdf 的 第43~46页 拆分为一份独立的pdf文件 
 
@@ -184,10 +232,3 @@
 - 输出增量更新报告
 
 使用 /hot-topic-tracker 技能，基于最近 coworker、扣子2.0 和 minimax agent 2.0 发布，写一篇 2026年 ai agent 发展趋势的报告
-
-## yt-dlp 
-使用 skills-creator 创建一个【yt-dlp】技能，要求：
-帮我把这个开源工具https://github.com/yt-dlp/yt-dlp打包成一个Skill，只要我后续给出视频链接，就可以帮我下载视频。
-
-把这些经验，都更新到video-downloader这个skill里，下次就别这么慢了。
-

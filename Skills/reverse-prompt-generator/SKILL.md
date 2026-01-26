@@ -1,5 +1,5 @@
 ---
-name: reverse-prompt-generator
+name: reverse-prompt-generator 提示词逆向
 description: 逆向工程提示词生成器。根据用户提供的文本或范例文档，倒推生成一个能够稳定生成同类风格内容的Prompt，并详细解析Prompt中各部分的作用。适用于需要复制特定文风、格式或逻辑的场景。
 ---
 

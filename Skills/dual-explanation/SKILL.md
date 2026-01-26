@@ -1,5 +1,5 @@
 ---
-name: dual-explanation
+name: dual-explanation 双层解释
 description: 使用双层解释法（通俗易懂的大爷版 vs 深度专业的专家版）回答用户的问题。当用户需要深入浅出地理解概念时使用。
 ---
 

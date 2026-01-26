@@ -14,7 +14,9 @@
       "Bash($env:PYTHONIOENCODING=\"utf-8\")",
       "Skill(hot-topic-tracker)",
       "WebSearch",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(head:*)",
+      "Bash(pip install:*)"
     ]
   }
 }
