@@ -21,6 +21,21 @@ irm https://claude.ai/install.ps1 | iex
 npm install -g @anthropic-ai/claude-code
 ```
 
+### 代理設置
+```
+## powershell
+$env:HTTP_PROXY = "http://proxy-server:port"
+$env:HTTPS_PROXY = "http://proxy-server:port"
+
+## CMD
+set HTTP_PROXY=http://proxy-server:port
+set HTTPS_PROXY=http://proxy-server:port
+
+## WSL (Linux)
+export http_proxy=http://proxy-server:port
+export https_proxy=http://proxy-server:port
+```
+
 ### 验证安装
 ```bash
 claude --version

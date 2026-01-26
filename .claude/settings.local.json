@@ -10,11 +10,21 @@
       "Bash(powershell -Command:*)",
       "Skill(document-skills:skill-creator)",
       "Bash(dir \"C:\\\\Users\\\\Administrator\\\\.claude\\\\plugins\\\\cache\\\\anthropic-agent-skills\\\\document-skills\\\\69c0b1a06741\\\\skills\\\\skill-creator\\\\scripts\")",
-      "Bash(python:*)",
       "Bash($env:PYTHONIOENCODING=\"utf-8\")",
       "Skill(hot-topic-tracker)",
       "WebSearch",
-      "Bash(git commit:*)"
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(copy:*)",
+      "Bash(python:*)",
+      "Bash(Get-ChildItem:*)",
+      "Bash(Select-Object -First 3 FullName)",
+      "Bash(pip install:*)",
+      "Bash(tar:*)",
+      "Bash(git commit:*)",
+      "Bash(git rebase:*)"
     ]
   }
 }
