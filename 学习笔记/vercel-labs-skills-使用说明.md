@@ -37,7 +37,7 @@ npx skills add vercel-labs/agent-skills
 npx skills add owner/repo --agent claude-code --skill frontend-design
 
 # 全局安装（适用于所有项目）
-npx skills add vercel-labs/agent-skills --global
+npx skills add vercel-labs/agent-skills -g
 ```
 
 ### 2. 查看已安装技能 (List)

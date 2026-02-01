@@ -2,27 +2,37 @@ import os
 import sys
 import json
 import re
+import shutil
+import time
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def stitch_skill(skill_dir):
     """
     Reads evolution.json and stitches it into SKILL.md under a dedicated section.
+    Creates a backup of SKILL.md before modification.
     """
     skill_md_path = os.path.join(skill_dir, "SKILL.md")
     evolution_json_path = os.path.join(skill_dir, "evolution.json")
 
     if not os.path.exists(skill_md_path):
-        print(f"Error: SKILL.md not found in {skill_dir}", file=sys.stderr)
+        logging.error(f"SKILL.md not found in {skill_dir}")
         return False
         
     if not os.path.exists(evolution_json_path):
-        print(f"Info: No evolution.json found in {skill_dir}. Nothing to stitch.", file=sys.stderr)
+        logging.info(f"No evolution.json found in {skill_dir}. Nothing to stitch.")
         return True
 
     try:
         with open(evolution_json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+    except json.JSONDecodeError as e:
+        logging.error(f"Error parsing evolution.json: {e}")
+        return False
     except Exception as e:
-        print(f"Error parsing evolution.json: {e}", file=sys.stderr)
+        logging.error(f"Error reading evolution.json: {e}")
         return False
 
     # Prepare the Markdown content block
@@ -46,32 +56,42 @@ def stitch_skill(skill_dir):
         
     evolution_block = "\n".join(evolution_section)
 
-    # Read original SKILL.md
-    with open(skill_md_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+    try:
+        # Read original SKILL.md
+        with open(skill_md_path, 'r', encoding='utf-8') as f:
+            content = f.read()
 
-    # Regex to find existing User-Learned section and replace it, or append if not found
-    # Pattern looks for "## User-Learned Best Practices..." until end of file
-    pattern = r"(\n+## User-Learned Best Practices & Constraints.*$)"
-    
-    match = re.search(pattern, content, re.DOTALL)
-    
-    new_content = ""
-    if match:
-        # Replace existing section
-        print("Updating existing evolution section...", file=sys.stderr)
-        new_content = content[:match.start()] + evolution_block
-    else:
-        # Append to end
-        print("Appending new evolution section...", file=sys.stderr)
-        new_content = content + evolution_block
-
-    # Write back
-    with open(skill_md_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
+        # Regex to find existing User-Learned section and replace it, or append if not found
+        pattern = r"(\n+## User-Learned Best Practices & Constraints.*$)"
+        match = re.search(pattern, content, re.DOTALL)
         
-    print(f"Successfully stitched evolution data into {skill_md_path}")
-    return True
+        new_content = ""
+        if match:
+            logging.info("Updating existing evolution section...")
+            new_content = content[:match.start()] + evolution_block
+        else:
+            logging.info("Appending new evolution section...")
+            new_content = content + evolution_block
+
+        # Create Backup
+        timestamp = int(time.time())
+        backup_path = f"{skill_md_path}.bak.{timestamp}"
+        try:
+            shutil.copy2(skill_md_path, backup_path)
+            logging.info(f"Created backup at {backup_path}")
+        except Exception as e:
+            logging.warning(f"Failed to create backup: {e}")
+
+        # Write back
+        with open(skill_md_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+            
+        logging.info(f"Successfully stitched evolution data into {skill_md_path}")
+        return True
+        
+    except Exception as e:
+        logging.error(f"An unexpected error occurred during stitching: {e}")
+        return False
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

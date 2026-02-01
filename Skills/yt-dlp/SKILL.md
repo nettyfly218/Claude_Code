@@ -2,7 +2,7 @@
 name: yt-dlp 音视频下载
 description: yt-dlp 的技能封装。基于 https://github.com/yt-dlp/yt-dlp 生成，功能强大的命令行视频下载工具。
 github_url: https://github.com/yt-dlp/yt-dlp
-github_hash: e3f0d8b731b40176bcc632bf92cfe5149402b202
+github_hash: 891613b098b2b315d983c2ae16901f5de344ca56
 version: 0.1.0
 created_at: 2026-01-26T23:06:23.110748
 entry_point: scripts/wrapper.py
@@ -29,3 +29,6 @@ Ensure the following dependencies are installed:
 ## Implementation Details
 
 The wrapper script in `scripts/wrapper.py` handles the invocation of the underlying tool.
+
+
+<!-- Updated by Skill Manager on 2026-02-02 to commit 891613b098b2b315d983c2ae16901f5de344ca56 -->

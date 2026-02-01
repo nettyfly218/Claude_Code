@@ -2,7 +2,7 @@
 name: lossless-cut 无损视频剪辑
 description: LosslessCut 的技能封装。基于 https://github.com/mifi/lossless-cut 生成，专注于无损剪切视频和音频。
 github_url: https://github.com/mifi/lossless-cut
-github_hash: 44b43a034789869d46a4d746780003eb1fc4732b
+github_hash: 26013077affafc6160a64bc875762c02f0c3ca89
 version: 0.1.0
 created_at: 2026-01-26T23:33:03.941400
 entry_point: scripts/wrapper.py
@@ -29,3 +29,6 @@ Ensure the following dependencies are installed:
 ## Implementation Details
 
 The wrapper script in `scripts/wrapper.py` handles the invocation of the underlying tool.
+
+
+<!-- Updated by Skill Manager on 2026-02-02 to commit 26013077affafc6160a64bc875762c02f0c3ca89 -->

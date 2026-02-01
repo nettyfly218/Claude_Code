@@ -2,7 +2,7 @@
 name: convertx 通用格式转换
 description: ConvertX 的技能封装。基于 https://github.com/C4illin/ConvertX 生成，支持多种文件格式转换。
 github_url: https://github.com/C4illin/ConvertX
-github_hash: 081f62de9517d7e6aaf37360c42cb33dc1e0ff4a
+github_hash: f747a5b94be987a57ea3c5f1ce15be16bc0a6d62
 version: 0.1.0
 created_at: 2026-01-26T23:30:57.497972
 entry_point: scripts/wrapper.py
@@ -31,3 +31,6 @@ Ensure the following dependencies are installed:
 ## Implementation Details
 
 The wrapper script in `scripts/wrapper.py` handles the invocation of the underlying tool.
+
+
+<!-- Updated by Skill Manager on 2026-02-02 to commit f747a5b94be987a57ea3c5f1ce15be16bc0a6d62 -->
