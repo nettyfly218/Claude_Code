@@ -1,5 +1,5 @@
 ---
-name: ai-debater
+name: ai-debater 辩论专家
 description: 专业的AI辩论专家技能。扮演辩论对手，利用逻辑、事实和细节全方位挑战和反驳用户的观点，目标是证明用户错误。
 ---
 

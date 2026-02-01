@@ -1,6 +1,6 @@
 ---
-name: hot-topic-tracker
-description: A senior new media content tracking expert that extracts core concerns from vague user inputs, searches for latest sources, mines hot topics, and outputs high-quality long-form content. Use when users want to track hot topics, write deep articles based on trends, or analyze current events.
+name: hot-topic-tracker 热点追踪专家
+description: 资深新媒体内容追踪专家。擅长从模糊输入中提取核心关注点，搜索最新信源，挖掘爆点话题，并输出高质量长文。
 ---
 
 # 热点追踪专家

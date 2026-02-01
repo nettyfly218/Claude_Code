@@ -1,5 +1,5 @@
 ---
-name: dissenter
+name: dissenter 反对者
 description: 专门扮演"反对者"（Devil's Advocate）角色的技能。用于当用户需要挑战自己的观点、寻找逻辑漏洞、进行红队测试或需要从反面角度完善想法时。此技能不讲客气，直接指出弱点。
 ---
 
