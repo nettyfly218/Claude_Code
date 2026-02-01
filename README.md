@@ -1,138 +1,119 @@
-# Claude Code 学习笔记
+# Claude Code 学习与实践仓库
 
-记录 Claude Code AI 助手的使用配置、学习笔记和最佳实践。
+本项目是 [Claude Code](https://claude.ai/code) 的学习与实践仓库，旨在探索 Agentic AI 编码助手的潜力。项目中包含完整的环境配置、MCP 服务器设置、Prompt 技能库以及多个实战项目案例。
 
-## 项目简介
+## 📂 项目架构
 
-本仓库用于记录 Claude Code 的配置方法、使用技巧以及开发实践，帮助更好地利用 AI 助手提升开发效率。
-
-## 项目结构
-
-```
+```text
 Claude_Code/
-├── .claude/          # Claude Code 配置目录
-├── Agents/           # Agent 配置文件
-├── MCP/              # MCP 服务器配置
-├── Memory/           # 记忆数据库
-├── Project/          # 项目实践代码
-│   ├── MemorizeWords/  # 背单词练习项目
-│   ├── SnakeGame/      # 贪吃蛇游戏
-│   ├── temp_converter/ # 温度转换工具
-│   └── SkitScript/     # 小品剧本 (待重命名)
-├── Prompt/           # Prompt 技能文档
-│   └── Prompt.md     # Prompt 编写指南
-├── Skills/           # Claude Skills 技能模块
-└── 学习笔记/          # 个人学习笔记
+├── .claude/             # Claude Code 全局配置
+├── Agents/              # 自定义 Agent 角色配置
+├── Extensions/          # Claude Code 扩展功能
+├── MCP/                 # Model Context Protocol 配置
+├── Memory/              # 长期记忆与知识库
+├── Project/             # 实战项目代码
+│   ├── MemorizeWords/   # 背单词工具 (命令行)
+│   ├── SnakeGame/       # 贪吃蛇游戏 (Pygame)
+│   ├── Skit Script/     # 小品剧本生成器
+│   └── HotPump/         # 热泵系统计算工具
+├── Prompt/              # Prompt 编写指南与模板
+├── Skills/              # 扩展技能模块 (14+ 自定义技能)
+└── 学习笔记/            # 个人学习记录文档
 ```
 
-## 目录说明
+## 🧩 MCP 服务器 (Model Context Protocol)
 
-| 目录 | 说明 |
-|------|------|
-| `.claude/` | Claude Code 全局配置 |
-| `Agents/` | 自定义 Agent 配置 |
-| `MCP/` | MCP 服务器配置文档 |
-| `Memory/` | 记忆数据库存储 |
-| `Project/` | 实践项目代码 |
-| `Prompt/` | Prompt 编写技巧 |
-| `Skills/` | Skills 技能模块 |
-| `学习笔记/` | 个人学习记录 |
+本项目集成了以下核心 MCP 服务器，极大地扩展了 Claude 的能力边界：
 
-## MCP 服务器配置
+- **Context7**: 获取任意库的最新文档和代码示例
+- **GitHub**: 直接操作仓库、Issue、PR 和代码搜索
+- **Playwright**: 浏览器自动化测试与网页交互
+- **Chrome DevTools**: 浏览器调试与深度分析
 
-### 安装命令
+*详细配置请参考 [`MCP/mcp_list.md`](./MCP/mcp_list.md)*
+
+## 🛠️ Skills 技能库
+
+本项目加载了丰富的自定义技能，涵盖五大领域：
+
+### 🎨 提示词与创意
+> `prompt-master`, `intelligent-prompt-generator`, `art-master`, `design-master`, `video-master` 等
+用于生成高质量的 AI 绘画、视频及设计提示词。
+
+### 📄 文档与办公
+> `docx`, `xlsx`, `pptx`, `pdf`, `doc-coauthoring` 等
+全能的 Office 文档处理能力，支持创建、编辑与分析。
+
+### 🖌️ 设计与前端
+> `web-artifacts-builder`, `frontend-design`, `ui-ux-pro-max`, `canvas-design`
+生成生产级前端代码、UI/UX 设计方案及视觉素材。
+
+### 💻 开发与工程
+> `feature-dev`, `code-review`, `webapp-testing`, `vercel-react-best-practices`
+辅助架构设计、代码审查、自动化测试及最佳实践落地。
+
+### ⚙️ 管理与工具
+> `planning-with-files` (Manus 风格规划), `skill-manager`, `github-to-skills`
+任务规划、技能生命周期管理及 GitHub 仓库转技能工具。
+
+*完整技能列表请参考 [`Skills/Skills_list.md`](./Skills/Skills_list.md)*
+
+## 🚀 实战项目介绍
+
+1. **MemorizeWords**
+   - 一个基于命令行的背单词练习工具，帮助用户高效记忆词汇。
+
+2. **SnakeGame**
+   - 经典的贪吃蛇游戏实现，展示了基本的图形界面交互开发。
+
+3. **Skit Script**
+   - 自动生成小品剧本的创意工具，利用 LLM 的创作能力。
+
+4. **HotPump**
+   - 热泵系统相关的计算或模拟工具。
+
+## 📖 快速开始
+
+### 常用配置命令
 
 ```powershell
-# Chrome 开发者工具
-claude mcp add chrome-devtools -s user -- npx chrome-devtools-mcp@latest
+# 安装新的 MCP 服务器
+claude mcp add <server_name> -s user -- <command>
 
-# Playwright 浏览器自动化
-claude mcp add playwright -s user -- npx @playwright/mcp@latest
-
-# Context7 文档查询
-claude mcp add context7 -s user -- npx @upstash/context7-mcp
-
-# GitHub API
-claude mcp add --transport http github https://api.githubcopilot.com/mcp -H "Authorization: Bearer $env:GITHUB_PAT" -s user
+# 从 GitHub 安装技能
+/plugin marketplace add <repo_url>
 ```
 
-详细配置请参考 [MCP 配置指南](./MCP/mcp_list.md)。
-
-## Skills 技能模块
-
-### 安装命令
+### Git 工作流
 
 ```powershell
-/plugin marketplace add anthropics/skills
-/plugin marketplace add anthropics/claude-plugins-official
-/plugin marketplace add https://github.com/daymade/claude-code-skills
-/plugin marketplace add https://github.com/davila7/claude-code-templates
-```
-
-### 常用技能
-
-| 技能 | 功能 |
-|------|------|
-| `algorithmic-art` | 算法艺术创作 |
-| `canvas-design` | 视觉设计 |
-| `docx` | Word 文档处理 |
-| `frontend-design` | 前端界面开发 |
-| `pdf` | PDF 处理 |
-| `pptx` | PPT 制作 |
-| `xlsx` | Excel 处理 |
-| `mcp-builder` | MCP 服务器开发 |
-| `web-artifacts-builder` | 复杂 Web 组件 |
-| `webapp-testing` | Web 应用测试 |
-
-详细说明请参考 [Skills 列表](./Skills/skills_list.md)。
-
-## 快速开始
-
-### 克隆仓库
-
-```bash
-git clone https://github.com/nettyfly218/Claude_Code.git
-cd Claude_Code
-```
-
-### 更新内容
-
-```powershell
-git add -A
-git commit -m "描述更改"
+git add .
+git commit -m "feat: 更新功能说明"
 git push
 ```
 
-## 更新日志
+## 📝 更新日志
 
-### v1.1.0 (2026-01-12)
+### v1.2.0 (2026-02)
+- **文档重构**: 全面更新 `README.md`，优化项目结构展示
+- **技能整合**: 整理并分类 14+ 个自定义 Skills，涵盖设计、办公、开发等领域
+- **项目收录**: 新增 `Skit Script` 和 `HotPump` 项目说明
+- **配置优化**: 更新 MCP 服务器列表与安装指南
 
-#### 新增
-- 新增 Prompt.md 文档，包含 git 提交命令示例
-- 新增背单词练习项目
+### v1.1.0 (2026-01)
+- 集成 GitHub Trending Reporter
+- 优化 MCP 配置流程与文档
+- 迁移背单词项目至 Project 目录
 
-#### 优化
-- 重构项目结构，将背单词项目迁移到 Project 目录
-- 优化 README 文档结构
-- 精简文档结构，更新 MCP 和 Skills 配置指南
-- 添加 GitHub MCP 上传项目操作说明
+### v1.0.0 (2026-01)
+- 项目初始化
+- 建立基本目录结构与配置规范
 
-### v1.0.0 (2026-01-02)
-
-- 初始化项目
-- 添加 Claude Code 配置和基本文档
-- 添加 MCP 和 Skills 配置说明
-- 添加学习笔记目录
-
+---
 ## 参考资源
 
 - [Claude Code 官方文档](https://docs.claude.com/)
 - [Claude Code GitHub](https://github.com/anthropics/claude-code)
 
-## 作者
-
-- GitHub: [@nettyfly218](https://github.com/nettyfly218)
-
 ## 许可证
-
 MIT License

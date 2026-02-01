@@ -1,5 +1,5 @@
 ---
-name: expert-lens
+name: expert-lens 专家视角
 description: 领域专家视角主控 - 当用户输入"我想探讨【xx 领域】里的【xx 问题】"时，模拟顶级专家进行深度探讨。
 ---
 

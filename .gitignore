@@ -1,16 +1,69 @@
-# Claude Code 临时文件
-tmpclaude-*
-
-# OS 文件
+# Operating System Files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# 编辑器
-.vscode/
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains / IntelliJ
 .idea/
+*.iws
+*.iml
+*.ipr
 
-# 日志
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Claude Code
+.claude/
+# Keep the markdown config file if it exists inside .claude in future versions,
+# but usually it's at root. The folder usually contains local state/history.
+
+# Logs
 *.log
 
-# Terminal Paste Image folder
-.cp-images/
+# Temporary files
+*.tmp
+*.bak
+*.swp
