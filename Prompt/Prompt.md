@@ -29,7 +29,7 @@
     脚本2：使用 /frontend-design 生成科技风格的日报信息，并输出html到桌面
 
 ## skill-translator (技能翻译助手) 
-    请帮我生成一个skills， 批量为所有Claude Code Skills添加中文翻译。
+    请帮我批量为所有Claude Code Skills添加中文翻译。
 
     任务：
     1. 扫描 ~/.claude/skills/ 和 Skills 目录下的所有 skills

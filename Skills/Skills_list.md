@@ -1,6 +1,6 @@
 # 全局可用 Skills 列表
 
-该列表基于当前 Claude Code 环境加载的技能库 (System Skills)。这些技能扩展了 Claude 的核心能力，涵盖设计、文档、开发等多个领域。
+该列表基于当前 Claude Code 环境加载的技能库 (System Skills) 及本地项目技能库 (Project Skills)。这些技能扩展了 Claude 的核心能力，涵盖设计、文档、开发、思维工具等多个领域。**（当前共收录 51 个 Skills，分为 6 大类）**
 
 ## 🎨 提示词与创意 (Prompt & Creative)
 *用于生成高质量的提示词，辅助 AI 绘画、视频生成及设计。*
@@ -15,6 +15,16 @@
 - **prompt-analyzer**: 提示词分析 - 洞察、对比、优化提示词结构。
 - **prompt-xray**: 提示词 X 光 - 逆向工程优秀提示词。
 - **domain-classifier**: 领域分类器 - 智能判断需求所属领域。
+- **reverse-prompt-generator**: 提示词逆向 - 逆向工程提示词生成器，从文本或范例倒推 Prompt 结构。
+
+## 🧠 深度思考与交互 (Deep Thinking & Interaction)
+*用于增强 Claude 的逻辑分析、辩论与多视角思考能力。*
+
+- **ai-debater**: 辩论专家 - 利用逻辑与事实挑战用户观点，证明错误。
+- **dissenter**: 反对者 - 扮演"魔鬼代言人" (Devil's Advocate)，寻找逻辑漏洞与风险。
+- **project-premortem**: 失败预演 - 假设项目失败，反向推导原因以识别致命风险。
+- **dual-explanation**: 双层解释 - 同时提供"通俗易懂"与"深度专业"两种视角的解释。
+- **expert-lens**: 专家视角 - 模拟特定领域的顶级专家进行深度探讨。
 
 ## 📄 文档与办公 (Document & Office)
 *用于处理企业级文档、演示文稿与表格。*
@@ -48,9 +58,11 @@
 - **vercel-composition-patterns**: 组件模式 - React 组合模式与架构建议。
 - **vercel-react-native-skills**: React Native 开发 - 移动端开发最佳实践。
 - **mcp-builder**: MCP 构建 - 辅助开发 Model Context Protocol 服务器。
+- **github-trending-reporter**: 热榜日报 - 自动抓取 GitHub 热榜并生成科技风格日报。
+- **pake**: 网页打包 - 将网页打包成轻量级桌面应用。
 
 ## ⚙️ 管理与工具 (Management & Tools)
-*用于技能管理、任务规划与系统配置。*
+*用于技能管理、任务规划与系统实用工具。*
 
 - **planning-with-files**: 任务规划 - 基于文件 (Manus 风格) 的复杂任务规划与追踪。
 - **skill-manager**: 技能管理 - 扫描、更新与管理本地/GitHub 技能。
@@ -60,6 +72,10 @@
 - **hot-topic-tracker**: 热点追踪 - 新媒体热点挖掘与内容生成。
 - **hookify**: 钩子管理 - 配置 Claude Code 的行为规则钩子。
 - **claude-hud**: 界面配置 - 自定义终端状态栏显示。
+- **skill-translator**: 技能翻译 - 批量扫描并自动翻译 Skill 的名称和描述为中文。
+- **convertx**: 格式转换 - 通用文件格式转换工具。
+- **yt-dlp**: 视频下载 - 强大的命令行音视频下载工具。
+- **lossless-cut**: 无损剪辑 - 视频与音频的无损裁剪工具。
 
 ## ⚠️ 注意事项
 *部分技能可能存在功能重叠（如 prompt-generator 与 intelligent-prompt-generator），建议优先使用功能更强的版本（如 v2.0）。*
