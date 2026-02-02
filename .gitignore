@@ -57,8 +57,27 @@ pnpm-debug.log
 
 # Claude Code
 .claude/
+.claude/settings.local.json
+.claude/settings.json
+.claude/cache/
+.claude/plugins/cache/
+.claude/sessions/
+.claude/state/
 # Keep the markdown config file if it exists inside .claude in future versions,
 # but usually it's at root. The folder usually contains local state/history.
+
+# Project-specific temporary files
+test_*.txt
+test_*.py
+sample_*.txt
+sample_*.py
+temp_*
+*_temp.*
+*_test.*
+
+# User-local scratch files
+scratch.*
+*.scratch
 
 # Logs
 *.log
