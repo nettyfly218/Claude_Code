@@ -1,0 +1,61 @@
+{
+  "preferences": [
+    "用户希望同时生成同名的 .html 和 .md 两份报告文件",
+    "用户希望两份报告都自动复制到桌面以便快速访问",
+    "用户希望报告包含趋势分析和可视化图表",
+    "用户希望看到更多技术栈分类和主题分析",
+    "报告文件名格式统一为: github-trending-YYYYMMDD.html 和 github-trending-YYYYMMDD.md"
+  ],
+  "fixes": [
+    "修复 run.py 中 Step 3 重复执行的代码",
+    "修复复制文件到桌面的逻辑错误（源文件和目标文件路径相同）",
+    "Windows 下路径处理应使用 shutil.copy 而非系统 copy 命令",
+    "JSON 处理应确保中文标点符号正确转义",
+    "生成报告时应验证文件完整性"
+  ],
+  "custom_prompts": "在生成报告后，主动提供 Markdown 摘要和趋势分析",
+  "best_practices": [
+    "使用 todo 列表跟踪执行进度，提高透明度",
+    "生成中文技术栈标签时应包含具体技术名称",
+    "为每个项目生成 2-3 句话的精炼中文摘要",
+    "添加跨项目的技术趋势对比分析",
+    "任务完成后自动清理临时文件，保持工作目录整洁",
+    "使用 collections.Counter 统计技术栈分布",
+    "提供可视化的条形图展示技术栈占比",
+    "统计 AI/LLM 相关项目和开发工具的数量"
+  ],
+  "implemented_features": [
+    "技术栈分布统计（带可视化条形图）",
+    "星标数据统计（总数、平均值）",
+    "AI/LLM 相关项目分类分析",
+    "开发工具项目分类分析",
+    "自动清理临时文件功能",
+    "增强的 Markdown 报告格式",
+    "排名 emoji 图标（🥇🥈🥉等）",
+    "改进的代码结构和可维护性"
+  ],
+  "enhancement_ideas": [
+    "添加每日趋势对比（与昨天/上周对比）",
+    "添加项目推荐标签（AI开发者/LLM研究者/金融从业者等）",
+    "支持导出为 PDF 格式",
+    "添加邮件/Slack 自动推送功能",
+    "添加更多可视化图表（饼图、折线图等）",
+    "支持自定义时间范围（本周/本月）"
+  ],
+  "automatic_cleanup": true,
+  "cleanup_patterns": [
+    "trending_raw.json",
+    "trending_with_summary.json",
+    "test-report.html",
+    "github-trending-report.html",
+    "github-trending-report-*.html",
+    "github-trending-report-*.md",
+    "TODAY_TRENDING.md"
+  ],
+  "cleanup_exclusions": [
+    "SKILL.md",
+    "evolution.json",
+    "requirements.txt"
+  ],
+  "last_update": "2026-02-03"
+}
