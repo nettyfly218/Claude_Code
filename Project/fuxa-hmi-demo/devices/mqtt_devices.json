@@ -1,0 +1,176 @@
+{
+  "_comment": "FUXA 生产设备监控项目 - 设备配置文件",
+  "project": {
+    "name": "智能工厂生产线监控",
+    "version": "1.0.0",
+    "description": "基于 MQTT 协议的生产线温度、电机状态监控系统",
+    "created": "2026-02-08",
+    "author": "Claude Code Assistant"
+  },
+  "devices": [
+    {
+      "id": "dev_001",
+      "name": "温度传感器组",
+      "enabled": true,
+      "type": "MQTT",
+      "description": "三个温度传感器，分别监控产线不同位置",
+      "connection": {
+        "host": "192.168.1.100",
+        "port": 1883,
+        "clientId": "fuxa_temp_client_001",
+        "username": "",
+        "password": "",
+        "keepalive": 60,
+        "reconnectPeriod": 5000,
+        "connectTimeout": 30000,
+        "clean": true
+      },
+      "tags": [
+        {
+          "id": "tag_temp_01",
+          "name": "温度传感器1",
+          "address": "factory/line1/temp1",
+          "datatype": "float",
+          "description": "生产线入口温度",
+          "unit": "°C",
+          "deadband": 0.5,
+          "readOnly": true
+        },
+        {
+          "id": "tag_temp_02",
+          "name": "温度传感器2",
+          "address": "factory/line1/temp2",
+          "datatype": "float",
+          "description": "生产线中段温度",
+          "unit": "°C",
+          "deadband": 0.5,
+          "readOnly": true
+        },
+        {
+          "id": "tag_temp_03",
+          "name": "温度传感器3",
+          "address": "factory/line1/temp3",
+          "datatype": "float",
+          "description": "生产线出口温度",
+          "unit": "°C",
+          "deadband": 0.5,
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "id": "dev_002",
+      "name": "电机控制单元",
+      "enabled": true,
+      "type": "MQTT",
+      "description": "两个电机的运行状态和控制",
+      "connection": {
+        "host": "192.168.1.100",
+        "port": 1883,
+        "clientId": "fuxa_motor_client_002",
+        "username": "",
+        "password": "",
+        "keepalive": 60,
+        "reconnectPeriod": 5000,
+        "connectTimeout": 30000,
+        "clean": true
+      },
+      "tags": [
+        {
+          "id": "tag_motor_01_status",
+          "name": "电机1运行状态",
+          "address": "factory/motors/motor1/status",
+          "datatype": "bool",
+          "description": "电机1运行/停止状态",
+          "readOnly": true
+        },
+        {
+          "id": "tag_motor_01_control",
+          "name": "电机1控制",
+          "address": "factory/motors/motor1/control",
+          "datatype": "bool",
+          "description": "电机1启动/停止控制",
+          "readOnly": false
+        },
+        {
+          "id": "tag_motor_01_rpm",
+          "name": "电机1转速",
+          "address": "factory/motors/motor1/rpm",
+          "datatype": "int16",
+          "description": "电机1当前转速",
+          "unit": "RPM",
+          "readOnly": true
+        },
+        {
+          "id": "tag_motor_02_status",
+          "name": "电机2运行状态",
+          "address": "factory/motors/motor2/status",
+          "datatype": "bool",
+          "description": "电机2运行/停止状态",
+          "readOnly": true
+        },
+        {
+          "id": "tag_motor_02_control",
+          "name": "电机2控制",
+          "address": "factory/motors/motor2/control",
+          "datatype": "bool",
+          "description": "电机2启动/停止控制",
+          "readOnly": false
+        },
+        {
+          "id": "tag_motor_02_rpm",
+          "name": "电机2转速",
+          "address": "factory/motors/motor2/rpm",
+          "datatype": "int16",
+          "description": "电机2当前转速",
+          "unit": "RPM",
+          "readOnly": true
+        }
+      ]
+    },
+    {
+      "id": "dev_003",
+      "name": "安全系统",
+      "enabled": true,
+      "type": "MQTT",
+      "description": "急停按钮和安全传感器",
+      "connection": {
+        "host": "192.168.1.100",
+        "port": 1883,
+        "clientId": "fuxa_safety_client_003",
+        "username": "",
+        "password": "",
+        "keepalive": 60,
+        "reconnectPeriod": 5000,
+        "connectTimeout": 30000,
+        "clean": true
+      },
+      "tags": [
+        {
+          "id": "tag_emergency_stop",
+          "name": "紧急停止",
+          "address": "factory/safety/emergency_stop",
+          "datatype": "bool",
+          "description": "急停按钮状态（true=按下/急停）",
+          "readOnly": true
+        },
+        {
+          "id": "tag_safety_door",
+          "name": "安全门状态",
+          "address": "factory/safety/door_status",
+          "datatype": "bool",
+          "description": "安全门关闭状态（true=关闭）",
+          "readOnly": true
+        },
+        {
+          "id": "tag_system_ready",
+          "name": "系统就绪",
+          "address": "factory/safety/system_ready",
+          "datatype": "bool",
+          "description": "系统可以启动",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}
