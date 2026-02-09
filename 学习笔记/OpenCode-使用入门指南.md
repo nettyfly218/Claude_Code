@@ -21,7 +21,7 @@
 
  `npm ls -g oh-my-opencode`
  `npm install -g oh-my-opencode@latest` 
- `npm install -g oh-my-opencode@3.1.11` 
+ `npm install -g oh-my-opencode@3.1.10` 
  `npm update -g oh-my-opencode`
  `npx oh-my-opencode doctor --verbose`
 
@@ -50,7 +50,7 @@ OpenCode 通过 MCP (Model Context Protocol) 协议连接各种外部工具，�
 
 ### 配置文件
 - **路径**: `~/.opencode/opencode.json`
-- **当前版本**: OpenCode v1.1.48
+- **当前版本**: OpenCode v1.1.49
 
 ### 可用 MCP 服务器清单
 
