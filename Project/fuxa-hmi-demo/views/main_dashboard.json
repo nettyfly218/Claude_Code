@@ -1,0 +1,662 @@
+{
+  "_comment": "FUXA HMI 视图配置 - 温度监控主面板",
+  "projectName": "智能工厂生产线监控",
+  "view": {
+    "id": "view_main_dashboard",
+    "name": "生产监控主画面",
+    "description": "生产线温度、电机状态综合监控面板",
+    "width": 1920,
+    "height": 1080,
+    "background": {
+      "color": "#0f172a",
+      "gradient": {
+        "enabled": true,
+        "type": "linear",
+        "angle": 180,
+        "colors": ["#0f172a", "#1e293b"]
+      }
+    },
+    "grid": {
+      "enabled": true,
+      "size": 20,
+      "snap": true
+    }
+  },
+  "items": [
+    {
+      "_comment": "标题栏",
+      "type": "text",
+      "name": "title_main",
+      "x": 50,
+      "y": 30,
+      "width": 600,
+      "height": 60,
+      "property": {
+        "text": "🏭 智能生产线监控系统",
+        "fontSize": 36,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc",
+        "fontWeight": "bold",
+        "align": "left"
+      }
+    },
+    {
+      "_comment": "系统时间显示",
+      "type": "text",
+      "name": "txt_datetime",
+      "x": 1450,
+      "y": 40,
+      "width": 420,
+      "height": 40,
+      "property": {
+        "text": "${SYSTEM_TIME}",
+        "fontSize": 20,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#94a3b8",
+        "align": "right"
+      }
+    },
+    {
+      "_comment": "温度监控区域标题",
+      "type": "text",
+      "name": "title_temp",
+      "x": 80,
+      "y": 120,
+      "width": 300,
+      "height": 40,
+      "property": {
+        "text": "🌡️ 温度监控",
+        "fontSize": 24,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#38bdf8",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "_comment": "温度仪表盘1 - 入口温度",
+      "type": "gauge",
+      "name": "gauge_temp_01",
+      "x": 80,
+      "y": 180,
+      "width": 240,
+      "height": 240,
+      "property": {
+        "tag": "${TEMP_01}",
+        "min": 0,
+        "max": 150,
+        "unit": "°C",
+        "title": "入口温度",
+        "titleFontSize": 16,
+        "valueFontSize": 32,
+        "unitFontSize": 14,
+        "decimals": 1,
+        "colorZones": [
+          { "from": 0, "to": 80, "color": "#22c55e" },
+          { "from": 80, "to": 100, "color": "#eab308" },
+          { "from": 100, "to": 150, "color": "#ef4444" }
+        ],
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "温度仪表盘2 - 中段温度",
+      "type": "gauge",
+      "name": "gauge_temp_02",
+      "x": 360,
+      "y": 180,
+      "width": 240,
+      "height": 240,
+      "property": {
+        "tag": "${TEMP_02}",
+        "min": 0,
+        "max": 150,
+        "unit": "°C",
+        "title": "中段温度",
+        "titleFontSize": 16,
+        "valueFontSize": 32,
+        "unitFontSize": 14,
+        "decimals": 1,
+        "colorZones": [
+          { "from": 0, "to": 120, "color": "#22c55e" },
+          { "from": 120, "to": 140, "color": "#eab308" },
+          { "from": 140, "to": 150, "color": "#ef4444" }
+        ],
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "温度仪表盘3 - 出口温度",
+      "type": "gauge",
+      "name": "gauge_temp_03",
+      "x": 640,
+      "y": 180,
+      "width": 240,
+      "height": 240,
+      "property": {
+        "tag": "${TEMP_03}",
+        "min": 0,
+        "max": 150,
+        "unit": "°C",
+        "title": "出口温度",
+        "titleFontSize": 16,
+        "valueFontSize": 32,
+        "unitFontSize": 14,
+        "decimals": 1,
+        "colorZones": [
+          { "from": 0, "to": 90, "color": "#22c55e" },
+          { "from": 90, "to": 110, "color": "#eab308" },
+          { "from": 110, "to": 150, "color": "#ef4444" }
+        ],
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "温度趋势图",
+      "type": "chart",
+      "name": "chart_temp_trend",
+      "x": 920,
+      "y": 150,
+      "width": 950,
+      "height": 320,
+      "property": {
+        "title": "温度趋势",
+        "titleFontSize": 18,
+        "titleColor": "#f8fafc",
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12,
+        "chartType": "line",
+        "timeRange": "1h",
+        "yAxis": {
+          "min": 0,
+          "max": 150,
+          "label": "温度 (°C)",
+          "gridColor": "#334155",
+          "labelColor": "#94a3b8"
+        },
+        "xAxis": {
+          "gridColor": "#334155",
+          "labelColor": "#94a3b8"
+        },
+        "series": [
+          {
+            "name": "入口温度",
+            "tag": "${TEMP_01}",
+            "color": "#22c55e",
+            "lineWidth": 2
+          },
+          {
+            "name": "中段温度",
+            "tag": "${TEMP_02}",
+            "color": "#3b82f6",
+            "lineWidth": 2
+          },
+          {
+            "name": "出口温度",
+            "tag": "${TEMP_03}",
+            "color": "#f59e0b",
+            "lineWidth": 2
+          }
+        ],
+        "legend": {
+          "enabled": true,
+          "position": "top",
+          "color": "#f8fafc"
+        }
+      }
+    },
+    {
+      "_comment": "电机状态区域标题",
+      "type": "text",
+      "name": "title_motor",
+      "x": 80,
+      "y": 480,
+      "width": 300,
+      "height": 40,
+      "property": {
+        "text": "⚙️ 电机状态",
+        "fontSize": 24,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#38bdf8",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "_comment": "电机1状态卡片",
+      "type": "panel",
+      "name": "panel_motor_01",
+      "x": 80,
+      "y": 540,
+      "width": 400,
+      "height": 200,
+      "property": {
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "电机1标题",
+      "type": "text",
+      "name": "txt_motor_01_title",
+      "x": 100,
+      "y": 560,
+      "width": 150,
+      "height": 30,
+      "property": {
+        "text": "电机 1#",
+        "fontSize": 20,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "_comment": "电机1运行指示灯",
+      "type": "led",
+      "name": "led_motor_01",
+      "x": 400,
+      "y": 560,
+      "width": 60,
+      "height": 60,
+      "property": {
+        "tag": "${MOTOR_01_RUN}",
+        "colorOn": "#22c55e",
+        "colorOff": "#64748b",
+        "blinkOnAlarm": false,
+        "shape": "circle"
+      }
+    },
+    {
+      "_comment": "电机1转速显示",
+      "type": "text",
+      "name": "txt_motor_01_rpm",
+      "x": 100,
+      "y": 620,
+      "width": 200,
+      "height": 40,
+      "property": {
+        "text": "转速: ${MOTOR_01_RPM} RPM",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#94a3b8"
+      }
+    },
+    {
+      "_comment": "电机1启动按钮",
+      "type": "button",
+      "name": "btn_motor_01_start",
+      "x": 100,
+      "y": 680,
+      "width": 100,
+      "height": 40,
+      "property": {
+        "text": "启动",
+        "fontSize": 16,
+        "backgroundColor": "#22c55e",
+        "color": "#ffffff",
+        "borderRadius": 8,
+        "action": {
+          "type": "setValue",
+          "tag": "${MOTOR_01_CMD}",
+          "value": true
+        }
+      }
+    },
+    {
+      "_comment": "电机1停止按钮",
+      "type": "button",
+      "name": "btn_motor_01_stop",
+      "x": 220,
+      "y": 680,
+      "width": 100,
+      "height": 40,
+      "property": {
+        "text": "停止",
+        "fontSize": 16,
+        "backgroundColor": "#ef4444",
+        "color": "#ffffff",
+        "borderRadius": 8,
+        "action": {
+          "type": "setValue",
+          "tag": "${MOTOR_01_CMD}",
+          "value": false
+        }
+      }
+    },
+    {
+      "_comment": "电机2状态卡片",
+      "type": "panel",
+      "name": "panel_motor_02",
+      "x": 520,
+      "y": 540,
+      "width": 400,
+      "height": 200,
+      "property": {
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "电机2标题",
+      "type": "text",
+      "name": "txt_motor_02_title",
+      "x": 540,
+      "y": 560,
+      "width": 150,
+      "height": 30,
+      "property": {
+        "text": "电机 2#",
+        "fontSize": 20,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "_comment": "电机2运行指示灯",
+      "type": "led",
+      "name": "led_motor_02",
+      "x": 840,
+      "y": 560,
+      "width": 60,
+      "height": 60,
+      "property": {
+        "tag": "${MOTOR_02_RUN}",
+        "colorOn": "#22c55e",
+        "colorOff": "#64748b",
+        "blinkOnAlarm": false,
+        "shape": "circle"
+      }
+    },
+    {
+      "_comment": "电机2转速显示",
+      "type": "text",
+      "name": "txt_motor_02_rpm",
+      "x": 540,
+      "y": 620,
+      "width": 200,
+      "height": 40,
+      "property": {
+        "text": "转速: ${MOTOR_02_RPM} RPM",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#94a3b8"
+      }
+    },
+    {
+      "_comment": "电机2启动按钮",
+      "type": "button",
+      "name": "btn_motor_02_start",
+      "x": 540,
+      "y": 680,
+      "width": 100,
+      "height": 40,
+      "property": {
+        "text": "启动",
+        "fontSize": 16,
+        "backgroundColor": "#22c55e",
+        "color": "#ffffff",
+        "borderRadius": 8,
+        "action": {
+          "type": "setValue",
+          "tag": "${MOTOR_02_CMD}",
+          "value": true
+        }
+      }
+    },
+    {
+      "_comment": "电机2停止按钮",
+      "type": "button",
+      "name": "btn_motor_02_stop",
+      "x": 660,
+      "y": 680,
+      "width": 100,
+      "height": 40,
+      "property": {
+        "text": "停止",
+        "fontSize": 16,
+        "backgroundColor": "#ef4444",
+        "color": "#ffffff",
+        "borderRadius": 8,
+        "action": {
+          "type": "setValue",
+          "tag": "${MOTOR_02_CMD}",
+          "value": false
+        }
+      }
+    },
+    {
+      "_comment": "急停按钮",
+      "type": "button",
+      "name": "btn_emergency_stop",
+      "x": 1000,
+      "y": 540,
+      "width": 150,
+      "height": 150,
+      "property": {
+        "text": "🛑\n紧急停止",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "backgroundColor": "#dc2626",
+        "color": "#ffffff",
+        "borderRadius": 75,
+        "borderColor": "#991b1b",
+        "borderWidth": 5,
+        "action": {
+          "type": "setValue",
+          "tag": "${EMERGENCY_STOP}",
+          "value": true
+        }
+      }
+    },
+    {
+      "_comment": "系统状态面板",
+      "type": "panel",
+      "name": "panel_system_status",
+      "x": 1200,
+      "y": 540,
+      "width": 670,
+      "height": 200,
+      "property": {
+        "backgroundColor": "#1e293b",
+        "borderColor": "#334155",
+        "borderWidth": 2,
+        "borderRadius": 12
+      }
+    },
+    {
+      "_comment": "系统状态标题",
+      "type": "text",
+      "name": "txt_system_status_title",
+      "x": 1220,
+      "y": 560,
+      "width": 200,
+      "height": 30,
+      "property": {
+        "text": "系统状态",
+        "fontSize": 20,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "_comment": "安全门状态",
+      "type": "led",
+      "name": "led_safety_door",
+      "x": 1220,
+      "y": 610,
+      "width": 30,
+      "height": 30,
+      "property": {
+        "tag": "${SAFETY_DOOR}",
+        "colorOn": "#22c55e",
+        "colorOff": "#ef4444",
+        "shape": "circle"
+      }
+    },
+    {
+      "_comment": "安全门文字",
+      "type": "text",
+      "name": "txt_safety_door",
+      "x": 1260,
+      "y": 610,
+      "width": 150,
+      "height": 30,
+      "property": {
+        "text": "安全门",
+        "fontSize": 16,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#94a3b8"
+      }
+    },
+    {
+      "_comment": "系统就绪状态",
+      "type": "led",
+      "name": "led_system_ready",
+      "x": 1220,
+      "y": 650,
+      "width": 30,
+      "height": 30,
+      "property": {
+        "tag": "${SYSTEM_READY}",
+        "colorOn": "#22c55e",
+        "colorOff": "#f59e0b",
+        "shape": "circle"
+      }
+    },
+    {
+      "_comment": "系统就绪文字",
+      "type": "text",
+      "name": "txt_system_ready",
+      "x": 1260,
+      "y": 650,
+      "width": 150,
+      "height": 30,
+      "property": {
+        "text": "系统就绪",
+        "fontSize": 16,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#94a3b8"
+      }
+    },
+    {
+      "_comment": "生产计数",
+      "type": "text",
+      "name": "txt_production_count",
+      "x": 1450,
+      "y": 610,
+      "width": 200,
+      "height": 40,
+      "property": {
+        "text": "今日产量: ${PRODUCTION_COUNT} 件",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc"
+      }
+    },
+    {
+      "_comment": "设备效率",
+      "type": "text",
+      "name": "txt_efficiency",
+      "x": 1450,
+      "y": 650,
+      "width": 200,
+      "height": 40,
+      "property": {
+        "text": "设备效率: ${EFFICIENCY}%",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc"
+      }
+    },
+    {
+      "_comment": "运行电机数",
+      "type": "text",
+      "name": "txt_motor_count",
+      "x": 1450,
+      "y": 690,
+      "width": 200,
+      "height": 40,
+      "property": {
+        "text": "运行电机: ${MOTOR_COUNT} / 2",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#f8fafc"
+      }
+    },
+    {
+      "_comment": "平均温度显示",
+      "type": "text",
+      "name": "txt_temp_avg",
+      "x": 1700,
+      "y": 610,
+      "width": 150,
+      "height": 40,
+      "property": {
+        "text": "平均: ${TEMP_AVG}°C",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#38bdf8"
+      }
+    },
+    {
+      "_comment": "最高温度显示",
+      "type": "text",
+      "name": "txt_temp_max",
+      "x": 1700,
+      "y": 650,
+      "width": 150,
+      "height": 40,
+      "property": {
+        "text": "最高: ${TEMP_MAX}°C",
+        "fontSize": 18,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#ef4444"
+      }
+    },
+    {
+      "_comment": "底部信息栏",
+      "type": "panel",
+      "name": "panel_footer",
+      "x": 0,
+      "y": 1020,
+      "width": 1920,
+      "height": 60,
+      "property": {
+        "backgroundColor": "#020617",
+        "borderColor": "#1e293b",
+        "borderWidth": 1
+      }
+    },
+    {
+      "_comment": "版权信息",
+      "type": "text",
+      "name": "txt_copyright",
+      "x": 50,
+      "y": 1035,
+      "width": 400,
+      "height": 30,
+      "property": {
+        "text": "© 2026 智能工厂监控系统 | Powered by FUXA",
+        "fontSize": 14,
+        "fontFamily": "Arial, sans-serif",
+        "color": "#64748b"
+      }
+    }
+  ]
+}

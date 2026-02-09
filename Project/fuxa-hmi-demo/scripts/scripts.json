@@ -1,0 +1,48 @@
+{
+  "_comment": "FUXA 自定义脚本配置 - JavaScript",
+  "projectName": "智能工厂生产线监控",
+  "scripts": [
+    {
+      "id": "script_temp_alarm",
+      "name": "温度报警处理",
+      "description": "当温度报警触发时执行的脚本",
+      "trigger": "alarm",
+      "enabled": true,
+      "code": "// 温度报警处理脚本\n// 当温度超过阈值时执行\n\n// 获取当前温度值\nvar temp1 = $getTag('TEMP_01');\nvar temp2 = $getTag('TEMP_02');\nvar temp3 = $getTag('TEMP_03');\n\n// 计算平均温度\nvar avgTemp = (temp1 + temp2 + temp3) / 3;\n\n// 记录日志\n$log('温度报警触发 - 平均温度: ' + avgTemp.toFixed(1) + '°C');\n\n// 如果平均温度超过120°C，自动降低电机转速\nif (avgTemp > 120) {\n    $log('温度过高，执行自动降温措施');\n    \n    // 检查电机是否运行\n    if ($getTag('MOTOR_01_RUN')) {\n        // 可以在这里添加降速逻辑\n        $log('建议降低电机1转速');\n    }\n    if ($getTag('MOTOR_02_RUN')) {\n        $log('建议降低电机2转速');\n    }\n}\n\n// 发送通知（如果配置了）\n// $notify('温度报警', '入口温度: ' + temp1 + '°C');\n"
+    },
+    {
+      "id": "script_emergency_stop",
+      "name": "急停处理",
+      "description": "紧急停止时的处理逻辑",
+      "trigger": "event",
+      "enabled": true,
+      "code": "// 紧急停止处理脚本\n// 当急停按钮按下时执行\n\n$log('!!! 紧急停止触发 !!!');\n\n// 立即停止所有电机\n$setTag('MOTOR_01_CMD', false);\n$setTag('MOTOR_02_CMD', false);\n\n// 记录停止时间\nvar stopTime = new Date().toISOString();\n$log('系统于 ' + stopTime + ' 紧急停止');\n\n// 可以在这里添加其他安全措施\n// 例如：关闭加热器、打开安全阀等\n\n// 设置系统未就绪状态\n$setTag('SYSTEM_READY', false);\n\n// 显示警告消息\n$toast('系统已紧急停止！请检查并排除故障后复位。', 'error');\n"
+    },
+    {
+      "id": "script_production_counter",
+      "name": "生产计数器",
+      "description": "自动计数生产数量",
+      "trigger": "schedule",
+      "schedule": "*/1 * * * *",
+      "enabled": true,
+      "code": "// 生产计数脚本\n// 每分钟执行一次，统计产量\n\n// 获取当前计数\nvar currentCount = $getTag('PRODUCTION_COUNT') || 0;\n\n// 根据电机运行状态估算产量\n// 假设每个电机每分钟生产10件产品\nvar motor1Running = $getTag('MOTOR_01_RUN');\nvar motor2Running = $getTag('MOTOR_02_RUN');\n\nvar productionRate = 0;\nif (motor1Running) productionRate += 10;\nif (motor2Running) productionRate += 10;\n\n// 更新计数\nvar newCount = currentCount + productionRate;\n$setTag('PRODUCTION_COUNT', newCount);\n\n// 计算设备效率\nvar maxRate = 20; // 最大产能\nvar efficiency = (productionRate / maxRate) * 100;\n$setTag('EFFICIENCY', efficiency.toFixed(1));\n\n// 记录日志\n$log('生产计数更新: ' + newCount + '件，效率: ' + efficiency.toFixed(1) + '%');\n"
+    },
+    {
+      "id": "script_startup_check",
+      "name": "启动检查",
+      "description": "设备启动前的安全检查",
+      "trigger": "event",
+      "enabled": true,
+      "code": "// 启动前安全检查脚本\n\n$log('执行启动前安全检查...');\n\nvar checks = {\n    safetyDoor: $getTag('SAFETY_DOOR'),\n    emergencyStop: $getTag('EMERGENCY_STOP'),\n    temp1: $getTag('TEMP_01'),\n    temp2: $getTag('TEMP_02'),\n    temp3: $getTag('TEMP_03')\n};\n\nvar canStart = true;\nvar messages = [];\n\n// 检查安全门\nif (!checks.safetyDoor) {\n    canStart = false;\n    messages.push('安全门未关闭');\n}\n\n// 检查急停\nif (checks.emergencyStop) {\n    canStart = false;\n    messages.push('急停按钮被按下');\n}\n\n// 检查温度是否在正常范围\nif (checks.temp1 > 100 || checks.temp2 > 140 || checks.temp3 > 110) {\n    canStart = false;\n    messages.push('温度过高，不能启动');\n}\n\n// 设置系统就绪状态\n$setTag('SYSTEM_READY', canStart);\n\nif (canStart) {\n    $log('启动检查通过，系统就绪');\n    $toast('系统就绪，可以启动', 'success');\n} else {\n    $log('启动检查失败: ' + messages.join(', '));\n    $toast('启动失败: ' + messages.join(', '), 'error');\n}\n"
+    },
+    {
+      "id": "script_data_logger",
+      "name": "数据记录",
+      "description": "定期记录关键数据到历史数据库",
+      "trigger": "schedule",
+      "schedule": "*/5 * * * *",
+      "enabled": true,
+      "code": "// 数据记录脚本\n// 每5分钟记录一次关键数据\n\nvar data = {\n    timestamp: new Date().toISOString(),\n    temperature: {\n        temp1: $getTag('TEMP_01'),\n        temp2: $getTag('TEMP_02'),\n        temp3: $getTag('TEMP_03'),\n        avg: $getTag('TEMP_AVG'),\n        max: $getTag('TEMP_MAX')\n    },\n    motors: {\n        motor1: {\n            running: $getTag('MOTOR_01_RUN'),\n            rpm: $getTag('MOTOR_01_RPM')\n        },\n        motor2: {\n            running: $getTag('MOTOR_02_RUN'),\n            rpm: $getTag('MOTOR_02_RPM')\n        }\n    },\n    production: {\n        count: $getTag('PRODUCTION_COUNT'),\n        efficiency: $getTag('EFFICIENCY')\n    }\n};\n\n// 记录到历史数据库\n$history('production_data', data);\n\n$log('数据已记录到历史数据库: ' + data.timestamp);\n"
+    }
+  ]
+}

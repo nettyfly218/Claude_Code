@@ -1,0 +1,211 @@
+{
+  "_comment": "FUXA 标签变量定义 - 便于管理和引用",
+  "projectName": "智能工厂生产线监控",
+  "tagGroups": [
+    {
+      "name": "温度监控",
+      "description": "生产线各位置温度传感器数据",
+      "tags": [
+        {
+          "id": "TEMP_01",
+          "name": "入口温度",
+          "deviceId": "dev_001",
+          "tagId": "tag_temp_01",
+          "dataType": "float",
+          "unit": "°C",
+          "min": 0,
+          "max": 150,
+          "normalRange": [20, 80],
+          "warningRange": [80, 100],
+          "alarmRange": [100, 150],
+          "description": "生产线入口物料温度"
+        },
+        {
+          "id": "TEMP_02",
+          "name": "中段温度",
+          "deviceId": "dev_001",
+          "tagId": "tag_temp_02",
+          "dataType": "float",
+          "unit": "°C",
+          "min": 0,
+          "max": 150,
+          "normalRange": [50, 120],
+          "warningRange": [120, 140],
+          "alarmRange": [140, 150],
+          "description": "生产线中段加工温度"
+        },
+        {
+          "id": "TEMP_03",
+          "name": "出口温度",
+          "deviceId": "dev_001",
+          "tagId": "tag_temp_03",
+          "dataType": "float",
+          "unit": "°C",
+          "min": 0,
+          "max": 150,
+          "normalRange": [30, 90],
+          "warningRange": [90, 110],
+          "alarmRange": [110, 150],
+          "description": "生产线出口成品温度"
+        },
+        {
+          "id": "TEMP_AVG",
+          "name": "平均温度",
+          "dataType": "float",
+          "unit": "°C",
+          "formula": "(${TEMP_01} + ${TEMP_02} + ${TEMP_03}) / 3",
+          "description": "三个测点的平均温度（计算值）"
+        },
+        {
+          "id": "TEMP_MAX",
+          "name": "最高温度",
+          "dataType": "float",
+          "unit": "°C",
+          "formula": "Math.max(${TEMP_01}, ${TEMP_02}, ${TEMP_03})",
+          "description": "当前最高温度值（计算值）"
+        }
+      ]
+    },
+    {
+      "name": "电机状态",
+      "description": "电机运行状态和控制",
+      "tags": [
+        {
+          "id": "MOTOR_01_RUN",
+          "name": "电机1运行",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_01_status",
+          "dataType": "bool",
+          "trueText": "运行中",
+          "falseText": "已停止",
+          "description": "电机1当前运行状态"
+        },
+        {
+          "id": "MOTOR_01_CMD",
+          "name": "电机1控制",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_01_control",
+          "dataType": "bool",
+          "trueText": "启动",
+          "falseText": "停止",
+          "description": "电机1启动/停止控制"
+        },
+        {
+          "id": "MOTOR_01_RPM",
+          "name": "电机1转速",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_01_rpm",
+          "dataType": "int",
+          "unit": "RPM",
+          "min": 0,
+          "max": 3000,
+          "normalRange": [1000, 2500],
+          "description": "电机1当前转速"
+        },
+        {
+          "id": "MOTOR_02_RUN",
+          "name": "电机2运行",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_02_status",
+          "dataType": "bool",
+          "trueText": "运行中",
+          "falseText": "已停止",
+          "description": "电机2当前运行状态"
+        },
+        {
+          "id": "MOTOR_02_CMD",
+          "name": "电机2控制",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_02_control",
+          "dataType": "bool",
+          "trueText": "启动",
+          "falseText": "停止",
+          "description": "电机2启动/停止控制"
+        },
+        {
+          "id": "MOTOR_02_RPM",
+          "name": "电机2转速",
+          "deviceId": "dev_002",
+          "tagId": "tag_motor_02_rpm",
+          "dataType": "int",
+          "unit": "RPM",
+          "min": 0,
+          "max": 3000,
+          "normalRange": [1000, 2500],
+          "description": "电机2当前转速"
+        },
+        {
+          "id": "MOTOR_COUNT",
+          "name": "运行电机数",
+          "dataType": "int",
+          "formula": "(${MOTOR_01_RUN} ? 1 : 0) + (${MOTOR_02_RUN} ? 1 : 0)",
+          "description": "当前运行的电机数量（计算值）"
+        }
+      ]
+    },
+    {
+      "name": "安全系统",
+      "description": "安全相关信号",
+      "tags": [
+        {
+          "id": "EMERGENCY_STOP",
+          "name": "急停状态",
+          "deviceId": "dev_003",
+          "tagId": "tag_emergency_stop",
+          "dataType": "bool",
+          "trueText": "急停中",
+          "falseText": "正常",
+          "priority": "high",
+          "description": "紧急停止按钮状态"
+        },
+        {
+          "id": "SAFETY_DOOR",
+          "name": "安全门",
+          "deviceId": "dev_003",
+          "tagId": "tag_safety_door",
+          "dataType": "bool",
+          "trueText": "已关闭",
+          "falseText": "打开",
+          "description": "安全门关闭状态"
+        },
+        {
+          "id": "SYSTEM_READY",
+          "name": "系统就绪",
+          "deviceId": "dev_003",
+          "tagId": "tag_system_ready",
+          "dataType": "bool",
+          "trueText": "就绪",
+          "falseText": "未就绪",
+          "description": "系统可以启动"
+        }
+      ]
+    },
+    {
+      "name": "系统信息",
+      "description": "系统运行信息",
+      "tags": [
+        {
+          "id": "SYSTEM_TIME",
+          "name": "系统时间",
+          "dataType": "datetime",
+          "description": "当前系统时间"
+        },
+        {
+          "id": "PRODUCTION_COUNT",
+          "name": "生产计数",
+          "dataType": "int",
+          "description": "今日生产数量"
+        },
+        {
+          "id": "EFFICIENCY",
+          "name": "设备效率",
+          "dataType": "float",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "description": "设备运行效率"
+        }
+      ]
+    }
+  ]
+}
