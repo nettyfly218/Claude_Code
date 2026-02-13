@@ -1,0 +1,32 @@
+{
+  "autoUpdatesChannel": "latest",
+  "enabledPlugins": {
+    "claude-hud@claude-hud": true,
+    "everything-claude-code@everything-claude-code": true
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-cp-nKm09Xkh2aCWxOHpEkwW6BLH-GF8CK8oKasl0YQ2IjOZYQfk1QvQNyWrF39qYV_H9xxuGHUthdxptdKBcgr4vlUbjaZmGOnuZQ9cZHn0d2FjjAbwDLkZpwg",
+    "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "MiniMax-M2.5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "MiniMax-M2.5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "MiniMax-M2.5",
+    "ANTHROPIC_MODEL": "MiniMax-M2.5",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "HTTPS_PROXY": "http://10.195.228.247:5005",
+    "HTTP_PROXY": "http://10.195.228.247:5005",
+    "http_proxy": "http://10.195.228.247:5005",
+    "https_proxy": "http://10.195.228.247:5005"
+  },
+  "language": "中文",
+  "permissions": {
+    "allow": [
+      "mcp__pencil"
+    ]
+  },
+  "statusLine": {
+    "command": "\"C:\\Program Files\\nodejs\\node.exe\" \"C:\\Users\\H2412164\\.claude\\plugins\\cache\\claude-hud\\claude-hud\\0.0.7\\dist\\index.js\"",
+    "type": "command"
+  },
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+}
