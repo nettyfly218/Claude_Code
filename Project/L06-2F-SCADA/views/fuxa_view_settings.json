@@ -1,0 +1,639 @@
+{
+  "id": "v_L06_2F_settings",
+  "name": "L06-2F 参数设置",
+  "profile": {
+    "width": 1920,
+    "height": 1080,
+    "bkcolor": "#1e1e2e",
+    "margin": 10,
+    "align": "topCenter",
+    "gridType": "fixed",
+    "viewRenderDelay": 0
+  },
+  "items": {
+    "svg_title": {
+      "id": "svg_title",
+      "type": "svg-ext-shapes-text",
+      "name": "标题",
+      "property": { "events": [], "actions": [] },
+      "label": "Shapes",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone1_high": {
+      "id": "INP_zone1_high",
+      "type": "svg-ext-html_input",
+      "name": "1#区湿度上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone1_low": {
+      "id": "INP_zone1_low",
+      "type": "svg-ext-html_input",
+      "name": "1#区湿度下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone2_high": {
+      "id": "INP_zone2_high",
+      "type": "svg-ext-html_input",
+      "name": "2#区湿度上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone2_low": {
+      "id": "INP_zone2_low",
+      "type": "svg-ext-html_input",
+      "name": "2#区湿度下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone3_high": {
+      "id": "INP_zone3_high",
+      "type": "svg-ext-html_input",
+      "name": "3#区湿度上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone3_low": {
+      "id": "INP_zone3_low",
+      "type": "svg-ext-html_input",
+      "name": "3#区湿度下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone4_high": {
+      "id": "INP_zone4_high",
+      "type": "svg-ext-html_input",
+      "name": "4#区湿度上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "INP_zone4_low": {
+      "id": "INP_zone4_low",
+      "type": "svg-ext-html_input",
+      "name": "4#区湿度下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_high": {
+      "id": "VAL_zone1_high",
+      "type": "svg-ext-value",
+      "name": "1#区当前上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_low": {
+      "id": "VAL_zone1_low",
+      "type": "svg-ext-value",
+      "name": "1#区当前下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_high": {
+      "id": "VAL_zone2_high",
+      "type": "svg-ext-value",
+      "name": "2#区当前上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_low": {
+      "id": "VAL_zone2_low",
+      "type": "svg-ext-value",
+      "name": "2#区当前下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_high": {
+      "id": "VAL_zone3_high",
+      "type": "svg-ext-value",
+      "name": "3#区当前上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_low": {
+      "id": "VAL_zone3_low",
+      "type": "svg-ext-value",
+      "name": "3#区当前下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_high": {
+      "id": "VAL_zone4_high",
+      "type": "svg-ext-value",
+      "name": "4#区当前上限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_low": {
+      "id": "VAL_zone4_low",
+      "type": "svg-ext-value",
+      "name": "4#区当前下限",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone1_high": {
+      "id": "HXI_zone1_high",
+      "type": "svg-ext-html_input",
+      "name": "1#区湿度上限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone1_low": {
+      "id": "HXI_zone1_low",
+      "type": "svg-ext-html_input",
+      "name": "1#区湿度下限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone2_high": {
+      "id": "HXI_zone2_high",
+      "type": "svg-ext-html_input",
+      "name": "2#区湿度上限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone2_low": {
+      "id": "HXI_zone2_low",
+      "type": "svg-ext-html_input",
+      "name": "2#区湿度下限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone3_high": {
+      "id": "HXI_zone3_high",
+      "type": "svg-ext-html_input",
+      "name": "3#区湿度上限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone3_low": {
+      "id": "HXI_zone3_low",
+      "type": "svg-ext-html_input",
+      "name": "3#区湿度下限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone4_high": {
+      "id": "HXI_zone4_high",
+      "type": "svg-ext-html_input",
+      "name": "4#区湿度上限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    },
+    "HXI_zone4_low": {
+      "id": "HXI_zone4_low",
+      "type": "svg-ext-html_input",
+      "name": "4#区湿度下限输入",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": [
+          {
+            "variableId": "t_XXXXXXXX-XXXX-XXXX",
+            "range": { "min": 0, "max": 100 },
+            "type": "show",
+            "options": {}
+          }
+        ],
+        "options": {
+          "updated": true,
+          "numeric": false,
+          "type": "number",
+          "maxlength": null,
+          "readonly": false,
+          "actionOnEsc": "enter",
+          "selectOnClick": true,
+          "updatedEsc": null
+        }
+      },
+      "label": "HtmlInput",
+      "hide": false,
+      "lock": false
+    }
+  },
+  "variables": {},
+  "svgcontent": "<svg width=\"1920\" height=\"1080\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:html=\"http://www.w3.org/1999/xhtml\">\n <g>\n  <title>Layer 1</title>\n  <!-- 标题背景 -->\n  <rect fill=\"#1a1a2e\" stroke=\"#16213e\" width=\"1920\" height=\"80\" id=\"svg_header_bg\"/>\n  <!-- 主标题 -->\n  <text data-name=\"标题\" fill=\"#4fc3f7\" stroke=\"#000000\" stroke-width=\"0\" x=\"20\" y=\"50\" id=\"svg_title\" font-size=\"32\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">L06-2F 参数设置</text>\n  <!-- 副标题 -->\n  <text fill=\"#4fc3f7\" stroke=\"#000000\" stroke-width=\"0\" x=\"1600\" y=\"50\" id=\"svg_subtitle\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"end\" xml:space=\"preserve\">湿度报警阈值设置</text>\n  <!-- 说明文字 -->\n  <rect fill=\"#1e2e1e\" stroke=\"#4caf50\" stroke-width=\"2\" x=\"20\" y=\"100\" width=\"1880\" height=\"60\" rx=\"5\" id=\"svg_info_panel\"/>\n  <text fill=\"#4caf50\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"135\" id=\"svg_info_text\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">设置说明: 湿度上限范围 0-100%，湿度下限范围 0-100%，下限必须小于上限</text>\n  <!-- 1#区设置面板 -->\n  <rect fill=\"#1e1e2e\" stroke=\"#00d9ff\" stroke-width=\"3\" x=\"20\" y=\"180\" width=\"460\" height=\"400\" rx=\"10\" id=\"svg_zone1_panel\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"225\" id=\"svg_zone1_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">1# 区域设置</text>\n  <!-- 湿度上限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"40\" y=\"250\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone1_high_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"280\" id=\"svg_zone1_high_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度上限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"305\" id=\"svg_zone1_high_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"1#区当前上限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_high_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"140\" y=\"305\">80%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"220\" y=\"305\" id=\"svg_zone1_high_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"1#区湿度上限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone1_high\">\n   <rect x=\"290\" y=\"285\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone1_high_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"290\" y=\"285\" height=\"24\" width=\"80\" id=\"H-HXI_zone1_high\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone1_high\"/>\n   </foreignObject>\n  </g>\n  <!-- 湿度下限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"40\" y=\"340\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone1_low_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"370\" id=\"svg_zone1_low_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度下限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"395\" id=\"svg_zone1_low_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"1#区当前下限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_low_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"140\" y=\"395\">40%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"220\" y=\"395\" id=\"svg_zone1_low_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"1#区湿度下限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone1_low\">\n   <rect x=\"290\" y=\"375\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone1_low_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"290\" y=\"375\" height=\"24\" width=\"80\" id=\"H-HXI_zone1_low\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone1_low\"/>\n   </foreignObject>\n  </g>\n  <!-- 2#区设置面板 -->\n  <rect fill=\"#1e1e2e\" stroke=\"#00d9ff\" stroke-width=\"3\" x=\"500\" y=\"180\" width=\"460\" height=\"400\" rx=\"10\" id=\"svg_zone2_panel\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"520\" y=\"225\" id=\"svg_zone2_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">2# 区域设置</text>\n  <!-- 湿度上限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"520\" y=\"250\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone2_high_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"540\" y=\"280\" id=\"svg_zone2_high_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度上限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"540\" y=\"305\" id=\"svg_zone2_high_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"2#区当前上限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_high_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"620\" y=\"305\">80%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"700\" y=\"305\" id=\"svg_zone2_high_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"2#区湿度上限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone2_high\">\n   <rect x=\"770\" y=\"285\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone2_high_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"770\" y=\"285\" height=\"24\" width=\"80\" id=\"H-HXI_zone2_high\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone2_high\"/>\n   </foreignObject>\n  </g>\n  <!-- 湿度下限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"520\" y=\"340\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone2_low_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"540\" y=\"370\" id=\"svg_zone2_low_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度下限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"540\" y=\"395\" id=\"svg_zone2_low_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"2#区当前下限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_low_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"620\" y=\"395\">40%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"700\" y=\"395\" id=\"svg_zone2_low_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"2#区湿度下限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone2_low\">\n   <rect x=\"770\" y=\"375\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone2_low_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"770\" y=\"375\" height=\"24\" width=\"80\" id=\"H-HXI_zone2_low\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone2_low\"/>\n   </foreignObject>\n  </g>\n  <!-- 3#区设置面板 -->\n  <rect fill=\"#1e1e2e\" stroke=\"#00d9ff\" stroke-width=\"3\" x=\"980\" y=\"180\" width=\"460\" height=\"400\" rx=\"10\" id=\"svg_zone3_panel\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1000\" y=\"225\" id=\"svg_zone3_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">3# 区域设置</text>\n  <!-- 湿度上限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"1000\" y=\"250\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone3_high_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1020\" y=\"280\" id=\"svg_zone3_high_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度上限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"1020\" y=\"305\" id=\"svg_zone3_high_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"3#区当前上限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_high_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1100\" y=\"305\">80%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"1180\" y=\"305\" id=\"svg_zone3_high_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"3#区湿度上限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone3_high\">\n   <rect x=\"1250\" y=\"285\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone3_high_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"1250\" y=\"285\" height=\"24\" width=\"80\" id=\"H-HXI_zone3_high\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone3_high\"/>\n   </foreignObject>\n  </g>\n  <!-- 湿度下限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"1000\" y=\"340\" width=\"420\" height=\"70\" rx=\"5\" id=\"svg_zone3_low_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1020\" y=\"370\" id=\"svg_zone3_low_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度下限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"1020\" y=\"395\" id=\"svg_zone3_low_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"3#区当前下限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_low_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1100\" y=\"395\">40%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"1180\" y=\"395\" id=\"svg_zone3_low_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"3#区湿度下限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone3_low\">\n   <rect x=\"1250\" y=\"375\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone3_low_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"1250\" y=\"375\" height=\"24\" width=\"80\" id=\"H-HXI_zone3_low\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone3_low\"/>\n   </foreignObject>\n  </g>\n  <!-- 4#区设置面板 -->\n  <rect fill=\"#1e1e2e\" stroke=\"#00d9ff\" stroke-width=\"3\" x=\"1460\" y=\"180\" width=\"440\" height=\"400\" rx=\"10\" id=\"svg_zone4_panel\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1480\" y=\"225\" id=\"svg_zone4_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">4# 区域设置</text>\n  <!-- 湿度上限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"1480\" y=\"250\" width=\"400\" height=\"70\" rx=\"5\" id=\"svg_zone4_high_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"280\" id=\"svg_zone4_high_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度上限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"305\" id=\"svg_zone4_high_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"4#区当前上限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_high_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1580\" y=\"305\">80%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"1660\" y=\"305\" id=\"svg_zone4_high_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"4#区湿度上限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone4_high\">\n   <rect x=\"1730\" y=\"285\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone4_high_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"1730\" y=\"285\" height=\"24\" width=\"80\" id=\"H-HXI_zone4_high\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone4_high\"/>\n   </foreignObject>\n  </g>\n  <!-- 湿度下限 -->\n  <rect fill=\"#2a2a3e\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"1480\" y=\"340\" width=\"400\" height=\"70\" rx=\"5\" id=\"svg_zone4_low_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"370\" id=\"svg_zone4_low_label\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度下限设定</text>\n  <text fill=\"#888888\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"395\" id=\"svg_zone4_low_unit\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">当前值:</text>\n  <g data-name=\"4#区当前下限\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_low_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1580\" y=\"395\">40%</text>\n  </g>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"1660\" y=\"395\" id=\"svg_zone4_low_new\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">新设定:</text>\n  <g data-name=\"4#区湿度下限输入\" type=\"svg-ext-html_input\" fill=\"#2a2a3e\" stroke=\"#00d9ff\" font-size=\"20\" stroke-width=\"0.5\" font-family=\"Arial\" text-anchor=\"start\" id=\"HXI_zone4_low\">\n   <rect x=\"1730\" y=\"375\" width=\"80\" height=\"24\" stroke-width=\"0.5\" id=\"svg_zone4_low_input_bg\" stroke=\"#00d9ff\" fill=\"#2a2a3e\"/>\n   <foreignObject x=\"1730\" y=\"375\" height=\"24\" width=\"80\" id=\"H-HXI_zone4_low\">\n    <INPUT style=\"width: calc(100% - 7px); height: calc(100% - 7px); text-align: right; border: unset; font-size: 20px; font-family: sans-serif; background-color: rgb(42, 42, 62); color: rgb(0, 217, 255); vector-effect: non-scaling-stroke;\" value=\"#.##\" type=\"text\" id=\"I-HXI_zone4_low\"/>\n   </foreignObject>\n  </g>\n  <!-- 底部说明 -->\n  <rect fill=\"#1e2e1e\" stroke=\"#4caf50\" stroke-width=\"2\" x=\"20\" y=\"600\" width=\"1880\" height=\"80\" rx=\"5\" id=\"svg_footer_panel\"/>\n  <text fill=\"#4caf50\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"630\" id=\"svg_footer_text1\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">操作说明: 点击\"新设定\"值可弹出输入框修改参数，修改后点击\"确认\"按钮生效</text>\n  <text fill=\"#4caf50\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"660\" id=\"svg_footer_text2\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">寄存器地址: 湿度上限(40020-40023), 湿度下限(40021-40024)</text>\n </g>\n</svg>",
+  "type": "svg",
+  "property": {
+    "events": [],
+    "actions": []
+  }
+}

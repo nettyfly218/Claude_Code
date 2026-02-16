@@ -1,0 +1,660 @@
+{
+  "_comment": "L06-2F 二流体加湿系统 - 变量标签定义",
+  "projectName": "L06-2F 二流体加湿系统监控",
+  "deviceId": "L06_H_2F_ELTJS",
+  "tagGroups": [
+    {
+      "name": "区域加湿状态",
+      "description": "4个加湿区域的运行状态",
+      "tags": [
+        {
+          "id": "Zone1_Status",
+          "name": "1#区加湿状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40001",
+          "address": "40001",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区加湿状态",
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "Zone2_Status",
+          "name": "2#区加湿状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40002",
+          "address": "40002",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区加湿状态",
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "Zone3_Status",
+          "name": "3#区加湿状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40003",
+          "address": "40003",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区加湿状态",
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "Zone4_Status",
+          "name": "4#区加湿状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40004",
+          "address": "40004",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区加湿状态",
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        }
+      ]
+    },
+    {
+      "name": "温湿度监测",
+      "description": "4个区域的温湿度数据（需×0.1换算）",
+      "tags": [
+        {
+          "id": "Zone1_Humidity",
+          "name": "1#区湿度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40005",
+          "address": "40005",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区湿度值",
+          "unit": "%",
+          "scale": 0.1,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Zone1_Temp",
+          "name": "1#区温度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40006",
+          "address": "40006",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区温度值",
+          "unit": "℃",
+          "scale": 0.1,
+          "min": -10,
+          "max": 60
+        },
+        {
+          "id": "Zone2_Humidity",
+          "name": "2#区湿度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40007",
+          "address": "40007",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区湿度值",
+          "unit": "%",
+          "scale": 0.1,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Zone2_Temp",
+          "name": "2#区温度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40008",
+          "address": "40008",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区温度值",
+          "unit": "℃",
+          "scale": 0.1,
+          "min": -10,
+          "max": 60
+        },
+        {
+          "id": "Zone3_Humidity",
+          "name": "3#区湿度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40009",
+          "address": "40009",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区湿度值",
+          "unit": "%",
+          "scale": 0.1,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Zone3_Temp",
+          "name": "3#区温度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40010",
+          "address": "40010",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区温度值",
+          "unit": "℃",
+          "scale": 0.1,
+          "min": -10,
+          "max": 60
+        },
+        {
+          "id": "Zone4_Humidity",
+          "name": "4#区湿度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40011",
+          "address": "40011",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区湿度值",
+          "unit": "%",
+          "scale": 0.1,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "Zone4_Temp",
+          "name": "4#区温度",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40012",
+          "address": "40012",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区温度值",
+          "unit": "℃",
+          "scale": 0.1,
+          "min": -10,
+          "max": 60
+        }
+      ]
+    },
+    {
+      "name": "设备信息",
+      "description": "设备基础信息和控制方式",
+      "tags": [
+        {
+          "id": "Device_Addr",
+          "name": "设备地址",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40013",
+          "address": "40013",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "设备通讯地址"
+        },
+        {
+          "id": "Device_Alarm",
+          "name": "设备报警状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40014",
+          "address": "40014",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "设备综合报警状态",
+          "valueMap": {
+            "0": "正常",
+            "1": "气路报警",
+            "2": "水路报警",
+            "3": "1#区漏水",
+            "4": "2#区漏水",
+            "5": "3#区漏水",
+            "6": "4#区漏水",
+            "7": "屏幕PLC通讯异常",
+            "8": "采集模块通讯异常"
+          }
+        },
+        {
+          "id": "Remote_Ctrl",
+          "name": "远控状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40015",
+          "address": "40015",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "远程控制状态",
+          "valueMap": {
+            "0": "关机",
+            "1": "开机"
+          }
+        },
+        {
+          "id": "Zone1_Mode",
+          "name": "1#区控制方式",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40016",
+          "address": "40016",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区控制模式",
+          "valueMap": {
+            "0": "手动停止",
+            "1": "自动",
+            "2": "手动加湿"
+          }
+        },
+        {
+          "id": "Zone2_Mode",
+          "name": "2#区控制方式",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40017",
+          "address": "40017",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区控制模式",
+          "valueMap": {
+            "0": "手动停止",
+            "1": "自动",
+            "2": "手动加湿"
+          }
+        },
+        {
+          "id": "Zone3_Mode",
+          "name": "3#区控制方式",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40018",
+          "address": "40018",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区控制模式",
+          "valueMap": {
+            "0": "手动停止",
+            "1": "自动",
+            "2": "手动加湿"
+          }
+        },
+        {
+          "id": "Zone4_Mode",
+          "name": "4#区控制方式",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40019",
+          "address": "40019",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区控制模式",
+          "valueMap": {
+            "0": "手动停止",
+            "1": "自动",
+            "2": "手动加湿"
+          }
+        }
+      ]
+    },
+    {
+      "name": "湿度限值设定",
+      "description": "4个区域的湿度限值设定（可读写）",
+      "tags": [
+        {
+          "id": "Zone1_HighLimit",
+          "name": "1#区湿度高限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40020",
+          "address": "40020",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "1#区湿度高限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 70
+        },
+        {
+          "id": "Zone1_LowLimit",
+          "name": "1#区湿度低限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40021",
+          "address": "40021",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "1#区湿度低限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 50
+        },
+        {
+          "id": "Zone2_HighLimit",
+          "name": "2#区湿度高限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40022",
+          "address": "40022",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "2#区湿度高限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 70
+        },
+        {
+          "id": "Zone2_LowLimit",
+          "name": "2#区湿度低限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40023",
+          "address": "40023",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "2#区湿度低限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 50
+        },
+        {
+          "id": "Zone3_HighLimit",
+          "name": "3#区湿度高限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40024",
+          "address": "40024",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "3#区湿度高限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 70
+        },
+        {
+          "id": "Zone3_LowLimit",
+          "name": "3#区湿度低限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40025",
+          "address": "40025",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "3#区湿度低限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 50
+        },
+        {
+          "id": "Zone4_HighLimit",
+          "name": "4#区湿度高限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40026",
+          "address": "40026",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "4#区湿度高限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 70
+        },
+        {
+          "id": "Zone4_LowLimit",
+          "name": "4#区湿度低限",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40027",
+          "address": "40027",
+          "dataType": "int",
+          "readOnly": false,
+          "description": "4#区湿度低限设定",
+          "unit": "%",
+          "min": 0,
+          "max": 99,
+          "defaultValue": 50
+        }
+      ]
+    },
+    {
+      "name": "漏水与阀门状态",
+      "description": "4个区域漏水检测和水路阀门状态",
+      "tags": [
+        {
+          "id": "Zone1_LeakAlarm",
+          "name": "1#区漏水报警",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40028",
+          "address": "40028",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区漏水检测状态",
+          "valueMap": {
+            "0": "漏水",
+            "1": "正常"
+          },
+          "alarmOn": "0"
+        },
+        {
+          "id": "Zone2_LeakAlarm",
+          "name": "2#区漏水报警",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40029",
+          "address": "40029",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区漏水检测状态",
+          "valueMap": {
+            "0": "漏水",
+            "1": "正常"
+          },
+          "alarmOn": "0"
+        },
+        {
+          "id": "Zone3_LeakAlarm",
+          "name": "3#区漏水报警",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40030",
+          "address": "40030",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区漏水检测状态",
+          "valueMap": {
+            "0": "漏水",
+            "1": "正常"
+          },
+          "alarmOn": "0"
+        },
+        {
+          "id": "Zone4_LeakAlarm",
+          "name": "4#区漏水报警",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40031",
+          "address": "40031",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区漏水检测状态",
+          "valueMap": {
+            "0": "漏水",
+            "1": "正常"
+          },
+          "alarmOn": "0"
+        },
+        {
+          "id": "Water_Valve",
+          "name": "水路阀门状态",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40032",
+          "address": "40032",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "水路阀门打开/关闭状态",
+          "valueMap": {
+            "0": "关闭",
+            "1": "打开"
+          }
+        }
+      ]
+    },
+    {
+      "name": "传感器状态",
+      "description": "4个区域温湿度计在线状态",
+      "tags": [
+        {
+          "id": "Zone1_SensorOffline",
+          "name": "1#区传感器离线",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40033",
+          "address": "40033",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "1#区温湿度计在线状态",
+          "valueMap": {
+            "0": "正常",
+            "1": "离线"
+          },
+          "alarmOn": "1"
+        },
+        {
+          "id": "Zone2_SensorOffline",
+          "name": "2#区传感器离线",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40034",
+          "address": "40034",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "2#区温湿度计在线状态",
+          "valueMap": {
+            "0": "正常",
+            "1": "离线"
+          },
+          "alarmOn": "1"
+        },
+        {
+          "id": "Zone3_SensorOffline",
+          "name": "3#区传感器离线",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40035",
+          "address": "40035",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "3#区温湿度计在线状态",
+          "valueMap": {
+            "0": "正常",
+            "1": "离线"
+          },
+          "alarmOn": "1"
+        },
+        {
+          "id": "Zone4_SensorOffline",
+          "name": "4#区传感器离线",
+          "deviceId": "L06_H_2F_ELTJS",
+          "tagId": "40036",
+          "address": "40036",
+          "dataType": "int",
+          "readOnly": true,
+          "description": "4#区温湿度计在线状态",
+          "valueMap": {
+            "0": "正常",
+            "1": "离线"
+          },
+          "alarmOn": "1"
+        }
+      ]
+    }
+  ],
+  "internalTags": [
+    {
+      "id": "Connection_Status",
+      "name": "通讯状态",
+      "dataType": "string",
+      "readOnly": true,
+      "description": "设备通讯连接状态",
+      "valueMap": {
+        "online": "在线",
+        "offline": "断开"
+      }
+    },
+    {
+      "id": "Last_Communication_Time",
+      "name": "最后通讯时间",
+      "dataType": "datetime",
+      "readOnly": true,
+      "description": "最后成功通讯的时间"
+    },
+    {
+      "id": "Device_Alarm_Message",
+      "name": "设备报警描述",
+      "dataType": "string",
+      "readOnly": true,
+      "description": "设备报警状态的中文描述",
+      "valueMap": {
+        "0": "正常",
+        "1": "气路报警",
+        "2": "水路报警",
+        "3": "1#区漏水",
+        "4": "2#区漏水",
+        "5": "3#区漏水",
+        "6": "4#区漏水",
+        "7": "屏幕PLC通讯异常",
+        "8": "采集模块通讯异常"
+      }
+    }
+  ],
+  "calculatedTags": [
+    {
+      "id": "Zone1_Humidity_Display",
+      "name": "1#区湿度(显示)",
+      "formula": "${Zone1_Humidity} * 0.1",
+      "unit": "%"
+    },
+    {
+      "id": "Zone1_Temp_Display",
+      "name": "1#区温度(显示)",
+      "formula": "${Zone1_Temp} * 0.1",
+      "unit": "℃"
+    },
+    {
+      "id": "Zone2_Humidity_Display",
+      "name": "2#区湿度(显示)",
+      "formula": "${Zone2_Humidity} * 0.1",
+      "unit": "%"
+    },
+    {
+      "id": "Zone2_Temp_Display",
+      "name": "2#区温度(显示)",
+      "formula": "${Zone2_Temp} * 0.1",
+      "unit": "℃"
+    },
+    {
+      "id": "Zone3_Humidity_Display",
+      "name": "3#区湿度(显示)",
+      "formula": "${Zone3_Humidity} * 0.1",
+      "unit": "%"
+    },
+    {
+      "id": "Zone3_Temp_Display",
+      "name": "3#区温度(显示)",
+      "formula": "${Zone3_Temp} * 0.1",
+      "unit": "℃"
+    },
+    {
+      "id": "Zone4_Humidity_Display",
+      "name": "4#区湿度(显示)",
+      "formula": "${Zone4_Humidity} * 0.1",
+      "unit": "%"
+    },
+    {
+      "id": "Zone4_Temp_Display",
+      "name": "4#区温度(显示)",
+      "formula": "${Zone4_Temp} * 0.1",
+      "unit": "℃"
+    },
+    {
+      "id": "Total_Zone_Running",
+      "name": "运行区域数",
+      "formula": "(${Zone1_Status} == 1 ? 1 : 0) + (${Zone2_Status} == 1 ? 1 : 0) + (${Zone3_Status} == 1 ? 1 : 0) + (${Zone4_Status} == 1 ? 1 : 0)"
+    },
+    {
+      "id": "System_Status",
+      "name": "系统状态",
+      "formula": "${Device_Alarm} == 0 ? '正常' : '报警'"
+    }
+  ]
+}

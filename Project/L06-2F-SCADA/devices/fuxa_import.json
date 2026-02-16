@@ -1,0 +1,600 @@
+[
+  {
+    "id": "0",
+    "name": "FUXA Server",
+    "type": "FuxaServer",
+    "property": {},
+    "enabled": true,
+    "tags": {
+      "t_server_status": {
+        "id": "t_server_status",
+        "name": "Server Status",
+        "label": "Server Status",
+        "value": "",
+        "type": "number",
+        "memaddress": "d_L06_H_2F_ELTJS",
+        "daq": {
+          "enabled": false,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "init": "",
+        "sysType": 1
+      }
+    },
+    "polling": 1000
+  },
+  {
+    "id": "d_L06_H_2F_ELTJS",
+    "name": "L06-2F 二流体加湿器",
+    "enabled": true,
+    "property": {
+      "address": "172.169.53.42:502",
+      "port": null,
+      "slot": null,
+      "rack": null,
+      "slaveid": "1",
+      "baudrate": 9600,
+      "databits": 8,
+      "stopbits": 1,
+      "parity": "None",
+      "connectionOption": "TcpPort",
+      "delay": 10,
+      "socketReuse": "Reuse",
+      "forceFC16": false
+    },
+    "type": "ModbusTCP",
+    "polling": 1000,
+    "tags": {
+      "t_40001": {
+        "id": "t_40001",
+        "name": "Zone1_Status",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 1,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1状态"
+      },
+      "t_40002": {
+        "id": "t_40002",
+        "name": "Zone2_Status",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 2,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2状态"
+      },
+      "t_40003": {
+        "id": "t_40003",
+        "name": "Zone3_Status",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 3,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3状态"
+      },
+      "t_40004": {
+        "id": "t_40004",
+        "name": "Zone4_Status",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 4,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4状态"
+      },
+      "t_40005": {
+        "id": "t_40005",
+        "name": "Zone1_Humidity",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 5,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1湿度"
+      },
+      "t_40006": {
+        "id": "t_40006",
+        "name": "Zone1_Temp",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 6,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1温度"
+      },
+      "t_40007": {
+        "id": "t_40007",
+        "name": "Zone2_Humidity",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 7,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2湿度"
+      },
+      "t_40008": {
+        "id": "t_40008",
+        "name": "Zone2_Temp",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 8,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2温度"
+      },
+      "t_40009": {
+        "id": "t_40009",
+        "name": "Zone3_Humidity",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 9,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3湿度"
+      },
+      "t_40010": {
+        "id": "t_40010",
+        "name": "Zone3_Temp",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 10,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3温度"
+      },
+      "t_40011": {
+        "id": "t_40011",
+        "name": "Zone4_Humidity",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 11,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4湿度"
+      },
+      "t_40012": {
+        "id": "t_40012",
+        "name": "Zone4_Temp",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 12,
+        "divisor": 10,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4温度"
+      },
+      "t_40013": {
+        "id": "t_40013",
+        "name": "Device_Addr",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 13,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "设备地址"
+      },
+      "t_40014": {
+        "id": "t_40014",
+        "name": "Device_Alarm",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 14,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "设备报警"
+      },
+      "t_40015": {
+        "id": "t_40015",
+        "name": "Remote_Ctrl",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 15,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "远程控制"
+      },
+      "t_40016": {
+        "id": "t_40016",
+        "name": "Zone1_Mode",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 16,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1模式"
+      },
+      "t_40017": {
+        "id": "t_40017",
+        "name": "Zone2_Mode",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 17,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2模式"
+      },
+      "t_40018": {
+        "id": "t_40018",
+        "name": "Zone3_Mode",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 18,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3模式"
+      },
+      "t_40019": {
+        "id": "t_40019",
+        "name": "Zone4_Mode",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 19,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4模式"
+      },
+      "t_40020": {
+        "id": "t_40020",
+        "name": "Zone1_HighLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 20,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1上限"
+      },
+      "t_40021": {
+        "id": "t_40021",
+        "name": "Zone1_LowLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 21,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1下限"
+      },
+      "t_40022": {
+        "id": "t_40022",
+        "name": "Zone2_HighLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 22,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2上限"
+      },
+      "t_40023": {
+        "id": "t_40023",
+        "name": "Zone2_LowLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 23,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2下限"
+      },
+      "t_40024": {
+        "id": "t_40024",
+        "name": "Zone3_HighLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 24,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3上限"
+      },
+      "t_40025": {
+        "id": "t_40025",
+        "name": "Zone3_LowLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 25,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3下限"
+      },
+      "t_40026": {
+        "id": "t_40026",
+        "name": "Zone4_HighLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 26,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4上限"
+      },
+      "t_40027": {
+        "id": "t_40027",
+        "name": "Zone4_LowLimit",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 27,
+        "divisor": 1,
+        "writeable": true,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4下限"
+      },
+      "t_40028": {
+        "id": "t_40028",
+        "name": "Zone1_LeakAlarm",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 28,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1泄漏报警"
+      },
+      "t_40029": {
+        "id": "t_40029",
+        "name": "Zone2_LeakAlarm",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 29,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2泄漏报警"
+      },
+      "t_40030": {
+        "id": "t_40030",
+        "name": "Zone3_LeakAlarm",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 30,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3泄漏报警"
+      },
+      "t_40031": {
+        "id": "t_40031",
+        "name": "Zone4_LeakAlarm",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 31,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4泄漏报警"
+      },
+      "t_40032": {
+        "id": "t_40032",
+        "name": "Water_Valve",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 32,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "水阀"
+      },
+      "t_40033": {
+        "id": "t_40033",
+        "name": "Zone1_SensorOffline",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 33,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域1传感器离线"
+      },
+      "t_40034": {
+        "id": "t_40034",
+        "name": "Zone2_SensorOffline",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 34,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域2传感器离线"
+      },
+      "t_40035": {
+        "id": "t_40035",
+        "name": "Zone3_SensorOffline",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 35,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域3传感器离线"
+      },
+      "t_40036": {
+        "id": "t_40036",
+        "name": "Zone4_SensorOffline",
+        "type": "UInt16",
+        "memaddress": "400000",
+        "address": 36,
+        "divisor": 1,
+        "daq": {
+          "enabled": true,
+          "interval": 60,
+          "changed": false,
+          "restored": false
+        },
+        "description": "区域4传感器离线"
+      }
+    }
+  }
+]

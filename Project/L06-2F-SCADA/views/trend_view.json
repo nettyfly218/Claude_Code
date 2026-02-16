@@ -1,0 +1,100 @@
+{
+  "_comment": "L06-2F 趋势分析画面",
+  "name": "趋势分析",
+  "id": "trend_view",
+  "header": {
+    "title": "温湿度趋势分析",
+    "showBackButton": true,
+    "showTimeRangeSelector": true
+  },
+  "widgets": [
+    {
+      "id": "zone_selector",
+      "type": "zone-selector",
+      "position": { "row": 1, "col": 1, "span": 3 },
+      "data": {
+        "title": "选择区域",
+        "zones": [
+          { "id": "zone1", "name": "1#区", "tags": ["Zone1_Humidity_Display", "Zone1_Temp_Display"] },
+          { "id": "zone2", "name": "2#区", "tags": ["Zone2_Humidity_Display", "Zone2_Temp_Display"] },
+          { "id": "zone3", "name": "3#区", "tags": ["Zone3_Humidity_Display", "Zone3_Temp_Display"] },
+          { "id": "zone4", "name": "4#区", "tags": ["Zone4_Humidity_Display", "Zone4_Temp_Display"] }
+        ],
+        "multiSelect": true
+      }
+    },
+    {
+      "id": "time_range_buttons",
+      "type": "button-group",
+      "position": { "row": 2, "col": 1, "span": 3 },
+      "data": {
+        "title": "时间范围",
+        "buttons": [
+          { "label": "1小时", "action": "setTimeRange", "value": "1h" },
+          { "label": "6小时", "action": "setTimeRange", "value": "6h" },
+          { "label": "24小时", "action": "setTimeRange", "value": "24h", "active": true },
+          { "label": "7天", "action": "setTimeRange", "value": "7d" },
+          { "label": "30天", "action": "setTimeRange", "value": "30d" }
+        ]
+      }
+    },
+    {
+      "id": "humidity_trend_chart",
+      "type": "trend-chart",
+      "position": { "row": 3, "col": 1, "span": 3 },
+      "data": {
+        "title": "湿度趋势",
+        "tags": ["Zone1_Humidity_Display", "Zone2_Humidity_Display", "Zone3_Humidity_Display", "Zone4_Humidity_Display"],
+        "colors": ["#2196F3", "#4CAF50", "#FF9800", "#9C27B0"],
+        "timeRange": "24h",
+        "yAxis": {
+          "min": 0,
+          "max": 100,
+          "unit": "%"
+        },
+        "showLegend": true,
+        "showGrid": true
+      }
+    },
+    {
+      "id": "temp_trend_chart",
+      "type": "trend-chart",
+      "position": { "row": 4, "col": 1, "span": 3 },
+      "data": {
+        "title": "温度趋势",
+        "tags": ["Zone1_Temp_Display", "Zone2_Temp_Display", "Zone3_Temp_Display", "Zone4_Temp_Display"],
+        "colors": ["#2196F3", "#4CAF50", "#FF9800", "#9C27B0"],
+        "timeRange": "24h",
+        "yAxis": {
+          "min": 0,
+          "max": 50,
+          "unit": "℃"
+        },
+        "showLegend": true,
+        "showGrid": true
+      }
+    },
+    {
+      "id": "statistics_summary",
+      "type": "statistics-panel",
+      "position": { "row": 5, "col": 1, "span": 3 },
+      "data": {
+        "title": "统计摘要",
+        "timeRange": "24h",
+        "items": [
+          { "label": "最高湿度", "tag": "maxHumidity", "suffix": "%" },
+          { "label": "最低湿度", "tag": "minHumidity", "suffix": "%" },
+          { "label": "平均湿度", "tag": "avgHumidity", "suffix": "%" },
+          { "label": "达标率", "tag": "humidityCompliance", "suffix": "%" }
+        ]
+      }
+    }
+  ],
+  "timeRanges": [
+    { "id": "1h", "label": "1小时", "startOffset": -3600000 },
+    { "id": "6h", "label": "6小时", "startOffset": -21600000 },
+    { "id": "24h", "label": "24小时", "startOffset": -86400000 },
+    { "id": "7d", "label": "7天", "startOffset": -604800000 },
+    { "id": "30d", "label": "30天", "startOffset": -2592000000 }
+  ]
+}

@@ -1,41 +1,67 @@
-# VS Code 插件列表
+# VS Code 扩展列表
 
-**总计插件数量**: 26 个
+**总计扩展数量**: 29 个
 
-## 🤖 AI 与智能辅助 (4 个)
-- `anthropic.claude-code`: Claude Code 官方插件
-- `google.gemini-cli-vscode-ide-companion`: Gemini CLI 伴侣
-- `rooveterinaryinc.roo-cline`: Roo Cline (AI 编程助手)
-- `highagency.pencildev`: Pencil (设计生成工具)
+## AI 与智能辅助 (4 个)
 
-## 🌐 Web 开发 (6 个)
-- `formulahendry.auto-close-tag`: 自动闭合 HTML/XML 标签
-- `formulahendry.auto-rename-tag`: 自动重命名配对标签
-- `esbenp.prettier-vscode`: Prettier 代码格式化
-- `humao.rest-client`: REST API 客户端
-- `ritwickdey.liveserver`: Live Server (实时预览)
-- `ruige24601.vite`: Vite 支持
+| 扩展 ID | 名称 |
+|--------|------|
+| `anthropic.claude-code` | Claude Code |
+| `google.gemini-cli-vscode-ide-companion` | Gemini CLI |
+| `rooveterinaryinc.roo-cline` | Roo Cline |
+| `highagency.pencildev` | Pencil |
 
-## 🐍 Python 开发 (3 个)
-- `ms-python.python`: Python 语言支持
-- `ms-python.vscode-pylance`: Pylance 语言服务器 (高性能)
-- `ms-python.black-formatter`: Black 代码格式化工具
+## Web 开发 (6 个)
 
-## 💻 系统、远程与容器 (7 个)
-- `ms-vscode-remote.remote-ssh`: Remote - SSH
-- `ms-vscode-remote.remote-ssh-edit`: SSH 配置文件编辑
-- `ms-vscode-remote.remote-wsl`: Remote - WSL
-- `ms-vscode.remote-explorer`: 远程资源管理器
-- `ms-azuretools.vscode-docker`: Docker 支持
-- `ms-azuretools.vscode-containers`: Dev Containers
-- `ms-vscode.powershell`: PowerShell 支持
+| 扩展 ID | 名称 |
+|--------|------|
+| `formulahendry.auto-close-tag` | Auto Close Tag |
+| `formulahendry.auto-rename-tag` | Auto Rename Tag |
+| `esbenp.prettier-vscode` | Prettier |
+| `humao.rest-client` | REST Client |
+| `ritwickdey.liveserver` | Live Server |
+| `ruige24601.vite` | Vite |
 
-## 📝 文档与工具 (5 个)
-- `yzhang.markdown-all-in-one`: Markdown 全能工具
-- `yzane.markdown-pdf`: Markdown 转 PDF
-- `tomoki1207.pdf`: PDF 阅读器
-- `redhat.vscode-yaml`: YAML 语言支持
-- `doonfrs.terminal-paste-image-vscode`: 终端粘贴图片
+## Python 开发 (4 个)
 
-## 🌍 语言包 (1 个)
-- `ms-ceintl.vscode-language-pack-zh-hans`: 简体中文语言包
+| 扩展 ID | 名称 |
+|--------|------|
+| `ms-python.python` | Python |
+| `ms-python.vscode-pylance` | Pylance |
+| `ms-python.black-formatter` | Black Formatter |
+| `charliermarsh.ruff` | Ruff |
+
+## 代码质量 (1 个)
+
+| 扩展 ID | 名称 |
+|--------|------|
+| `dbaeumer.vscode-eslint` | ESLint |
+
+## 远程开发 (7 个)
+
+| 扩展 ID | 名称 |
+|--------|------|
+| `ms-vscode-remote.remote-ssh` | Remote - SSH |
+| `ms-vscode-remote.remote-ssh-edit` | Remote - SSH Edit |
+| `ms-vscode-remote.remote-wsl` | Remote - WSL |
+| `ms-vscode.remote-explorer` | Remote Explorer |
+| `ms-azuretools.vscode-docker` | Docker |
+| `ms-azuretools.vscode-containers` | Dev Containers |
+| `ms-vscode.powershell` | PowerShell |
+
+## 文档与工具 (6 个)
+
+| 扩展 ID | 名称 |
+|--------|------|
+| `yzhang.markdown-all-in-one` | Markdown All in One |
+| `yzane.markdown-pdf` | Markdown PDF |
+| `tomoki1207.pdf` | PDF Viewer |
+| `redhat.vscode-yaml` | YAML |
+| `doonfrs.terminal-paste-image-vscode` | Terminal Paste Image |
+| `sst-dev.opencode` | OpenCode |
+
+## 语言包 (1 个)
+
+| 扩展 ID | 名称 |
+|--------|------|
+| `ms-ceintl.vscode-language-pack-zh-hans` | 简体中文语言包 |

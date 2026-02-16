@@ -1,0 +1,162 @@
+{
+  "_comment": "L06-2F 二流体加湿系统 - 报警配置",
+  "projectName": "L06-2F 二流体加湿系统监控",
+  "alarmSettings": {
+    "enableSound": true,
+    "enableBlink": true,
+    "ackRequired": true,
+    "retentionDays": 180
+  },
+  "alarmGroups": [
+    {
+      "name": "设备报警",
+      "priority": "critical",
+      "alarms": [
+        {
+          "id": "ALM001",
+          "name": "气路报警",
+          "tagId": "Device_Alarm",
+          "condition": "value == 1",
+          "priority": "critical",
+          "message": "L06-2F加湿系统气路报警，请检查气源",
+          "sound": true,
+          "blink": true
+        },
+        {
+          "id": "ALM002",
+          "name": "水路报警",
+          "tagId": "Device_Alarm",
+          "condition": "value == 2",
+          "priority": "critical",
+          "message": "L06-2F加湿系统水路报警，请检查水源",
+          "sound": true,
+          "blink": true
+        }
+      ]
+    },
+    {
+      "name": "漏水报警",
+      "priority": "critical",
+      "alarms": [
+        {
+          "id": "ALM003",
+          "name": "1#区漏水报警",
+          "tagId": "Zone1_LeakAlarm",
+          "condition": "value == 0",
+          "priority": "critical",
+          "message": "1#区检测到漏水，请立即检查",
+          "sound": true,
+          "blink": true
+        },
+        {
+          "id": "ALM004",
+          "name": "2#区漏水报警",
+          "tagId": "Zone2_LeakAlarm",
+          "condition": "value == 0",
+          "priority": "critical",
+          "message": "2#区检测到漏水，请立即检查",
+          "sound": true,
+          "blink": true
+        },
+        {
+          "id": "ALM005",
+          "name": "3#区漏水报警",
+          "tagId": "Zone3_LeakAlarm",
+          "condition": "value == 0",
+          "priority": "critical",
+          "message": "3#区检测到漏水，请立即检查",
+          "sound": true,
+          "blink": true
+        },
+        {
+          "id": "ALM006",
+          "name": "4#区漏水报警",
+          "tagId": "Zone4_LeakAlarm",
+          "condition": "value == 0",
+          "priority": "critical",
+          "message": "4#区检测到漏水，请立即检查",
+          "sound": true,
+          "blink": true
+        }
+      ]
+    },
+    {
+      "name": "通讯报警",
+      "priority": "high",
+      "alarms": [
+        {
+          "id": "ALM007",
+          "name": "屏幕PLC通讯故障",
+          "tagId": "Device_Alarm",
+          "condition": "value == 7",
+          "priority": "high",
+          "message": "屏幕与PLC通讯异常，尝试恢复中...",
+          "sound": true,
+          "blink": true
+        },
+        {
+          "id": "ALM008",
+          "name": "模块通讯故障",
+          "tagId": "Device_Alarm",
+          "condition": "value == 8",
+          "priority": "high",
+          "message": "采集模块与屏幕通讯异常，请检查网络",
+          "sound": true,
+          "blink": true
+        }
+      ]
+    },
+    {
+      "name": "传感器报警",
+      "priority": "medium",
+      "alarms": [
+        {
+          "id": "ALM009",
+          "name": "1#区传感器离线",
+          "tagId": "Zone1_SensorOffline",
+          "condition": "value == 1",
+          "priority": "medium",
+          "message": "1#区温湿度计离线，请检查传感器连接",
+          "sound": false,
+          "blink": false
+        },
+        {
+          "id": "ALM010",
+          "name": "2#区传感器离线",
+          "tagId": "Zone2_SensorOffline",
+          "condition": "value == 1",
+          "priority": "medium",
+          "message": "2#区温湿度计离线，请检查传感器连接",
+          "sound": false,
+          "blink": false
+        },
+        {
+          "id": "ALM011",
+          "name": "3#区传感器离线",
+          "tagId": "Zone3_SensorOffline",
+          "condition": "value == 1",
+          "priority": "medium",
+          "message": "3#区温湿度计离线，请检查传感器连接",
+          "sound": false,
+          "blink": false
+        },
+        {
+          "id": "ALM012",
+          "name": "4#区传感器离线",
+          "tagId": "Zone4_SensorOffline",
+          "condition": "value == 1",
+          "priority": "medium",
+          "message": "4#区温湿度计离线，请检查传感器连接",
+          "sound": false,
+          "blink": false
+        }
+      ]
+    }
+  ],
+  "alarmStatistics": {
+    "todayCritical": 0,
+    "todayHigh": 0,
+    "todayMedium": 0,
+    "todayProcessed": 0
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "_comment": "L06-2F 二流体加湿系统 - 总览监控画面",
+  "name": "总览画面",
+  "id": "overview",
+  "layout": {
+    "type": "grid",
+    "rows": 3,
+    "cols": 4,
+    "gap": 10
+  },
+  "header": {
+    "title": "L06-2F 二流体加湿系统监控",
+    "showAlarmButton": true,
+    "showSettingsButton": true
+  },
+  "widgets": [
+    {
+      "id": "zone1_card",
+      "type": "zone-card",
+      "position": { "row": 1, "col": 1 },
+      "data": {
+        "zoneName": "1#区",
+        "statusTag": "Zone1_Status",
+        "statusMap": { "0": "停止", "1": "加湿中" },
+        "humidityTag": "Zone1_Humidity_Display",
+        "tempTag": "Zone1_Temp_Display",
+        "highLimitTag": "Zone1_HighLimit",
+        "lowLimitTag": "Zone1_LowLimit",
+        "buttons": [
+          { "label": "详情", "action": "navigate", "target": "zone1_detail" },
+          { "label": "报警", "action": "navigate", "target": "alarm_center", "filter": "zone1" }
+        ]
+      }
+    },
+    {
+      "id": "zone2_card",
+      "type": "zone-card",
+      "position": { "row": 1, "col": 2 },
+      "data": {
+        "zoneName": "2#区",
+        "statusTag": "Zone2_Status",
+        "statusMap": { "0": "停止", "1": "加湿中" },
+        "humidityTag": "Zone2_Humidity_Display",
+        "tempTag": "Zone2_Temp_Display",
+        "highLimitTag": "Zone2_HighLimit",
+        "lowLimitTag": "Zone2_LowLimit",
+        "buttons": [
+          { "label": "详情", "action": "navigate", "target": "zone2_detail" },
+          { "label": "报警", "action": "navigate", "target": "alarm_center", "filter": "zone2" }
+        ]
+      }
+    },
+    {
+      "id": "zone3_card",
+      "type": "zone-card",
+      "position": { "row": 1, "col": 3 },
+      "data": {
+        "zoneName": "3#区",
+        "statusTag": "Zone3_Status",
+        "statusMap": { "0": "停止", "1": "加湿中" },
+        "humidityTag": "Zone3_Humidity_Display",
+        "tempTag": "Zone3_Temp_Display",
+        "highLimitTag": "Zone3_HighLimit",
+        "lowLimitTag": "Zone3_LowLimit",
+        "buttons": [
+          { "label": "详情", "action": "navigate", "target": "zone3_detail" },
+          { "label": "报警", "action": "navigate", "target": "alarm_center", "filter": "zone3" }
+        ]
+      }
+    },
+    {
+      "id": "zone4_card",
+      "type": "zone-card",
+      "position": { "row": 1, "col": 4 },
+      "data": {
+        "zoneName": "4#区",
+        "statusTag": "Zone4_Status",
+        "statusMap": { "0": "停止", "1": "加湿中" },
+        "humidityTag": "Zone4_Humidity_Display",
+        "tempTag": "Zone4_Temp_Display",
+        "highLimitTag": "Zone4_HighLimit",
+        "lowLimitTag": "Zone4_LowLimit",
+        "buttons": [
+          { "label": "详情", "action": "navigate", "target": "zone4_detail" },
+          { "label": "报警", "action": "navigate", "target": "alarm_center", "filter": "zone4" }
+        ]
+      }
+    },
+    {
+      "id": "device_status_panel",
+      "type": "status-panel",
+      "position": { "row": 2, "col": 1, "span": 2 },
+      "data": {
+        "title": "设备状态",
+        "items": [
+          { "label": "系统状态", "tag": "System_Status", "colorMap": { "正常": "green", "报警": "red" } },
+          { "label": "远控状态", "tag": "Remote_Ctrl", "valueMap": { "0": "关机", "1": "开机" } },
+          { "label": "水路阀门", "tag": "Water_Valve", "valueMap": { "0": "关闭", "1": "打开" } },
+          { "label": "运行区域", "tag": "Total_Zone_Running", "suffix": "个" },
+          { "label": "设备报警", "tag": "Device_Alarm_Message" }
+        ]
+      }
+    },
+    {
+      "id": "alarm_summary_panel",
+      "type": "alarm-panel",
+      "position": { "row": 2, "col": 3, "span": 2 },
+      "data": {
+        "title": "报警汇总",
+        "showCurrent": true,
+        "showHistory": false,
+        "maxItems": 5
+      }
+    },
+    {
+      "id": "quick_actions",
+      "type": "button-group",
+      "position": { "row": 3, "col": 1, "span": 4 },
+      "data": {
+        "buttons": [
+          { "label": "报警中心", "action": "navigate", "target": "alarm_center", "icon": "alert" },
+          { "label": "趋势分析", "action": "navigate", "target": "trend_view", "icon": "chart" },
+          { "label": "参数设定", "action": "navigate", "target": "settings", "icon": "cog" },
+          { "label": "刷新", "action": "refresh", "icon": "refresh" }
+        ]
+      }
+    }
+  ]
+}

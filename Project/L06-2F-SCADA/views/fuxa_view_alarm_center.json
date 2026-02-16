@@ -1,0 +1,283 @@
+{
+  "id": "v_L06_2F_alarm",
+  "name": "L06-2F 报警中心",
+  "profile": {
+    "width": 1920,
+    "height": 1080,
+    "bkcolor": "#1e1e2e",
+    "margin": 10,
+    "align": "topCenter",
+    "gridType": "fixed",
+    "viewRenderDelay": 0
+  },
+  "items": {
+    "svg_title": {
+      "id": "svg_title",
+      "type": "svg-ext-shapes-text",
+      "name": "标题",
+      "property": { "events": [], "actions": [] },
+      "label": "Shapes",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_leak": {
+      "id": "VAL_zone1_leak",
+      "type": "svg-ext-value",
+      "name": "1#区泄漏报警",
+      "property": {
+        "variableId": "t_6e7e8b82-39244f07",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_leak": {
+      "id": "VAL_zone2_leak",
+      "type": "svg-ext-value",
+      "name": "2#区泄漏报警",
+      "property": {
+        "variableId": "t_b13d8e0b-185e4736",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_leak": {
+      "id": "VAL_zone3_leak",
+      "type": "svg-ext-value",
+      "name": "3#区泄漏报警",
+      "property": {
+        "variableId": "t_7d0856c4-88b6428e",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_leak": {
+      "id": "VAL_zone4_leak",
+      "type": "svg-ext-value",
+      "name": "4#区泄漏报警",
+      "property": {
+        "variableId": "t_919b9027-76d843ae",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_sensor": {
+      "id": "VAL_zone1_sensor",
+      "type": "svg-ext-value",
+      "name": "1#区传感器",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_sensor": {
+      "id": "VAL_zone2_sensor",
+      "type": "svg-ext-value",
+      "name": "2#区传感器",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_sensor": {
+      "id": "VAL_zone3_sensor",
+      "type": "svg-ext-value",
+      "name": "3#区传感器",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_sensor": {
+      "id": "VAL_zone4_sensor",
+      "type": "svg-ext-value",
+      "name": "4#区传感器",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_device_alarm": {
+      "id": "VAL_device_alarm",
+      "type": "svg-ext-value",
+      "name": "设备报警",
+      "property": {
+        "variableId": "t_5a63deed-496340e0",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_humidity_high": {
+      "id": "VAL_zone1_humidity_high",
+      "type": "svg-ext-value",
+      "name": "1#区湿度高",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone1_humidity_low": {
+      "id": "VAL_zone1_humidity_low",
+      "type": "svg-ext-value",
+      "name": "1#区湿度低",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_humidity_high": {
+      "id": "VAL_zone2_humidity_high",
+      "type": "svg-ext-value",
+      "name": "2#区湿度高",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone2_humidity_low": {
+      "id": "VAL_zone2_humidity_low",
+      "type": "svg-ext-value",
+      "name": "2#区湿度低",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_humidity_high": {
+      "id": "VAL_zone3_humidity_high",
+      "type": "svg-ext-value",
+      "name": "3#区湿度高",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone3_humidity_low": {
+      "id": "VAL_zone3_humidity_low",
+      "type": "svg-ext-value",
+      "name": "3#区湿度低",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_humidity_high": {
+      "id": "VAL_zone4_humidity_high",
+      "type": "svg-ext-value",
+      "name": "4#区湿度高",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_zone4_humidity_low": {
+      "id": "VAL_zone4_humidity_low",
+      "type": "svg-ext-value",
+      "name": "4#区湿度低",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    },
+    "VAL_comm_status": {
+      "id": "VAL_comm_status",
+      "type": "svg-ext-value",
+      "name": "通讯状态",
+      "property": {
+        "variableId": "t_XXXXXXXX-XXXX-XXXX",
+        "ranges": [],
+        "events": [],
+        "actions": []
+      },
+      "label": "Value",
+      "hide": false,
+      "lock": false
+    }
+  },
+  "variables": {},
+  "svgcontent": "<svg width=\"1920\" height=\"1080\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <g>\n  <title>Layer 1</title>\n  <!-- 标题背景 -->\n  <rect fill=\"#1a1a2e\" stroke=\"#16213e\" width=\"1920\" height=\"80\" id=\"svg_header_bg\"/>\n  <!-- 主标题 -->\n  <text data-name=\"标题\" fill=\"#ff5722\" stroke=\"#000000\" stroke-width=\"0\" x=\"20\" y=\"50\" id=\"svg_title\" font-size=\"32\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">L06-2F 报警中心</text>\n  <!-- 副标题 -->\n  <text fill=\"#ff5722\" stroke=\"#000000\" stroke-width=\"0\" x=\"1600\" y=\"50\" id=\"svg_subtitle\" font-size=\"20\" font-family=\"Arial\" text-anchor=\"end\" xml:space=\"preserve\">实时报警监控</text>\n  <!-- 泄漏报警区 -->\n  <rect fill=\"#2d1f1f\" stroke=\"#ff0000\" stroke-width=\"3\" x=\"20\" y=\"100\" width=\"930\" height=\"300\" rx=\"10\" id=\"svg_leak_panel\"/>\n  <text fill=\"#ff0000\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"140\" id=\"svg_leak_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">泄漏报警</text>\n  <!-- 1#区泄漏 -->\n  <rect fill=\"#3d2f2f\" stroke=\"#ff4444\" stroke-width=\"1\" x=\"40\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone1_leak_card\"/>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"190\" id=\"svg_zone1_leak_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">1# 区域</text>\n  <g data-name=\"1#区泄漏报警\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_leak\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_leak_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"60\" y=\"225\">正常</text>\n  </g>\n  <!-- 2#区泄漏 -->\n  <rect fill=\"#3d2f2f\" stroke=\"#ff4444\" stroke-width=\"1\" x=\"260\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone2_leak_card\"/>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"280\" y=\"190\" id=\"svg_zone2_leak_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">2# 区域</text>\n  <g data-name=\"2#区泄漏报警\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_leak\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_leak_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"280\" y=\"225\">正常</text>\n  </g>\n  <!-- 3#区泄漏 -->\n  <rect fill=\"#3d2f2f\" stroke=\"#ff4444\" stroke-width=\"1\" x=\"480\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone3_leak_card\"/>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"500\" y=\"190\" id=\"svg_zone3_leak_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">3# 区域</text>\n  <g data-name=\"3#区泄漏报警\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_leak\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_leak_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"500\" y=\"225\">正常</text>\n  </g>\n  <!-- 4#区泄漏 -->\n  <rect fill=\"#3d2f2f\" stroke=\"#ff4444\" stroke-width=\"1\" x=\"700\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone4_leak_card\"/>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"720\" y=\"190\" id=\"svg_zone4_leak_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">4# 区域</text>\n  <g data-name=\"4#区泄漏报警\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_leak\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_leak_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"720\" y=\"225\">正常</text>\n  </g>\n  <!-- 传感器离线区 -->\n  <rect fill=\"#2d2a1f\" stroke=\"#ff9800\" stroke-width=\"3\" x=\"980\" y=\"100\" width=\"920\" height=\"300\" rx=\"10\" id=\"svg_sensor_panel\"/>\n  <text fill=\"#ff9800\" stroke=\"#000000\" stroke-width=\"0\" x=\"1000\" y=\"140\" id=\"svg_sensor_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">传感器状态</text>\n  <!-- 1#区传感器 -->\n  <rect fill=\"#3d3a2f\" stroke=\"#ffaa00\" stroke-width=\"1\" x=\"1020\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone1_sensor_card\"/>\n  <text fill=\"#ffbb44\" stroke=\"#000000\" stroke-width=\"0\" x=\"1040\" y=\"190\" id=\"svg_zone1_sensor_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">1# 传感器</text>\n  <g data-name=\"1#区传感器\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_sensor\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_sensor_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1040\" y=\"225\">在线</text>\n  </g>\n  <!-- 2#区传感器 -->\n  <rect fill=\"#3d3a2f\" stroke=\"#ffaa00\" stroke-width=\"1\" x=\"1240\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone2_sensor_card\"/>\n  <text fill=\"#ffbb44\" stroke=\"#000000\" stroke-width=\"0\" x=\"1260\" y=\"190\" id=\"svg_zone2_sensor_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">2# 传感器</text>\n  <g data-name=\"2#区传感器\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_sensor\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_sensor_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1260\" y=\"225\">在线</text>\n  </g>\n  <!-- 3#区传感器 -->\n  <rect fill=\"#3d3a2f\" stroke=\"#ffaa00\" stroke-width=\"1\" x=\"1460\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone3_sensor_card\"/>\n  <text fill=\"#ffbb44\" stroke=\"#000000\" stroke-width=\"0\" x=\"1480\" y=\"190\" id=\"svg_zone3_sensor_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">3# 传感器</text>\n  <g data-name=\"3#区传感器\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_sensor\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_sensor_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1480\" y=\"225\">在线</text>\n  </g>\n  <!-- 4#区传感器 -->\n  <rect fill=\"#3d3a2f\" stroke=\"#ffaa00\" stroke-width=\"1\" x=\"1680\" y=\"160\" width=\"200\" height=\"80\" rx=\"5\" id=\"svg_zone4_sensor_card\"/>\n  <text fill=\"#ffbb44\" stroke=\"#000000\" stroke-width=\"0\" x=\"1700\" y=\"190\" id=\"svg_zone4_sensor_title\" font-size=\"16\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">4# 传感器</text>\n  <g data-name=\"4#区传感器\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_sensor\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_sensor_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1700\" y=\"225\">在线</text>\n  </g>\n  <!-- 湿度限值报警区 -->\n  <rect fill=\"#1f2d2d\" stroke=\"#00bcd4\" stroke-width=\"3\" x=\"20\" y=\"420\" width=\"1420\" height=\"280\" rx=\"10\" id=\"svg_humidity_panel\"/>\n  <text fill=\"#00bcd4\" stroke=\"#000000\" stroke-width=\"0\" x=\"40\" y=\"460\" id=\"svg_humidity_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">湿度限值报警</text>\n  <!-- 1#区湿度 -->\n  <rect fill=\"#2f3d3d\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"40\" y=\"480\" width=\"340\" height=\"180\" rx=\"5\" id=\"svg_zone1_humidity_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"515\" id=\"svg_zone1_humidity_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">1# 区域湿度</text>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"550\" id=\"svg_zone1_high_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">高限报警:</text>\n  <g data-name=\"1#区湿度高\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_humidity_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_humidity_high_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"160\" y=\"550\">正常</text>\n  </g>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"60\" y=\"585\" id=\"svg_zone1_low_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">低限报警:</text>\n  <g data-name=\"1#区湿度低\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone1_humidity_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone1_humidity_low_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"160\" y=\"585\">正常</text>\n  </g>\n  <!-- 2#区湿度 -->\n  <rect fill=\"#2f3d3d\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"400\" y=\"480\" width=\"340\" height=\"180\" rx=\"5\" id=\"svg_zone2_humidity_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"420\" y=\"515\" id=\"svg_zone2_humidity_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">2# 区域湿度</text>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"420\" y=\"550\" id=\"svg_zone2_high_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">高限报警:</text>\n  <g data-name=\"2#区湿度高\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_humidity_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_humidity_high_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"520\" y=\"550\">正常</text>\n  </g>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"420\" y=\"585\" id=\"svg_zone2_low_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">低限报警:</text>\n  <g data-name=\"2#区湿度低\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone2_humidity_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone2_humidity_low_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"520\" y=\"585\">正常</text>\n  </g>\n  <!-- 3#区湿度 -->\n  <rect fill=\"#2f3d3d\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"760\" y=\"480\" width=\"340\" height=\"180\" rx=\"5\" id=\"svg_zone3_humidity_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"780\" y=\"515\" id=\"svg_zone3_humidity_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">3# 区域湿度</text>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"780\" y=\"550\" id=\"svg_zone3_high_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">高限报警:</text>\n  <g data-name=\"3#区湿度高\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_humidity_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_humidity_high_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"880\" y=\"550\">正常</text>\n  </g>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"780\" y=\"585\" id=\"svg_zone3_low_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">低限报警:</text>\n  <g data-name=\"3#区湿度低\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone3_humidity_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone3_humidity_low_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"880\" y=\"585\">正常</text>\n  </g>\n  <!-- 4#区湿度 -->\n  <rect fill=\"#2f3d3d\" stroke=\"#00d9ff\" stroke-width=\"1\" x=\"1120\" y=\"480\" width=\"300\" height=\"180\" rx=\"5\" id=\"svg_zone4_humidity_card\"/>\n  <text fill=\"#00d9ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1140\" y=\"515\" id=\"svg_zone4_humidity_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">4# 区域湿度</text>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"1140\" y=\"550\" id=\"svg_zone4_high_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">高限报警:</text>\n  <g data-name=\"4#区湿度高\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_humidity_high\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_humidity_high_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1240\" y=\"550\">正常</text>\n  </g>\n  <text fill=\"#ff6666\" stroke=\"#000000\" stroke-width=\"0\" x=\"1140\" y=\"585\" id=\"svg_zone4_low_label\" font-size=\"14\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">低限报警:</text>\n  <g data-name=\"4#区湿度低\" type=\"svg-ext-value\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_zone4_humidity_low\">\n   <text stroke-width=\"0\" id=\"VAL_zone4_humidity_low_txt\" fill=\"#ff0000\" stroke=\"#000000\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1240\" y=\"585\">正常</text>\n  </g>\n  <!-- 设备报警和通讯状态 -->\n  <rect fill=\"#1f1f2d\" stroke=\"#9c27b0\" stroke-width=\"3\" x=\"1460\" y=\"420\" width=\"440\" height=\"280\" rx=\"10\" id=\"svg_device_panel\"/>\n  <text fill=\"#9c27b0\" stroke=\"#000000\" stroke-width=\"0\" x=\"1480\" y=\"460\" id=\"svg_device_title\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">设备状态</text>\n  <!-- 设备报警 -->\n  <rect fill=\"#2f1f2f\" stroke=\"#bb66ff\" stroke-width=\"1\" x=\"1480\" y=\"480\" width=\"400\" height=\"100\" rx=\"5\" id=\"svg_device_alarm_card\"/>\n  <text fill=\"#cc66ff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"515\" id=\"svg_device_alarm_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">设备报警</text>\n  <g data-name=\"设备报警\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"28\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_device_alarm\">\n   <text stroke-width=\"0\" id=\"VAL_device_alarm_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"28\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1500\" y=\"560\">正常</text>\n  </g>\n  <!-- 通讯状态 -->\n  <rect fill=\"#1f2f2f\" stroke=\"#66ccff\" stroke-width=\"1\" x=\"1480\" y=\"590\" width=\"400\" height=\"90\" rx=\"5\" id=\"svg_comm_card\"/>\n  <text fill=\"#66ccff\" stroke=\"#000000\" stroke-width=\"0\" x=\"1500\" y=\"620\" id=\"svg_comm_title\" font-size=\"18\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\">通讯状态</text>\n  <g data-name=\"通讯状态\" type=\"svg-ext-value\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" stroke-width=\"0\" font-family=\"Arial\" text-anchor=\"start\" id=\"VAL_comm_status\">\n   <text stroke-width=\"0\" id=\"VAL_comm_status_txt\" fill=\"#00ff00\" stroke=\"#000000\" font-size=\"24\" font-family=\"Arial\" text-anchor=\"start\" xml:space=\"preserve\" x=\"1500\" y=\"660\">正常</text>\n  </g>\n </g>\n</svg>",
+  "type": "svg",
+  "property": {
+    "events": [],
+    "actions": []
+  }
+}

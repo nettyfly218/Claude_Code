@@ -1,0 +1,680 @@
+{
+  "views": [
+    {
+      "id": "view_overview",
+      "name": "总览画面",
+      "grid": {
+        "cols": 4,
+        "rows": 3,
+        "gap": 10,
+        "width": 1200,
+        "height": 800
+      },
+      "elements": [
+        {
+          "id": "header_bg",
+          "type": "rectangle",
+          "x": 0,
+          "y": 0,
+          "width": 1200,
+          "height": 60,
+          "styles": {
+            "fill": "#1a1a2e",
+            "stroke": "#16213e",
+            "strokeWidth": 1
+          }
+        },
+        {
+          "id": "header_title",
+          "type": "text",
+          "x": 20,
+          "y": 38,
+          "text": "L06-2F 二流体加湿系统监控",
+          "styles": {
+            "fontSize": 24,
+            "fill": "#4fc3f7",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "header_datetime",
+          "type": "label",
+          "x": 1000,
+          "y": 38,
+          "tag": "datetime",
+          "styles": {
+            "fontSize": 16,
+            "fill": "#ffffff"
+          }
+        },
+        {
+          "id": "zone1_card",
+          "type": "rectangle",
+          "x": 10,
+          "y": 80,
+          "width": 280,
+          "height": 220,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#00d9ff",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "zone1_title",
+          "type": "text",
+          "x": 30,
+          "y": 105,
+          "text": "1# 区域",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#00d9ff",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "zone1_status_label",
+          "type": "text",
+          "x": 30,
+          "y": 135,
+          "text": "状态:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone1_status",
+          "type": "label",
+          "x": 90,
+          "y": 135,
+          "tag": "d_L06_H_2F_ELTJS/t_40001",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#00ff00"
+          },
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "zone1_humidity_label",
+          "type": "text",
+          "x": 30,
+          "y": 165,
+          "text": "湿度:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone1_humidity",
+          "type": "label",
+          "x": 90,
+          "y": 165,
+          "tag": "d_L06_H_2F_ELTJS/t_40005",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#00ff00",
+            "fontWeight": "bold"
+          },
+          "format": "{value}%"
+        },
+        {
+          "id": "zone1_temp_label",
+          "type": "text",
+          "x": 30,
+          "y": 195,
+          "text": "温度:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone1_temp",
+          "type": "label",
+          "x": 90,
+          "y": 195,
+          "tag": "d_L06_H_2F_ELTJS/t_40006",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#ff9800",
+            "fontWeight": "bold"
+          },
+          "format": "{value}°C"
+        },
+        {
+          "id": "zone1_alarm_indicator",
+          "type": "ellipse",
+          "x": 250,
+          "y": 100,
+          "width": 20,
+          "height": 20,
+          "styles": {
+            "fill": "#ff0000",
+            "visibility": "{{d_L06_H_2F_ELTJS/t_40028}} == 1 ? 'visible' : 'hidden'"
+          }
+        },
+        {
+          "id": "zone2_card",
+          "type": "rectangle",
+          "x": 310,
+          "y": 80,
+          "width": 280,
+          "height": 220,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#00d9ff",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "zone2_title",
+          "type": "text",
+          "x": 330,
+          "y": 105,
+          "text": "2# 区域",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#00d9ff",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "zone2_status",
+          "type": "label",
+          "x": 390,
+          "y": 135,
+          "tag": "d_L06_H_2F_ELTJS/t_40002",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#00ff00"
+          },
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "zone2_humidity",
+          "type": "label",
+          "x": 390,
+          "y": 165,
+          "tag": "d_L06_H_2F_ELTJS/t_40007",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#00ff00",
+            "fontWeight": "bold"
+          },
+          "format": "{value}%"
+        },
+        {
+          "id": "zone2_temp",
+          "type": "label",
+          "x": 390,
+          "y": 195,
+          "tag": "d_L06_H_2F_ELTJS/t_40008",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#ff9800",
+            "fontWeight": "bold"
+          },
+          "format": "{value}°C"
+        },
+        {
+          "id": "zone2_alarm_indicator",
+          "type": "ellipse",
+          "x": 550,
+          "y": 100,
+          "width": 20,
+          "height": 20,
+          "styles": {
+            "fill": "#ff0000",
+            "visibility": "{{d_L06_H_2F_ELTJS/t_40029}} == 1 ? 'visible' : 'hidden'"
+          }
+        },
+        {
+          "id": "zone3_card",
+          "type": "rectangle",
+          "x": 610,
+          "y": 80,
+          "width": 280,
+          "height": 220,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#00d9ff",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "zone3_title",
+          "type": "text",
+          "x": 630,
+          "y": 105,
+          "text": "3# 区域",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#00d9ff",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "zone3_status",
+          "type": "label",
+          "x": 690,
+          "y": 135,
+          "tag": "d_L06_H_2F_ELTJS/t_40003",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#00ff00"
+          },
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "zone3_humidity",
+          "type": "label",
+          "x": 690,
+          "y": 165,
+          "tag": "d_L06_H_2F_ELTJS/t_40009",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#00ff00",
+            "fontWeight": "bold"
+          },
+          "format": "{value}%"
+        },
+        {
+          "id": "zone3_temp",
+          "type": "label",
+          "x": 690,
+          "y": 195,
+          "tag": "d_L06_H_2F_ELTJS/t_40010",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#ff9800",
+            "fontWeight": "bold"
+          },
+          "format": "{value}°C"
+        },
+        {
+          "id": "zone3_alarm_indicator",
+          "type": "ellipse",
+          "x": 850,
+          "y": 100,
+          "width": 20,
+          "height": 20,
+          "styles": {
+            "fill": "#ff0000",
+            "visibility": "{{d_L06_H_2F_ELTJS/t_40030}} == 1 ? 'visible' : 'hidden'"
+          }
+        },
+        {
+          "id": "zone4_card",
+          "type": "rectangle",
+          "x": 910,
+          "y": 80,
+          "width": 280,
+          "height": 220,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#00d9ff",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "zone4_title",
+          "type": "text",
+          "x": 930,
+          "y": 105,
+          "text": "4# 区域",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#00d9ff",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "zone4_status",
+          "type": "label",
+          "x": 990,
+          "y": 135,
+          "tag": "d_L06_H_2F_ELTJS/t_40004",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#00ff00"
+          },
+          "valueMap": {
+            "0": "停止",
+            "1": "加湿中"
+          }
+        },
+        {
+          "id": "zone4_humidity",
+          "type": "label",
+          "x": 990,
+          "y": 165,
+          "tag": "d_L06_H_2F_ELTJS/t_40011",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#00ff00",
+            "fontWeight": "bold"
+          },
+          "format": "{value}%"
+        },
+        {
+          "id": "zone4_temp",
+          "type": "label",
+          "x": 990,
+          "y": 195,
+          "tag": "d_L06_H_2F_ELTJS/t_40012",
+          "styles": {
+            "fontSize": 20,
+            "fill": "#ff9800",
+            "fontWeight": "bold"
+          },
+          "format": "{value}°C"
+        },
+        {
+          "id": "zone4_alarm_indicator",
+          "type": "ellipse",
+          "x": 1150,
+          "y": 100,
+          "width": 20,
+          "height": 20,
+          "styles": {
+            "fill": "#ff0000",
+            "visibility": "{{d_L06_H_2F_ELTJS/t_40031}} == 1 ? 'visible' : 'hidden'"
+          }
+        },
+        {
+          "id": "device_panel",
+          "type": "rectangle",
+          "x": 10,
+          "y": 320,
+          "width": 580,
+          "height": 200,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#4fc3f7",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "device_panel_title",
+          "type": "text",
+          "x": 30,
+          "y": 350,
+          "text": "设备状态",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#4fc3f7",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "device_addr_label",
+          "type": "text",
+          "x": 30,
+          "y": 385,
+          "text": "设备地址:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "device_addr",
+          "type": "label",
+          "x": 120,
+          "y": 385,
+          "tag": "d_L06_H_2F_ELTJS/t_40013",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ffffff"
+          }
+        },
+        {
+          "id": "remote_ctrl_label",
+          "type": "text",
+          "x": 30,
+          "y": 415,
+          "text": "远程控制:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "remote_ctrl",
+          "type": "label",
+          "x": 120,
+          "y": 415,
+          "tag": "d_L06_H_2F_ELTJS/t_40015",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#00ff00"
+          },
+          "valueMap": {
+            "0": "关闭",
+            "1": "开启"
+          }
+        },
+        {
+          "id": "water_valve_label",
+          "type": "text",
+          "x": 30,
+          "y": 445,
+          "text": "水阀状态:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "water_valve",
+          "type": "label",
+          "x": 120,
+          "y": 445,
+          "tag": "d_L06_H_2F_ELTJS/t_40032",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#2196f3"
+          },
+          "valueMap": {
+            "0": "关闭",
+            "1": "打开"
+          }
+        },
+        {
+          "id": "device_alarm_label",
+          "type": "text",
+          "x": 300,
+          "y": 385,
+          "text": "设备报警:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "device_alarm",
+          "type": "label",
+          "x": 390,
+          "y": 385,
+          "tag": "d_L06_H_2F_ELTJS/t_40014",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff0000"
+          }
+        },
+        {
+          "id": "alarm_panel",
+          "type": "rectangle",
+          "x": 610,
+          "y": 320,
+          "width": 580,
+          "height": 200,
+          "styles": {
+            "fill": "#1e1e2f",
+            "stroke": "#ff5722",
+            "strokeWidth": 2,
+            "rx": 10
+          }
+        },
+        {
+          "id": "alarm_panel_title",
+          "type": "text",
+          "x": 630,
+          "y": 350,
+          "text": "报警信息",
+          "styles": {
+            "fontSize": 18,
+            "fill": "#ff5722",
+            "fontWeight": "bold"
+          }
+        },
+        {
+          "id": "zone1_leak_label",
+          "type": "text",
+          "x": 630,
+          "y": 385,
+          "text": "1#区泄漏:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone1_leak",
+          "type": "label",
+          "x": 720,
+          "y": 385,
+          "tag": "d_L06_H_2F_ELTJS/t_40028",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff0000"
+          },
+          "valueMap": {
+            "0": "正常",
+            "1": "报警"
+          }
+        },
+        {
+          "id": "zone2_leak_label",
+          "type": "text",
+          "x": 630,
+          "y": 415,
+          "text": "2#区泄漏:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone2_leak",
+          "type": "label",
+          "x": 720,
+          "y": 415,
+          "tag": "d_L06_H_2F_ELTJS/t_40029",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff0000"
+          },
+          "valueMap": {
+            "0": "正常",
+            "1": "报警"
+          }
+        },
+        {
+          "id": "zone3_leak_label",
+          "type": "text",
+          "x": 630,
+          "y": 445,
+          "text": "3#区泄漏:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone3_leak",
+          "type": "label",
+          "x": 720,
+          "y": 445,
+          "tag": "d_L06_H_2F_ELTJS/t_40030",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff0000"
+          },
+          "valueMap": {
+            "0": "正常",
+            "1": "报警"
+          }
+        },
+        {
+          "id": "zone4_leak_label",
+          "type": "text",
+          "x": 630,
+          "y": 475,
+          "text": "4#区泄漏:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "zone4_leak",
+          "type": "label",
+          "x": 720,
+          "y": 475,
+          "tag": "d_L06_H_2F_ELTJS/t_40031",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff0000"
+          },
+          "valueMap": {
+            "0": "正常",
+            "1": "报警"
+          }
+        },
+        {
+          "id": "sensor_offline_label",
+          "type": "text",
+          "x": 900,
+          "y": 385,
+          "text": "传感器状态:",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#aaaaaa"
+          }
+        },
+        {
+          "id": "sensor_status",
+          "type": "label",
+          "x": 1000,
+          "y": 385,
+          "tag": "d_L06_H_2F_ELTJS/t_40033",
+          "styles": {
+            "fontSize": 14,
+            "fill": "#ff9800"
+          },
+          "valueMap": {
+            "0": "在线",
+            "1": "离线"
+          }
+        }
+      ]
+    }
+  ]
+}

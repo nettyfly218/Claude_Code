@@ -1,0 +1,113 @@
+{
+  "_comment": "L06-2F 3#区详情监控画面",
+  "name": "3#区详情",
+  "id": "zone3_detail",
+  "header": {
+    "title": "3#区加湿控制详情",
+    "showBackButton": true,
+    "showSettingsButton": true
+  },
+  "widgets": [
+    {
+      "id": "zone_status_large",
+      "type": "status-indicator",
+      "position": { "row": 1, "col": 1 },
+      "data": {
+        "title": "加湿状态",
+        "tag": "Zone3_Status",
+        "valueMap": { "0": "已停止", "1": "运行中" },
+        "colorMap": { "0": "gray", "1": "green" },
+        "size": "large"
+      }
+    },
+    {
+      "id": "zone_mode",
+      "type": "value-display",
+      "position": { "row": 1, "col": 2 },
+      "data": {
+        "title": "控制方式",
+        "tag": "Zone3_Mode",
+        "valueMap": { "0": "手动停止", "1": "自动", "2": "手动加湿" }
+      }
+    },
+    {
+      "id": "humidity_gauge",
+      "type": "gauge",
+      "position": { "row": 2, "col": 1 },
+      "data": {
+        "title": "湿度",
+        "tag": "Zone3_Humidity_Display",
+        "unit": "%",
+        "min": 0,
+        "max": 100,
+        "highLimit": "Zone3_HighLimit",
+        "lowLimit": "Zone3_LowLimit",
+        "ranges": [
+          { "min": 0, "max": 50, "color": "yellow" },
+          { "min": 50, "max": 70, "color": "green" },
+          { "min": 70, "max": 100, "color": "red" }
+        ]
+      }
+    },
+    {
+      "id": "temp_gauge",
+      "type": "gauge",
+      "position": { "row": 2, "col": 2 },
+      "data": {
+        "title": "温度",
+        "tag": "Zone3_Temp_Display",
+        "unit": "℃",
+        "min": 0,
+        "max": 50,
+        "ranges": [
+          { "min": 0, "max": 18, "color": "blue" },
+          { "min": 18, "max": 28, "color": "green" },
+          { "min": 28, "max": 50, "color": "red" }
+        ]
+      }
+    },
+    {
+      "id": "limit_display",
+      "type": "limit-display",
+      "position": { "row": 2, "col": 3 },
+      "data": {
+        "title": "设定范围",
+        "highLimitTag": "Zone3_HighLimit",
+        "lowLimitTag": "Zone3_LowLimit",
+        "unit": "%"
+      }
+    },
+    {
+      "id": "trend_chart",
+      "type": "trend-chart",
+      "position": { "row": 3, "col": 1, "span": 3 },
+      "data": {
+        "title": "温湿度曲线 (24h)",
+        "tags": ["Zone3_Humidity_Display", "Zone3_Temp_Display"],
+        "timeRange": "24h",
+        "showLegend": true
+      }
+    },
+    {
+      "id": "status_indicators",
+      "type": "status-grid",
+      "position": { "row": 4, "col": 1, "span": 3 },
+      "data": {
+        "title": "设备状态",
+        "items": [
+          { "label": "漏水检测", "tag": "Zone3_LeakAlarm", "valueMap": { "0": "报警", "1": "正常" }, "alarmOn": "0" },
+          { "label": "传感器状态", "tag": "Zone3_SensorOffline", "valueMap": { "0": "在线", "1": "离线" }, "alarmOn": "1" },
+          { "label": "水路阀门", "tag": "Water_Valve", "valueMap": { "0": "关闭", "1": "打开" } }
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "label": "修改限值",
+      "action": "navigate",
+      "target": "settings",
+      "params": { "zone": "3" }
+    }
+  ]
+}

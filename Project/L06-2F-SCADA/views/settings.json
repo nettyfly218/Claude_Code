@@ -1,0 +1,129 @@
+{
+  "_comment": "L06-2F 参数设定画面",
+  "name": "参数设定",
+  "id": "settings",
+  "header": {
+    "title": "湿度限值设定",
+    "showBackButton": true,
+    "showSaveButton": true,
+    "showCancelButton": true
+  },
+  "widgets": [
+    {
+      "id": "zone1_settings",
+      "type": "limit-settings",
+      "position": { "row": 1, "col": 1 },
+      "data": {
+        "zone": "1",
+        "zoneName": "1#区",
+        "highLimitTag": "Zone1_HighLimit",
+        "lowLimitTag": "Zone1_LowLimit",
+        "unit": "%",
+        "min": 0,
+        "max": 99,
+        "defaultHigh": 70,
+        "defaultLow": 50
+      }
+    },
+    {
+      "id": "zone2_settings",
+      "type": "limit-settings",
+      "position": { "row": 1, "col": 2 },
+      "data": {
+        "zone": "2",
+        "zoneName": "2#区",
+        "highLimitTag": "Zone2_HighLimit",
+        "lowLimitTag": "Zone2_LowLimit",
+        "unit": "%",
+        "min": 0,
+        "max": 99,
+        "defaultHigh": 70,
+        "defaultLow": 50
+      }
+    },
+    {
+      "id": "zone3_settings",
+      "type": "limit-settings",
+      "position": { "row": 2, "col": 1 },
+      "data": {
+        "zone": "3",
+        "zoneName": "3#区",
+        "highLimitTag": "Zone3_HighLimit",
+        "lowLimitTag": "Zone3_LowLimit",
+        "unit": "%",
+        "min": 0,
+        "max": 99,
+        "defaultHigh": 70,
+        "defaultLow": 50
+      }
+    },
+    {
+      "id": "zone4_settings",
+      "type": "limit-settings",
+      "position": { "row": 2, "col": 2 },
+      "data": {
+        "zone": "4",
+        "zoneName": "4#区",
+        "highLimitTag": "Zone4_HighLimit",
+        "lowLimitTag": "Zone4_LowLimit",
+        "unit": "%",
+        "min": 0,
+        "max": 99,
+        "defaultHigh": 70,
+        "defaultLow": 50
+      }
+    },
+    {
+      "id": "setting_notice",
+      "type": "notice",
+      "position": { "row": 3, "col": 1, "span": 2 },
+      "data": {
+        "type": "warning",
+        "message": "⚠ 保存后立即下发至设备，请确认参数正确后再保存"
+      }
+    },
+    {
+      "id": "validation_rules",
+      "type": "info-panel",
+      "position": { "row": 4, "col": 1, "span": 2 },
+      "data": {
+        "title": "设定规则",
+        "items": [
+          "高限值必须大于低限值",
+          "设定范围：0-99%",
+          "修改后自动保存到设备",
+          "所有区域可独立设定"
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "save_button",
+      "label": "保存",
+      "type": "primary",
+      "action": "saveSettings"
+    },
+    {
+      "id": "cancel_button",
+      "label": "取消",
+      "type": "secondary",
+      "action": "cancelSettings"
+    },
+    {
+      "id": "reset_button",
+      "label": "恢复默认",
+      "type": "default",
+      "action": "resetToDefault"
+    }
+  ],
+  "validation": {
+    "highMustGreaterThanLow": true,
+    "range": {
+      "min": 0,
+      "max": 99
+    },
+    "confirmBeforeSave": true,
+    "confirmMessage": "确认保存设定值？保存后立即下发至设备。"
+  }
+}

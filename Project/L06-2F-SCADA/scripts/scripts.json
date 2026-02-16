@@ -1,0 +1,69 @@
+{
+  "_comment": "L06-2F 二流体加湿系统 - 脚本逻辑配置",
+  "projectName": "L06-2F 二流体加湿系统监控",
+  "scripts": [
+    {
+      "id": "alarm_aggregation",
+      "name": "设备报警聚合",
+      "description": "根据设备报警状态值解析具体报警类型",
+      "trigger": "onChange",
+      "tags": ["Device_Alarm"],
+      "code": "// 设备报警值解析\n// 0=正常, 1=气路, 2=水路, 3-6=漏水, 7=PLC通讯, 8=模块通讯\nvar alarmValue = getTag('Device_Alarm');\nvar alarmMessages = {\n  0: '正常',\n  1: '气路报警',\n  2: '水路报警',\n  3: '1#区漏水',\n  4: '2#区漏水',\n  5: '3#区漏水',\n  6: '4#区漏水',\n  7: '屏幕PLC通讯异常',\n  8: '采集模块通讯异常'\n};\n\nvar message = alarmMessages[alarmValue] || '未知报警';\nsetTag('Device_Alarm_Message', message);"
+    },
+    {
+      "id": "zone_status_count",
+      "name": "运行区域统计",
+      "description": "统计当前运行中的加湿区域数量",
+      "trigger": "onChange",
+      "tags": ["Zone1_Status", "Zone2_Status", "Zone3_Status", "Zone4_Status"],
+      "code": "// 统计运行中的区域数量\nvar count = 0;\nif (getTag('Zone1_Status') === 1) count++;\nif (getTag('Zone2_Status') === 1) count++;\nif (getTag('Zone3_Status') === 1) count++;\nif (getTag('Zone4_Status') === 1) count++;\n\nsetTag('Total_Zone_Running', count);"
+    },
+    {
+      "id": "humidity_limit_check",
+      "name": "湿度限值确认",
+      "description": "湿度设定值写入前的确认和验证",
+      "trigger": "beforeWrite",
+      "tags": ["Zone1_HighLimit", "Zone1_LowLimit", "Zone2_HighLimit", "Zone2_LowLimit",
+               "Zone3_HighLimit", "Zone3_LowLimit", "Zone4_HighLimit", "Zone4_LowLimit"],
+      "code": "// 湿度限值验证：高限必须大于低限\nfunction validateLimit(highTag, lowTag) {\n  var high = getTag(highTag);\n  var low = getTag(lowTag);\n\n  if (high <= low) {\n    return { success: false, message: '高限必须大于低限' };\n  }\n  if (high > 99 || low > 99) {\n    return { success: false, message: '限值不能超过99%' };\n  }\n  return { success: true };\n}\n\n// 各区域验证\nvar results = [];\nresults.push(validateLimit('Zone1_HighLimit', 'Zone1_LowLimit'));\nresults.push(validateLimit('Zone2_HighLimit', 'Zone2_LowLimit'));\nresults.push(validateLimit('Zone3_HighLimit', 'Zone3_LowLimit'));\nresults.push(validateLimit('Zone4_HighLimit', 'Zone4_LowLimit'));\n\nvar allValid = results.every(function(r) { return r.success; });\nif (!allValid) {\n  var errorMsg = results.find(function(r) { return !r.success; }).message;\n  return { success: false, message: errorMsg };\n}\n\nreturn { success: true, message: '参数验证通过' };"
+    },
+    {
+      "id": "connection_status",
+      "name": "通讯状态监测",
+      "description": "监控设备通讯状态，通讯中断时记录",
+      "trigger": "onChange",
+      "tags": ["Zone1_Status"],
+      "code": "// 设备通讯状态监测\n// 当任意标签值变化时检查通讯状态\nvar zone1Status = getTag('Zone1_Status');\n\nif (zone1Status === null || zone1Status === undefined) {\n  // 通讯异常\n  setTag('Connection_Status', 'offline');\n  setTag('Last_Communication_Time', new Date().toISOString());\n} else {\n  // 通讯正常\n  setTag('Connection_Status', 'online');\n  setTag('Last_Communication_Time', new Date().toISOString());\n}"
+    }
+  ],
+  "scheduledScripts": [
+    {
+      "id": "hourly_report",
+      "name": "每小时数据记录",
+      "description": "每小时自动记录温湿度统计数据",
+      "schedule": "0 * * * *",
+      "code": "// 每小时统计数据记录\nvar report = {\n  timestamp: new Date().toISOString(),\n  zone1: { humidity: getTag('Zone1_Humidity_Display'), temp: getTag('Zone1_Temp_Display') },\n  zone2: { humidity: getTag('Zone2_Humidity_Display'), temp: getTag('Zone2_Temp_Display') },\n  zone3: { humidity: getTag('Zone3_Humidity_Display'), temp: getTag('Zone3_Temp_Display') },\n  zone4: { humidity: getTag('Zone4_Humidity_Display'), temp: getTag('Zone4_Temp_Display') }\n};\n\nconsole.log('每小时报告:', JSON.stringify(report));"
+    },
+    {
+      "id": "daily_statistics",
+      "name": "每日统计数据",
+      "description": "每日0点计算各区域日统计数据",
+      "schedule": "0 0 * * *",
+      "code": "// 每日统计计算\n// 注意：实际实现需要历史数据支持\nvar now = new Date();\nvar dateStr = now.toISOString().split('T')[0];\n\nvar dailyReport = {\n  date: dateStr,\n  zones: []\n};\n\n// 各区域统计\nfor (var i = 1; i <= 4; i++) {\n  var zone = {\n    zone: i + '#区',\n    avgHumidity: 0,\n    avgTemp: 0,\n    runningHours: 0,\n    alarmCount: 0\n  };\n  dailyReport.zones.push(zone);\n}\n\nconsole.log('每日统计:', JSON.stringify(dailyReport));\nreturn dailyReport;"
+    },
+    {
+      "id": "compliance_check",
+      "name": "湿度达标率检查",
+      "description": "每小时检查各区域湿度是否在设定范围内",
+      "schedule": "0 * * * *",
+      "code": "// 湿度达标率检查\n// 检查各区域当前湿度是否在设定的高/低限范围内\n\nvar zones = [1, 2, 3, 4];\nvar complianceResults = [];\n\nzones.forEach(function(zoneNum) {\n  var highLimit = getTag('Zone' + zoneNum + '_HighLimit');\n  var lowLimit = getTag('Zone' + zoneNum + '_LowLimit');\n  var currentHumidity = getTag('Zone' + zoneNum + '_Humidity_Display');\n\n  if (currentHumidity !== null && highLimit !== null && lowLimit !== null) {\n    var isCompliant = currentHumidity >= lowLimit && currentHumidity <= highLimit;\n    complianceResults.push({\n      zone: zoneNum + '#区',\n      humidity: currentHumidity,\n      range: lowLimit + '% - ' + highLimit + '%',\n      compliant: isCompliant\n    });\n  }\n});\n\nconsole.log('达标率检查:', JSON.stringify(complianceResults));"
+    },
+    {
+      "id": "running_time_counter",
+      "name": "运行时间累计",
+      "description": "累计各区域加湿运行时间",
+      "schedule": "0 * * * *",
+      "code": "// 运行时间累计统计\n// 每小时检查各区域运行状态并累计时间\n\nvar zones = [1, 2, 3, 4];\nvar runningData = {};\n\nzones.forEach(function(zoneNum) {\n  var status = getTag('Zone' + zoneNum + '_Status');\n  var runningKey = 'Zone' + zoneNum + '_RunningHours';\n  var currentHours = getTag(runningKey) || 0;\n\n  // 如果正在运行，加1小时\n  if (status === 1) {\n    setTag(runningKey, currentHours + 1);\n    runningData['Zone' + zoneNum] = currentHours + 1;\n  } else {\n    runningData['Zone' + zoneNum] = currentHours;\n  }\n});\n\nconsole.log('运行时间累计:', JSON.stringify(runningData));\nreturn runningData;"
+    }
+  ]
+}

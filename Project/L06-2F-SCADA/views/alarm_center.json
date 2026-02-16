@@ -1,0 +1,96 @@
+{
+  "_comment": "L06-2F 报警中心画面",
+  "name": "报警中心",
+  "id": "alarm_center",
+  "header": {
+    "title": "报警中心",
+    "showBackButton": true,
+    "showAckButton": true,
+    "showClearButton": true
+  },
+  "tabs": [
+    {
+      "id": "current_alarms",
+      "label": "当前报警",
+      "active": true
+    },
+    {
+      "id": "alarm_history",
+      "label": "历史报警"
+    },
+    {
+      "id": "alarm_statistics",
+      "label": "统计"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "current_alarm_list",
+      "type": "alarm-list",
+      "position": { "row": 1, "col": 1, "span": 2 },
+      "data": {
+        "title": "当前报警",
+        "showPriority": true,
+        "showTimestamp": true,
+        "showAckButton": true,
+        "showProcessButton": true,
+        "alarmTypes": ["critical", "high", "medium"],
+        "columns": [
+          { "field": "priority", "label": "级别", "width": 80 },
+          { "field": "time", "label": "时间", "width": 120 },
+          { "field": "name", "label": "报警名称", "width": 200 },
+          { "field": "message", "label": "报警信息" },
+          { "field": "status", "label": "状态", "width": 100 }
+        ]
+      }
+    },
+    {
+      "id": "alarm_filter",
+      "type": "alarm-filter",
+      "position": { "row": 1, "col": 3 },
+      "data": {
+        "title": "报警筛选",
+        "options": [
+          { "value": "all", "label": "全部" },
+          { "value": "critical", "label": "紧急" },
+          { "value": "high", "label": "严重" },
+          { "value": "medium", "label": "警告" }
+        ]
+      }
+    },
+    {
+      "id": "today_statistics",
+      "type": "statistics-panel",
+      "position": { "row": 2, "col": 1, "span": 3 },
+      "data": {
+        "title": "今日统计",
+        "items": [
+          { "label": "紧急报警", "tag": "todayCritical", "color": "red" },
+          { "label": "严重报警", "tag": "todayHigh", "color": "orange" },
+          { "label": "警告报警", "tag": "todayMedium", "color": "yellow" },
+          { "label": "已处理", "tag": "todayProcessed", "color": "green" }
+        ]
+      }
+    }
+  ],
+  "alarmPriorityConfig": {
+    "critical": {
+      "color": "#ff4444",
+      "icon": "🔴",
+      "sound": true,
+      "blink": true
+    },
+    "high": {
+      "color": "#ff8800",
+      "icon": "🟠",
+      "sound": true,
+      "blink": true
+    },
+    "medium": {
+      "color": "#ffcc00",
+      "icon": "🟡",
+      "sound": false,
+      "blink": false
+    }
+  }
+}

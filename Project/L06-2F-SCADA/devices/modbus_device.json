@@ -1,0 +1,72 @@
+{
+  "_comment": "L06-2F 二流体加湿系统 - Modbus-TCP 设备配置",
+  "project": {
+    "name": "L06-2F 二流体加湿系统监控",
+    "version": "1.0.0",
+    "description": "基于 Modbus-TCP 协议的二流体加湿系统 SCADA 监控项目",
+    "created": "2026-02-14",
+    "author": "Claude Code"
+  },
+  "devices": [
+    {
+      "id": "L06_H_2F_ELTJS",
+      "name": "L06-2F 二流体加湿器",
+      "enabled": true,
+      "type": "Modbus TCP",
+      "description": "西南风柜房二流体加湿系统，4个独立加湿区域",
+      "connection": {
+        "protocol": "tcp",
+        "host": "172.169.53.42",
+        "port": 502,
+        "unitId": 1,
+        "timeout": 5000,
+        "retryInterval": 3000,
+        "maxRetries": 3,
+        "keepAlive": true
+      },
+      "settings": {
+        "pollingInterval": 1000,
+        "readMultipleRegisters": true,
+        "maxReadCount": 125
+      },
+      "tags": [
+        {"tagId": "40001", "name": "Zone1_Status", "address": "40001", "dataType": "int"},
+        {"tagId": "40002", "name": "Zone2_Status", "address": "40002", "dataType": "int"},
+        {"tagId": "40003", "name": "Zone3_Status", "address": "40003", "dataType": "int"},
+        {"tagId": "40004", "name": "Zone4_Status", "address": "40004", "dataType": "int"},
+        {"tagId": "40005", "name": "Zone1_Humidity", "address": "40005", "dataType": "int", "scale": 0.1},
+        {"tagId": "40006", "name": "Zone1_Temp", "address": "40006", "dataType": "int", "scale": 0.1},
+        {"tagId": "40007", "name": "Zone2_Humidity", "address": "40007", "dataType": "int", "scale": 0.1},
+        {"tagId": "40008", "name": "Zone2_Temp", "address": "40008", "dataType": "int", "scale": 0.1},
+        {"tagId": "40009", "name": "Zone3_Humidity", "address": "40009", "dataType": "int", "scale": 0.1},
+        {"tagId": "40010", "name": "Zone3_Temp", "address": "40010", "dataType": "int", "scale": 0.1},
+        {"tagId": "40011", "name": "Zone4_Humidity", "address": "40011", "dataType": "int", "scale": 0.1},
+        {"tagId": "40012", "name": "Zone4_Temp", "address": "40012", "dataType": "int", "scale": 0.1},
+        {"tagId": "40013", "name": "Device_Addr", "address": "40013", "dataType": "int"},
+        {"tagId": "40014", "name": "Device_Alarm", "address": "40014", "dataType": "int"},
+        {"tagId": "40015", "name": "Remote_Ctrl", "address": "40015", "dataType": "int"},
+        {"tagId": "40016", "name": "Zone1_Mode", "address": "40016", "dataType": "int"},
+        {"tagId": "40017", "name": "Zone2_Mode", "address": "40017", "dataType": "int"},
+        {"tagId": "40018", "name": "Zone3_Mode", "address": "40018", "dataType": "int"},
+        {"tagId": "40019", "name": "Zone4_Mode", "address": "40019", "dataType": "int"},
+        {"tagId": "40020", "name": "Zone1_HighLimit", "address": "40020", "dataType": "int", "writeable": true},
+        {"tagId": "40021", "name": "Zone1_LowLimit", "address": "40021", "dataType": "int", "writeable": true},
+        {"tagId": "40022", "name": "Zone2_HighLimit", "address": "40022", "dataType": "int", "writeable": true},
+        {"tagId": "40023", "name": "Zone2_LowLimit", "address": "40023", "dataType": "int", "writeable": true},
+        {"tagId": "40024", "name": "Zone3_HighLimit", "address": "40024", "dataType": "int", "writeable": true},
+        {"tagId": "40025", "name": "Zone3_LowLimit", "address": "40025", "dataType": "int", "writeable": true},
+        {"tagId": "40026", "name": "Zone4_HighLimit", "address": "40026", "dataType": "int", "writeable": true},
+        {"tagId": "40027", "name": "Zone4_LowLimit", "address": "40027", "dataType": "int", "writeable": true},
+        {"tagId": "40028", "name": "Zone1_LeakAlarm", "address": "40028", "dataType": "int"},
+        {"tagId": "40029", "name": "Zone2_LeakAlarm", "address": "40029", "dataType": "int"},
+        {"tagId": "40030", "name": "Zone3_LeakAlarm", "address": "40030", "dataType": "int"},
+        {"tagId": "40031", "name": "Zone4_LeakAlarm", "address": "40031", "dataType": "int"},
+        {"tagId": "40032", "name": "Water_Valve", "address": "40032", "dataType": "int"},
+        {"tagId": "40033", "name": "Zone1_SensorOffline", "address": "40033", "dataType": "int"},
+        {"tagId": "40034", "name": "Zone2_SensorOffline", "address": "40034", "dataType": "int"},
+        {"tagId": "40035", "name": "Zone3_SensorOffline", "address": "40035", "dataType": "int"},
+        {"tagId": "40036", "name": "Zone4_SensorOffline", "address": "40036", "dataType": "int"}
+      ]
+    }
+  ]
+}

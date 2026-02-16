@@ -78,6 +78,7 @@ temp_*
 # User-local scratch files
 scratch.*
 *.scratch
+*.db
 
 # Logs
 *.log
@@ -86,3 +87,6 @@ scratch.*
 *.tmp
 *.bak
 *.swp
+
+# Terminal Paste Image folder
+.cp-images/
